@@ -1,3 +1,6 @@
+
+#SAMPLE CODE TO FINE TUNE DEEPSPEECH MODEL
+
 import deepspeech
 
 def fine_tune_model(train_csv, dev_csv, checkpoint_dir, epochs):
