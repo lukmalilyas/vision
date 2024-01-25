@@ -1,0 +1,18 @@
+version: "3.1"
+
+stories:
+
+- story: General Cooking Tips
+  steps:
+  - intent: general_cooking_tips
+  - action: utter_general_cooking_tips
+
+- story: Cooking Time Management
+  steps:
+  - intent: cooking_time_management
+  - action: utter_cooking_time_management
+
+- story: Storing Leftovers
+  steps:
+  - intent: storing_leftovers
+  - action: utter_storing_leftovers

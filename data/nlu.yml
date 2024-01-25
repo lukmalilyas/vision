@@ -1,0 +1,137 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+
+- intent: thanks
+  examples: |
+    - thanks
+    - thank you
+    - appreciate it
+    - many thanks
+
+- intent: general_cooking_tips
+  examples: |
+    - Can you share some general cooking tips?
+    - What are some cooking hacks for beginners?
+    - Provide me with useful tips for cooking.
+    - Share some tricks to enhance my cooking skills.
+    - Any advice for someone new to cooking?
+    
+- intent: cooking_time_management
+  examples: |
+    - How can I manage my cooking time more efficiently?
+    - Any tips for multitasking in the kitchen?
+    - Help me with time management while cooking.
+    - How do I coordinate different cooking times for a meal?
+    - Tips for preparing meals quickly and effectively.
+    
+- intent: storing_leftovers
+  examples: |
+    - How should I store leftovers to maintain freshness?
+    - Can you provide guidelines for storing cooked food?
+    - What's the best way to store leftover ingredients?
+    - Tips for preserving food for later use.
+    - How do I prevent leftovers from spoiling?
+
+- intent: dish_help
+  examples: |
+    - Can you help me make a dish?
+    - I need assistance with preparing a dish.
+    - Help me with the recipe for a dish.
+    - Can you guide me through making a dish?
+    - I'm looking for some help with a dish.
+    - Could you assist me in cooking a dish?
+
+- intent: recipe_calories
+  examples: |
+    - What's the calorie count for this recipe?
+    - Can you provide information about the calories in this dish?
+    - How many calories does this dish have?
+    - Tell me about the calorie content of this dish.
+    - I'm curious about the caloric content of this dish.
+
+- intent: recipe_vegetarian_version
+  examples: |
+    - Is there a vegetarian version of this dish?
+    - Can I make this recipe without meat?
+    - What are the vegetarian options for this meal?
+    - Provide a meat-free variation.
+    - How can I make it vegetarian?
+
+- intent: recipe_preparation_time
+  examples: |
+    - How long does it take to make this dish?
+    - What's the total preparation time?
+    - Can you give an estimate of the cooking time?
+    - How much time should I allocate for cooking?
+    - Tell me about the time required for preparation.
+
+- intent: recipe_required_equipment
+  examples: |
+    - What kitchen tools do I need for this recipe?
+    - List the equipment required to make this dish.
+    - Are there any specific utensils I should use?
+    - Tell me about the necessary kitchen appliances.
+    - Mention the tools needed for cooking.
+
+- intent: recipe_allergens
+  examples: |
+    - Are there any common allergens in this recipe?
+    - Do I need to be cautious about allergies with this dish?
+    - What allergens should I be aware of?
+    - Any potential allergens in this meal?
+    - List the ingredients that may cause allergies.
+
+- intent: recipe_difficulty_level
+  examples: |
+    - How difficult is it to make this recipe?
+    - Is this dish suitable for beginners?
+    - Tell me about the cooking complexity.
+    - Provide information on the skill level required.
+
+- intent: recipe_side_dish_recommendation
+  examples: |
+    - Any suggestions for a side dish that pairs well with this recipe?
+    - What side dishes complement this meal?
+    - Recommend a good side dish for this dish.
+    - Tell me about side options for this recipe.
+    - Suggest some sides to serve with this.
+    
+- intent: recipe_hazards
+  examples: |
+    - Are there any safety hazards I should be aware of when making this dish?
+    - Can you list potential risks or hazards associated with preparing this dish?
+    - What precautions should I take while making this dish?
+    - Are there any safety concerns when cooking this dish?
+    - Tell me about possible hazards involved in preparing this dish.
+    - Are there specific dangers or risks related to this dish that I should know?
+
+- intent: inform_recipe
+  examples: |
+    - [Spaghetti Aglio e Olio](recipe)
+    - [Caprese Salad](recipe)
+    - [Chicken Stir-Fry](recipe)
+    - [Vegetarian Quesadillas](recipe)
+    - [Pasta Primavera](recipe)
+    - [Omelette](recipe)
+    - [Tomato Basil Bruschetta](recipe)
+    - [Mushroom Risotto](recipe)
+    - [Honey Mustard Baked Chicken](recipe)
+    - [Tuna Salad Wrap](recipe)
