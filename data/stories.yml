@@ -16,3 +16,19 @@ stories:
   steps:
   - intent: storing_leftovers
   - action: utter_storing_leftovers
+
+- story: User directly asks for calories of a dish
+  steps:
+  - intent: recipe_calories
+  - action: action_get_recipe_calories
+
+- story: User specifies dish and later asks about calorie count
+  steps:
+  - intent: dish_help
+  - action: utter_ask_dish_name
+
+  - intent: inform_recipe
+  - action: action_set_dish_name
+
+  - intent: recipe_calories
+  - action: action_get_recipe_calories

@@ -18,26 +18,41 @@ intents:
   - recipe_hazards
   - inform_recipe
 
+slots:
+  recipe:
+    type: text
+    mappings: []
+
+entities:
+  - recipe
+
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: "Hey! How are you?"
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "Bye"
 
   utter_thanks:
-  - text: "You are welcome, it was my pleasure to assist you"
+    - text: "You are welcome, it was my pleasure to assist you"
 
   utter_general_cooking_tips:
-  - text: "Sure! Here are some general cooking tips:\n1. Always read the recipe thoroughly before starting.\n2. Keep your knives sharp for efficient chopping.\n3. Taste as you go to adjust seasoning.\n4. Use fresh and high-quality ingredients.\n5. Don't overcrowd the pan for better cooking results."
+    - text: "Sure! Here are some general cooking tips:\n1. Always read the recipe thoroughly before starting.\n2. Keep your knives sharp for efficient chopping.\n3. Taste as you go to adjust seasoning.\n4. Use fresh and high-quality ingredients.\n5. Don't overcrowd the pan for better cooking results."
 
   utter_cooking_time_management:
-  - text: "Effective time management is crucial in the kitchen! Here are some tips:\n1. Prep ingredients before you start cooking.\n2. Prioritize tasks and create a cooking schedule.\n3. Use timers to avoid overcooking or burning.\n4. Clean as you go to minimize post-cooking cleanup time.\n5. Learn to multitask for more efficient cooking."
+    - text: "Effective time management is crucial in the kitchen! Here are some tips:\n1. Prep ingredients before you start cooking.\n2. Prioritize tasks and create a cooking schedule.\n3. Use timers to avoid overcooking or burning.\n4. Clean as you go to minimize post-cooking cleanup time.\n5. Learn to multitask for more efficient cooking."
 
   utter_storing_leftovers:
-  - text: "To store leftovers properly:\n1. Allow hot food to cool before refrigerating.\n2. Use airtight containers to prevent odors and maintain freshness.\n3. Label containers with the date to track shelf life.\n4. Store similar items together for easy access.\n5. Consume leftovers within a safe timeframe to ensure quality."
+    - text: "To store leftovers properly:\n1. Allow hot food to cool before refrigerating.\n2. Use airtight containers to prevent odors and maintain freshness.\n3. Label containers with the date to track shelf life.\n4. Store similar items together for easy access.\n5. Consume leftovers within a safe timeframe to ensure quality."
+
+  utter_ask_dish_name:
+    - text: "Sure, what dish do you want assistance for?"
 
 
+
+actions:
+  - action_get_recipe_calories
+  - action_set_dish_name
 
 session_config:
   session_expiration_time: 60

@@ -61,11 +61,11 @@ nlu:
 
 - intent: recipe_calories
   examples: |
-    - What's the calorie count for this recipe?
-    - Can you provide information about the calories in this dish?
-    - How many calories does this dish have?
-    - Tell me about the calorie content of this dish.
-    - I'm curious about the caloric content of this dish.
+    - What's the calorie count for [recipe](recipe)?
+    - Can you provide information about the calories in [recipe](recipe)?
+    - How many calories does [recipe](recipe) have?
+    - Tell me about the calorie content of [recipe](recipe).
+    - I'm curious about the caloric content of [recipe](recipe).
 
 - intent: recipe_vegetarian_version
   examples: |

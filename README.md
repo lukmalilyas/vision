@@ -1,3 +1,2 @@
 # vision
-Data science group project 
-hello
+Data science group project
