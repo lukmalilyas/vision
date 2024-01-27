@@ -17,10 +17,25 @@ stories:
   - intent: storing_leftovers
   - action: utter_storing_leftovers
 
+- story: User directly asks for assistance of a dish
+  steps:
+  - intent: dish_help
+  - action: action_set_dish_name
+
 - story: User directly asks for calories of a dish
   steps:
   - intent: recipe_calories
   - action: action_get_recipe_calories
+
+- story: User directly asks for vegetarian version of a dish
+  steps:
+  - intent: recipe_vegetarian_version
+  - action: action_get_recipe_vegetarian_version
+
+- story: User directly asks for preparation time of a dish
+  steps:
+  - intent: recipe_preparation_time
+  - action: action_get_recipe_preparation_time
 
 - story: User specifies dish and later asks about calorie count
   steps:
@@ -32,3 +47,26 @@ stories:
 
   - intent: recipe_calories
   - action: action_get_recipe_calories
+
+- story: User specifies dish and later asks about vegetarian version
+  steps:
+  - intent: dish_help
+  - action: utter_ask_dish_name
+
+  - intent: inform_recipe
+  - action: action_set_dish_name
+
+  - intent: recipe_vegetarian_version
+  - action: action_get_recipe_vegetarian_version
+
+- story: User specifies dish and later asks about preparation time
+  steps:
+  - intent: dish_help
+  - action: utter_ask_dish_name
+
+  - intent: inform_recipe
+  - action: action_set_dish_name
+
+  - intent: recipe_preparation_time
+  - action: action_get_recipe_preparation_time
+

@@ -53,6 +53,8 @@ responses:
 actions:
   - action_get_recipe_calories
   - action_set_dish_name
+  - action_get_recipe_vegetarian_version
+  - action_get_recipe_preparation_time
 
 session_config:
   session_expiration_time: 60

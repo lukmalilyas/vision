@@ -52,12 +52,12 @@ nlu:
 
 - intent: dish_help
   examples: |
-    - Can you help me make a dish?
-    - I need assistance with preparing a dish.
-    - Help me with the recipe for a dish.
-    - Can you guide me through making a dish?
-    - I'm looking for some help with a dish.
-    - Could you assist me in cooking a dish?
+    - Can you help me make a [recipe](recipe)?
+    - I need assistance with preparing a [recipe](recipe).
+    - Help me with the recipe for a [recipe](recipe).
+    - Can you guide me through making a [recipe](recipe)?
+    - I'm looking for some help with a [recipe](recipe).
+    - Could you assist me in cooking a [recipe](recipe)?
 
 - intent: recipe_calories
   examples: |
@@ -69,19 +69,19 @@ nlu:
 
 - intent: recipe_vegetarian_version
   examples: |
-    - Is there a vegetarian version of this dish?
-    - Can I make this recipe without meat?
-    - What are the vegetarian options for this meal?
-    - Provide a meat-free variation.
-    - How can I make it vegetarian?
+    - Is there a vegetarian version of [recipe](recipe)?
+    - Can I make [recipe](recipe) without meat?
+    - What are the vegetarian options for [recipe](recipe)?
+    - Provide a meat-free variation for [recipe](recipe).
+    - How can I make [recipe](recipe) vegetarian?
 
 - intent: recipe_preparation_time
   examples: |
-    - How long does it take to make this dish?
-    - What's the total preparation time?
-    - Can you give an estimate of the cooking time?
-    - How much time should I allocate for cooking?
-    - Tell me about the time required for preparation.
+    - How long does it take to make [recipe](recipe)?
+    - What's the total preparation time of [recipe](recipe)?
+    - Can you give an estimate of the cooking time of [recipe](recipe)?
+    - How much time should I allocate for cooking [recipe](recipe)?
+    - Tell me about the time required for preparation of [recipe](recipe).
 
 - intent: recipe_required_equipment
   examples: |
@@ -135,3 +135,4 @@ nlu:
     - [Mushroom Risotto](recipe)
     - [Honey Mustard Baked Chicken](recipe)
     - [Tuna Salad Wrap](recipe)
+    

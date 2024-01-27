@@ -1,0 +1,17 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhuCS/KDMvPT4nNa0kvyy1qLi2NhYAVY0grQ==": "utter_storing_leftovers",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhuCS/KDMvPT4nNa0kvyy1qLiWgHmlJSWpRfGY2ogxORYA/+BEDw==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhKDU5syA1PjkxJ78oM7W4tjYWABHQH5c=": "action_get_recipe_calories",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhKDU5syA1PjkxJ78oM7W4ljjT0lNL4tF1EjY6FgCHdUK2": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohPTUvtSgxJz45Pz87My89viSzoLi2NhYAtZ0htA==": "utter_general_cooking_tips",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohPTUvtSgxJz45Pz87My89viSzoLiWgJGlJSWpRfFYdRJpfiwAVZtHJA==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohJbM4Iz4jNaegtjYWAFstHR4=": "action_set_dish_name",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohJbM4Iz4jNaegljhzilNL4sF6QKJ4jYsFAAOyO08=": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohJbM4Iz4jNaegljhzilNL4sF6QKKUG4fLWUWpyZkFqfHJiTn5RZmpxbW1sQCgbVk1": "action_get_recipe_calories",
+    "eJyljksKgDAQQ6/SA3iCXkVkKDXoQK2lU90U7279rASx4C4JySNt3hqVQ8RKxiaevVb5EuTNBK1u41gSfOkuglg67ItNWvUsI41wYavjCBKdmyP9j3u7FWE5gKxxc2RIJW0o557Lb3S3A5J3fFQ=": "action_listen",
+    "eJwtisEJgDAMAFfJAE7QVURCKKEETVra6Kd0dwP6u+Nun2uD2To/SNmlWoL5ARopJ/jlkuFs8d6DezxioZ4g13qKFXRRRiWjwhphreMFHPYi4g==": "utter_cooking_time_management",
+    "eJyNjVEKgDAMQ6+yA3iCXUWklFFG0Xaydf4M725Bf0X/EvKSzOOcwtgrHYDJuGgM4xagKBTDYzZuRupsb1SdYXVrMaRSVtYMxkIgqJhJPDg/VrsZVXgr/39ZLuk8Sq4=": "action_listen"
+  }
+}
