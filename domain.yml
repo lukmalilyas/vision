@@ -48,13 +48,16 @@ responses:
   utter_ask_dish_name:
     - text: "Sure, what dish do you want assistance for?"
 
-
-
 actions:
   - action_get_recipe_calories
   - action_set_dish_name
   - action_get_recipe_vegetarian_version
   - action_get_recipe_preparation_time
+  - action_get_recipe_required_equipment
+  - action_get_recipe_allergens
+  - action_get_recipe_difficulty_level
+  - action_get_recipe_side_dish_recommendation
+  - action_get_recipe_hazards
 
 session_config:
   session_expiration_time: 60

@@ -37,6 +37,31 @@ stories:
   - intent: recipe_preparation_time
   - action: action_get_recipe_preparation_time
 
+- story: User directly asks for required equipment of a dish
+  steps:
+  - intent: recipe_required_equipment
+  - action: action_get_recipe_required_equipment
+
+- story: User directly asks about allergens in a dish
+  steps:
+  - intent: recipe_allergens
+  - action: action_get_recipe_allergens
+
+- story: User directly asks about the difficulty level of a dish
+  steps:
+  - intent: recipe_difficulty_level
+  - action: action_get_recipe_difficulty_level
+
+- story: User directly asks for side dish recommendations for a dish
+  steps:
+  - intent: recipe_side_dish_recommendation
+  - action: action_get_recipe_side_dish_recommendation
+
+- story: User directly asks about hazards in a dish
+  steps:
+  - intent: recipe_hazards
+  - action: action_get_recipe_hazards
+
 - story: User specifies dish and later asks about calorie count
   steps:
   - intent: dish_help
@@ -70,3 +95,57 @@ stories:
   - intent: recipe_preparation_time
   - action: action_get_recipe_preparation_time
 
+- story: User specifies dish and later asks about required equipment
+  steps:
+  - intent: dish_help
+  - action: utter_ask_dish_name
+
+  - intent: inform_recipe
+  - action: action_set_dish_name
+
+  - intent: recipe_required_equipment
+  - action: action_get_recipe_required_equipment
+
+- story: User specifies dish and later asks about allergens
+  steps:
+  - intent: dish_help
+  - action: utter_ask_dish_name
+
+  - intent: inform_recipe
+  - action: action_set_dish_name
+
+  - intent: recipe_allergens
+  - action: action_get_recipe_allergens
+
+- story: User specifies dish and later asks about the difficulty level
+  steps:
+  - intent: dish_help
+  - action: utter_ask_dish_name
+
+  - intent: inform_recipe
+  - action: action_set_dish_name
+
+  - intent: recipe_difficulty_level
+  - action: action_get_recipe_difficulty_level
+
+- story: User specifies dish and later asks for side dish recommendations
+  steps:
+  - intent: dish_help
+  - action: utter_ask_dish_name
+
+  - intent: inform_recipe
+  - action: action_set_dish_name
+
+  - intent: recipe_side_dish_recommendation
+  - action: action_get_recipe_side_dish_recommendation
+
+- story: User specifies dish and later asks about hazards
+  steps:
+  - intent: dish_help
+  - action: utter_ask_dish_name
+
+  - intent: inform_recipe
+  - action: action_set_dish_name
+
+  - intent: recipe_hazards
+  - action: action_get_recipe_hazards

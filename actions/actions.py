@@ -109,7 +109,7 @@ class ActionGetRecipeVegetarianVersion(Action):
     @staticmethod
     def get_vegetarian_version_response(recipe_name: Text) -> Text:
         vegetarian_versions = {
-            "spaghetti aglio e olio": "Yes, there is a vegetarian version of Spaghetti Aglio e Olio.",
+            "spaghetti aglio e olio": "Yes, you can make a delightful vegetarian version of Spaghetti Aglio e Olio by using roasted vegetables such as cherry tomatoes, zucchini, and bell peppers.",
             "caprese salad": "Caprese Salad is naturally vegetarian.",
             "chicken stir-fry": "A vegetarian version of Chicken Stir-Fry can be made using tofu or vegetables.",
             "vegetarian quesadillas": "Vegetarian Quesadillas are already meat-free.",
@@ -170,3 +170,268 @@ class ActionGetRecipePreparationTime(Action):
             return preparation_times[recipe_name.lower()]
         else:
             return f"I'm sorry, I don't have information on the preparation time for {recipe_name}."
+
+
+class ActionGetRecipeRequiredEquipment(Action):
+    def name(self) -> Text:
+        return "action_get_recipe_required_equipment"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Extract the value of the 'recipe' entity from the current user message
+        recipe_entity = next(tracker.get_latest_entity_values("recipe"), None)
+
+        # Check if the slot 'recipe' has been set in previous turns
+        recipe_slot = tracker.get_slot("recipe")
+
+        if recipe_entity:
+            # User directly mentions the dish in the current turn
+            response = self.get_required_equipment_response(recipe_entity)
+        elif recipe_slot:
+            # User has mentioned the dish in previous turns
+            response = self.get_required_equipment_response(recipe_slot)
+        else:
+            # Handle the case where neither the entity nor the slot is available
+            response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+
+        dispatcher.utter_message(response)
+        return []
+
+    @staticmethod
+    def get_required_equipment_response(recipe_name: Text) -> Text:
+        equipment_info = {
+            "spaghetti aglio e olio": "To prepare Spaghetti Aglio e Olio, you'll need a pot for boiling pasta, a pan for sautéing garlic, and tongs for tossing the pasta.",
+            "caprese salad": "Caprese Salad is a simple dish that requires a cutting board, a knife, and a serving plate.",
+            "chicken stir-fry": "For Chicken Stir-Fry, you'll need a wok or a large skillet, a cutting board, and a sharp knife.",
+            "vegetarian quesadillas": "Vegetarian Quesadillas can be made with a skillet, a spatula, and a cutting board.",
+            "pasta primavera": "To prepare Pasta Primavera, you'll need a pot for boiling pasta, a pan for sautéing vegetables, and tongs for tossing the pasta.",
+            "omelette": "For making an Omelette, you'll need a non-stick skillet, a spatula, and a mixing bowl.",
+            "tomato basil bruschetta": "Tomato Basil Bruschetta requires a toaster or an oven, a cutting board, and a knife.",
+            "mushroom risotto": "To prepare Mushroom Risotto, you'll need a saucepan, a ladle, and a stirring spoon.",
+            "honey mustard baked chicken": "Honey Mustard Baked Chicken can be made with a baking dish, a basting brush, and an oven.",
+            "tuna salad wrap": "For Tuna Salad Wrap, you'll need a mixing bowl, a spoon, and a tortilla or wrap.",
+        }
+
+        if recipe_name.lower() in equipment_info:
+            return equipment_info[recipe_name.lower()]
+        else:
+            return f"I'm sorry, I don't have information on the required equipment for {recipe_name}."
+
+
+class ActionGetRecipeAllergens(Action):
+    def name(self) -> Text:
+        return "action_get_recipe_allergens"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Extract the value of the 'recipe' entity from the current user message
+        recipe_entity = next(tracker.get_latest_entity_values("recipe"), None)
+
+        # Check if the slot 'recipe' has been set in previous turns
+        recipe_slot = tracker.get_slot("recipe")
+
+        if recipe_entity:
+            # User directly mentions the dish in the current turn
+            response = self.get_allergens_response(recipe_entity)
+        elif recipe_slot:
+            # User has mentioned the dish in previous turns
+            response = self.get_allergens_response(recipe_slot)
+        else:
+            # Handle the case where neither the entity nor the slot is available
+            response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+
+        dispatcher.utter_message(response)
+        return []
+
+    @staticmethod
+    def get_allergens_response(recipe_name: Text) -> Text:
+        allergens_info = {
+            "spaghetti aglio e olio": "Spaghetti Aglio e Olio may contain wheat in the form of pasta.",
+            "caprese salad": "Caprese Salad is generally allergen-free.",
+            "chicken stir-fry": "Chicken Stir-Fry may contain soy sauce, which has soy and wheat.",
+            "vegetarian quesadillas": "Vegetarian Quesadillas can include ingredients like cheese and wheat tortillas.",
+            "pasta primavera": "Pasta Primavera may contain wheat in pasta.",
+            "omelette": "Omelette ingredients vary, but common allergens include eggs and milk.",
+            "tomato basil bruschetta": "Tomato Basil Bruschetta is generally allergen-free.",
+            "mushroom risotto": "Mushroom Risotto may contain dairy.",
+            "honey mustard baked chicken": "Honey Mustard Baked Chicken may contain mustard and honey.",
+            "tuna salad wrap": "Tuna Salad Wrap may contain fish and other potential allergens."
+        }
+
+        if recipe_name.lower() in allergens_info:
+            return allergens_info[recipe_name.lower()]
+        else:
+            return f"I'm sorry, I don't have information on the allergens for {recipe_name}."
+
+
+class ActionGetRecipeDifficultyLevel(Action):
+    def name(self) -> Text:
+        return "action_get_recipe_difficulty_level"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Extract the value of the 'recipe' entity from the current user message
+        recipe_entity = next(tracker.get_latest_entity_values("recipe"), None)
+
+        # Check if the slot 'recipe' has been set in previous turns
+        recipe_slot = tracker.get_slot("recipe")
+
+        if recipe_entity:
+            # User directly mentions the dish in the current turn
+            response = self.get_difficulty_level_response(recipe_entity)
+        elif recipe_slot:
+            # User has mentioned the dish in previous turns
+            response = self.get_difficulty_level_response(recipe_slot)
+        else:
+            # Handle the case where neither the entity nor the slot is available
+            response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+
+        dispatcher.utter_message(response)
+        return []
+
+    @staticmethod
+    def get_difficulty_level_response(recipe_name: Text) -> Text:
+        difficulty_levels = {
+            "spaghetti aglio e olio": {
+                "beginner": True,
+                "difficulty": "Easy",
+                "skill_level": "Basic",
+            },
+            "caprese salad": {
+                "beginner": True,
+                "difficulty": "Very Easy",
+                "skill_level": "Basic",
+            },
+            "chicken stir-fry": {
+                "beginner": False,
+                "difficulty": "Moderate",
+                "skill_level": "Intermediate",
+            },
+            "vegetarian quesadillas": {
+                "beginner": True,
+                "difficulty": "Easy",
+                "skill_level": "Basic",
+            },
+            "pasta primavera": {
+                "beginner": True,
+                "difficulty": "Easy",
+                "skill_level": "Basic",
+            },
+            "omelette": {
+                "beginner": True,
+                "difficulty": "Easy",
+                "skill_level": "Basic",
+            },
+            "tomato basil bruschetta": {
+                "beginner": True,
+                "difficulty": "Very Easy",
+                "skill_level": "Basic",
+            },
+            "mushroom risotto": {
+                "beginner": False,
+                "difficulty": "Moderate",
+                "skill_level": "Intermediate",
+            },
+            "honey mustard baked chicken": {
+                "beginner": False,
+                "difficulty": "Moderate",
+                "skill_level": "Intermediate",
+            },
+            "tuna salad wrap": {
+                "beginner": False,
+                "difficulty": "Moderate",
+                "skill_level": "Intermediate",
+            }
+        }
+
+        if recipe_name.lower() in difficulty_levels:
+            info = difficulty_levels[recipe_name.lower()]
+            return f"The recipe for {recipe_name} is {'suitable for beginners' if info['beginner'] else 'not recommended for beginners'}. " \
+                   f"It has a difficulty level of {info['difficulty']} and requires a skill level of {info['skill_level']}."
+        else:
+            return f"I'm sorry, I don't have information on the difficulty level of {recipe_name}."
+
+
+class ActionGetRecipeSideDishRecommendation(Action):
+    def name(self) -> Text:
+        return "action_get_recipe_side_dish_recommendation"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Extract the value of the 'recipe' entity from the current user message
+        recipe_entity = next(tracker.get_latest_entity_values("recipe"), None)
+
+        # Check if the slot 'recipe' has been set in previous turns
+        recipe_slot = tracker.get_slot("recipe")
+
+        if recipe_entity:
+            # User directly mentions the dish in the current turn
+            response = self.get_side_dish_recommendation_response(recipe_entity)
+        elif recipe_slot:
+            # User has mentioned the dish in previous turns
+            response = self.get_side_dish_recommendation_response(recipe_slot)
+        else:
+            # Handle the case where neither the entity nor the slot is available
+            response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+
+        dispatcher.utter_message(response)
+        return []
+
+    @staticmethod
+    def get_side_dish_recommendation_response(recipe_name: Text) -> Text:
+        side_dish_recommendations = {
+            "spaghetti aglio e olio": "A classic side dish for Spaghetti Aglio e Olio is a simple green salad with a lemon vinaigrette.",
+            "caprese salad": "Caprese Salad pairs well with a side of garlic bread or a light soup.",
+            "chicken stir-fry": "For Chicken Stir-Fry, consider serving it with steamed rice or vegetable spring rolls.",
+            "vegetarian quesadillas": "Vegetarian Quesadillas go well with guacamole, salsa, and sour cream for dipping.",
+            "pasta primavera": "Pasta Primavera is delicious with a side of crusty bread or a fresh garden salad.",
+            "omelette": "An Omelette is versatile, but you can pair it with a side of mixed greens or hash browns.",
+            "tomato basil bruschetta": "Tomato Basil Bruschetta is fantastic with a side of balsamic-glazed roasted vegetables.",
+            "mushroom risotto": "Mushroom Risotto can be complemented with a side of sautéed spinach or a simple green salad.",
+            "honey mustard baked chicken": "Honey Mustard Baked Chicken pairs well with roasted sweet potatoes or steamed broccoli.",
+            "tuna salad wrap": "Tuna Salad Wraps are great with a side of coleslaw or a refreshing fruit salad."
+        }
+        if recipe_name.lower() in side_dish_recommendations:
+            return side_dish_recommendations[recipe_name.lower()]
+        else:
+            return f"I'm sorry, I don't have information on side dish recommendations for {recipe_name}."
+
+
+class ActionGetRecipeHazards(Action):
+    def name(self) -> Text:
+        return "action_get_recipe_hazards"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Extract the value of the 'recipe' entity from the current user message
+        recipe_entity = next(tracker.get_latest_entity_values("recipe"), None)
+
+        # Check if the slot 'recipe' has been set in previous turns
+        recipe_slot = tracker.get_slot("recipe")
+
+        if recipe_entity:
+            # User directly mentions the dish in the current turn
+            response = self.get_recipe_hazards_response(recipe_entity)
+        elif recipe_slot:
+            # User has mentioned the dish in previous turns
+            response = self.get_recipe_hazards_response(recipe_slot)
+        else:
+            # Handle the case where neither the entity nor the slot is available
+            response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+
+        dispatcher.utter_message(response)
+        return []
+
+    @staticmethod
+    def get_recipe_hazards_response(recipe_name: Text) -> Text:
+        recipe_hazards_info = {
+            "spaghetti aglio e olio": "When making Spaghetti Aglio e Olio, be cautious of hot oil splatter while sautéing garlic. Additionally, be mindful of boiling water when cooking the pasta.",
+            "caprese salad": "Caprese Salad is generally safe to prepare. However, exercise caution when using knives to slice tomatoes and mozzarella.",
+            "chicken stir-fry": "When making Chicken Stir-Fry, be careful with the hot wok or pan. Use proper utensils to avoid burns and ensure the chicken is cooked thoroughly.",
+            "vegetarian quesadillas": "When preparing Vegetarian Quesadillas, be cautious when flipping them to avoid hot filling spills. Use oven mitts or tongs.",
+            "pasta primavera": "Pasta Primavera involves boiling pasta; take care to avoid burns from hot water. Be cautious when handling sharp knives for chopping vegetables.",
+            "omelette": "When cooking an Omelette, use caution with the stove and hot pans. Be mindful of potential allergens if adding cheese or other ingredients.",
+            "tomato basil bruschetta": "Tomato Basil Bruschetta is generally safe to make. Exercise caution with sharp knives when chopping tomatoes and basil.",
+            "mushroom risotto": "When making Mushroom Risotto, be cautious of hot liquids and steam. Stir carefully to prevent burns, and ensure the mushrooms are properly cooked.",
+            "honey mustard baked chicken": "When preparing Honey Mustard Baked Chicken, be cautious of cross-contamination with raw chicken. Ensure the chicken reaches a safe internal temperature.",
+            "tuna salad wrap": "When assembling Tuna Salad Wraps, be cautious if using a knife to chop ingredients. Ensure the tuna is properly refrigerated and fresh."
+        }
+        if recipe_name.lower() in recipe_hazards_info:
+            return recipe_hazards_info[recipe_name.lower()]
+        else:
+            return f"I'm sorry, I don't have information on the safety hazards of {recipe_name}."

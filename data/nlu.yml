@@ -77,7 +77,6 @@ nlu:
 
 - intent: recipe_preparation_time
   examples: |
-    - How long does it take to make [recipe](recipe)?
     - What's the total preparation time of [recipe](recipe)?
     - Can you give an estimate of the cooking time of [recipe](recipe)?
     - How much time should I allocate for cooking [recipe](recipe)?
@@ -85,43 +84,43 @@ nlu:
 
 - intent: recipe_required_equipment
   examples: |
-    - What kitchen tools do I need for this recipe?
-    - List the equipment required to make this dish.
-    - Are there any specific utensils I should use?
-    - Tell me about the necessary kitchen appliances.
-    - Mention the tools needed for cooking.
+    - What kitchen tools do I need for [recipe](recipe)?
+    - List the equipment required to make [recipe](recipe).
+    - Are there any specific utensils I should use when making [recipe](recipe)?
+    - Tell me about the necessary kitchen appliances when making [recipe](recipe).
+    - Mention the tools needed for cooking [recipe](recipe).
 
 - intent: recipe_allergens
   examples: |
-    - Are there any common allergens in this recipe?
-    - Do I need to be cautious about allergies with this dish?
-    - What allergens should I be aware of?
-    - Any potential allergens in this meal?
-    - List the ingredients that may cause allergies.
+    - Are there any common allergens in [recipe](recipe)?
+    - Do I need to be cautious about allergies with [recipe](recipe)?
+    - What allergens should I be aware of [recipe](recipe)?
+    - Any potential allergens in [recipe](recipe)?
+    - List the ingredients that may cause allergies of [recipe](recipe).
 
 - intent: recipe_difficulty_level
   examples: |
-    - How difficult is it to make this recipe?
-    - Is this dish suitable for beginners?
-    - Tell me about the cooking complexity.
-    - Provide information on the skill level required.
+    - How difficult is it to make [recipe](recipe)?
+    - Is [recipe](recipe) suitable for beginners?
+    - Tell me about the cooking complexity for [recipe](recipe).
+    - Provide information on the skill level required for [recipe](recipe).
 
 - intent: recipe_side_dish_recommendation
   examples: |
-    - Any suggestions for a side dish that pairs well with this recipe?
-    - What side dishes complement this meal?
-    - Recommend a good side dish for this dish.
-    - Tell me about side options for this recipe.
-    - Suggest some sides to serve with this.
+    - Any suggestions for a side dish that pairs well with [recipe](recipe)?
+    - What side dishes complement [recipe](recipe)?
+    - Recommend a good side dish for [recipe](recipe).
+    - Tell me about side options for [recipe](recipe).
+    - Suggest some sides to serve with [recipe](recipe).
     
 - intent: recipe_hazards
   examples: |
-    - Are there any safety hazards I should be aware of when making this dish?
-    - Can you list potential risks or hazards associated with preparing this dish?
-    - What precautions should I take while making this dish?
-    - Are there any safety concerns when cooking this dish?
-    - Tell me about possible hazards involved in preparing this dish.
-    - Are there specific dangers or risks related to this dish that I should know?
+    - Are there any safety hazards I should be aware of when making [recipe](recipe)?
+    - Can you list potential risks or hazards associated with preparing [recipe](recipe)?
+    - What precautions should I take while making [recipe](recipe)?
+    - Are there any safety concerns when cooking [recipe](recipe)?
+    - Tell me about possible hazards involved in preparing [recipe](recipe).
+    - Are there specific dangers or risks related to [recipe](recipe) that I should know?
 
 - intent: inform_recipe
   examples: |
@@ -135,4 +134,83 @@ nlu:
     - [Mushroom Risotto](recipe)
     - [Honey Mustard Baked Chicken](recipe)
     - [Tuna Salad Wrap](recipe)
-    
+
+#- synonyms: Spaghetti Aglio e Olio
+#  examples: |
+#    - spaghetti aglio e olio
+#    - aglio e olio
+#    - garlic and oil pasta
+#    - pasta with garlic and olive oil
+#    - traditional Italian spaghetti
+#
+#- synonyms: Caprese Salad
+#  examples: |
+#    - caprese salad
+#    - caprese
+#    - tomato and mozzarella salad
+#    - Italian salad
+#    - fresh tomato and cheese salad
+#
+#- synonyms: Chicken Stir-Fry
+#  examples: |
+#    - chicken stir-fry
+#    - stir-fried chicken
+#    - Asian-style chicken
+#    - quick chicken stir-fry
+#    - chicken and vegetable stir-fry
+#
+#- synonyms: Vegetarian Quesadillas
+#  examples: |
+#    - vegetarian quesadillas
+#    - veggie quesadillas
+#    - cheese and veggie wraps
+#    - meatless quesadillas
+#    - Mexican cheese tortillas
+#
+#- synonyms: Pasta Primavera
+#  examples: |
+#    - pasta primavera
+#    - vegetable pasta
+#    - primavera pasta
+#    - colorful vegetable spaghetti
+#    - pasta with mixed veggies
+#
+#- synonyms: Omelette
+#  examples: |
+#    - omelette
+#    - egg omelette
+#    - fluffy egg dish
+#    - savory egg pancake
+#    - classic breakfast omelet
+#
+#- synonyms: Tomato Basil Bruschetta
+#  examples: |
+#    - tomato basil bruschetta
+#    - bruschetta
+#    - Italian appetizer
+#    - tomato and basil toast
+#    - crispy tomato bread
+#
+#- synonyms: Mushroom Risotto
+#  examples: |
+#    - mushroom risotto
+#    - risotto
+#    - creamy mushroom rice
+#    - Italian mushroom rice
+#    - savory risotto with mushrooms
+#
+#- synonyms: Honey Mustard Baked Chicken
+#  examples: |
+#    - honey mustard baked chicken
+#    - baked chicken with honey mustard
+#    - sweet and tangy chicken
+#    - oven-roasted honey mustard chicken
+#    - glazed mustard chicken
+#
+#- synonyms: Tuna Salad Wrap
+#  examples: |
+#    - tuna salad wrap
+#    - wrap with tuna salad
+#    - tuna-filled wrap
+#    - light tuna sandwich wrap
+#    - Mediterranean tuna wrap
