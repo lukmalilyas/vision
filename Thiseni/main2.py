@@ -1,4 +1,3 @@
-#SAMPLE CODE TO GENERATE CSV FILE
 import os
 import pandas as pd
 
@@ -21,15 +20,19 @@ for audio_file in os.listdir(audio_directory):
         transcript_file = os.path.join(transcript_directory, audio_file.replace(".wav", ".txt"))
 
         if os.path.exists(transcript_file):
+            # Get WAV file size
+            wav_filesize = os.path.getsize(audio_path)
+            wav_filesize_kb = wav_filesize / 1024  # Convert to kilobytes
+
             with open(transcript_file, 'r') as file:
                 transcript = file.read().strip()
 
-            data.append([audio_path, transcript])
+            data.append([audio_path, wav_filesize_kb, transcript])
         else:
             print(f"Transcript file not found for {audio_file}")
 
 # Create a DataFrame from the list
-df = pd.DataFrame(data, columns=["audio_path", "transcript"])
+df = pd.DataFrame(data, columns=["wav_filename", "wav_filesize", "transcript"])
 
 # Save DataFrame to CSV
 df.to_csv(csv_file, index=False)
