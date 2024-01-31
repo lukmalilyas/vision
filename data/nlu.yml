@@ -50,6 +50,30 @@ nlu:
     - Tips for preserving food for later use.
     - How do I prevent leftovers from spoiling?
 
+- intent: kitchen_tools_and_utensils
+  examples: |
+    - What are essential kitchen tools and utensils for beginners?
+    - Can you provide a list of basic kitchen tools every beginner should have?
+    - What essential utensils do I need to start cooking at home?
+    - Share recommendations for must-have kitchen tools for novice cooks.
+    - What tools are essential for someone setting up their first kitchen?
+    
+- intent: meal_preparation_techniques
+  examples: |
+    - What are some time-saving meal preparation techniques?
+    - Can you provide tips for efficient meal prep to save time during the week?
+    - Share techniques for preparing ingredients in advance for quick meals.
+    - What are some make-ahead meal preparation strategies?
+    - Can you suggest time-saving chopping and dicing techniques?
+    
+- intent: flavor_enhancement_techniques
+  examples: |
+    - How can I enhance the flavor of my dishes naturally?
+    - Provide tips on using herbs and spices to elevate the taste of dishes.
+    - What are some natural flavor enhancers for savory and sweet recipes?
+    - Share insights into using umami-rich ingredients for enhanced taste.
+    - What cooking methods can enhance the natural flavors of ingredients?
+
 - intent: dish_help
   examples: |
     - Can you help me make a [recipe](recipe)?

@@ -17,6 +17,21 @@ stories:
   - intent: storing_leftovers
   - action: utter_storing_leftovers
 
+- story: Kitchen Tools and Utensils
+  steps:
+  - intent: kitchen_tools_and_utensils
+  - action: utter_kitchen_tools_and_utensils
+
+- story: Meal Preparation Techniques
+  steps:
+  - intent: meal_preparation_techniques
+  - action: utter_meal_preparation_techniques
+
+- story: Flavor Enhancement Techniques
+  steps:
+  - intent: flavor_enhancement_techniques
+  - action: utter_flavor_enhancement_techniques
+
 - story: User directly asks for assistance of a dish
   steps:
   - intent: dish_help

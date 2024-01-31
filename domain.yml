@@ -7,6 +7,9 @@ intents:
   - general_cooking_tips
   - cooking_time_management
   - storing_leftovers
+  - kitchen_tools_and_utensils
+  - meal_preparation_techniques
+  - flavor_enhancement_techniques
   - dish_help
   - recipe_calories
   - recipe_vegetarian_version
@@ -44,6 +47,44 @@ responses:
 
   utter_storing_leftovers:
     - text: "To store leftovers properly:\n1. Allow hot food to cool before refrigerating.\n2. Use airtight containers to prevent odors and maintain freshness.\n3. Label containers with the date to track shelf life.\n4. Store similar items together for easy access.\n5. Consume leftovers within a safe timeframe to ensure quality."
+
+  utter_kitchen_tools_and_utensils:
+    - text: "Certainly! Here's a list of essential kitchen tools and utensils for beginners:
+        \n1. Chef's knife: A versatile knife for chopping, slicing, and dicing.
+        \n2. Cutting board: To provide a stable surface for food preparation.
+        \n3. Pots and pans: Basic cookware for boiling, sautéing, and frying.
+        \n4. Wooden spoons: Ideal for stirring and mixing without scratching cookware.
+        \n5. Measuring cups and spoons: For precise ingredient measurements.
+        \n6. Mixing bowls: Essential for combining and mixing ingredients.
+        \n7. Can opener: To easily open canned goods.
+        \n8. Peeler: For removing the skin from fruits and vegetables.
+        \n9. Tongs: Useful for flipping, turning, and serving.
+        \n10. Colander: For draining pasta and washing fruits and vegetables.
+        \nThese tools will help you get started and make your cooking experience enjoyable!"
+
+  utter_meal_preparation_techniques:
+    - text: "Absolutely! Here are some time-saving meal preparation techniques:
+        \n1. Batch cooking: Prepare large quantities and store portions for later use.
+        \n2. Mise en place: Pre-measure and organize ingredients before starting to cook.
+        \n3. Use pre-cut and frozen vegetables: Save time on chopping and preparation.
+        \n4. One-pan meals: Cook multiple ingredients together in a single pan for easy cleanup.
+        \n5. Pre-marinate proteins: Enhance flavor by marinating meats ahead of time.
+        \n6. Invest in kitchen gadgets: Tools like a food processor can speed up chopping.
+        \n7. Plan your meals: Create a weekly meal plan to streamline preparation.
+        \n8. Cook once, eat twice: Repurpose leftovers into new meals.
+        \nThese techniques will help you streamline your meal preparation and make cooking more efficient!"
+
+  utter_flavor_enhancement_techniques:
+    - text: "Certainly! Here are some flavor enhancement techniques to elevate your dishes:
+        \n1. Herbs and spices: Experiment with a variety of herbs and spices for added depth.
+        \n2. Citrus zest: Use lemon, lime, or orange zest to brighten flavors.
+        \n3. Infused oils: Make your own flavored oils with herbs and garlic for a gourmet touch.
+        \n4. Umami-rich ingredients: Incorporate ingredients like mushrooms, soy sauce, and miso.
+        \n5. Roasting: Enhance natural sweetness and depth by roasting vegetables and meats.
+        \n6. Caramelization: Develop rich flavors by caramelizing onions or sugars.
+        \n7. Fresh ingredients: Use high-quality, fresh produce for optimal flavor.
+        \n8. Reductions: Create flavorful sauces by reducing stocks or liquids.
+        \nThese techniques will help you create delicious and well-seasoned dishes!"
 
   utter_ask_dish_name:
     - text: "Sure, what dish do you want assistance for?"

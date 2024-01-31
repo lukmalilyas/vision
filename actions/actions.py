@@ -4,6 +4,20 @@ from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 
 
+valid_recipes = [
+    "spaghetti aglio e olio",
+    "caprese salad",
+    "chicken stir-fry",
+    "vegetarian quesadillas",
+    "pasta primavera",
+    "omelette",
+    "tomato basil bruschetta",
+    "mushroom risotto",
+    "honey mustard baked chicken",
+    "tuna salad wrap"
+]
+
+
 class ActionSetDishName(Action):
     def name(self) -> Text:
         return "action_set_dish_name"
@@ -11,14 +25,6 @@ class ActionSetDishName(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # Extract the value of the 'recipe' entity from the user message
         recipe_entity = next(tracker.get_latest_entity_values("recipe"), None)
-
-        # Define a list of valid recipes
-        valid_recipes = [
-            "spaghetti aglio e olio", "caprese salad", "chicken stir-fry",
-            "vegetarian quesadillas", "pasta primavera", "omelette",
-            "tomato basil bruschetta", "mushroom risotto",
-            "honey mustard baked chicken", "tuna salad wrap"
-        ]
 
         if recipe_entity.lower() in valid_recipes:
             # User directly mentions the dish in the current turn
@@ -43,41 +49,41 @@ class ActionGetRecipeCalories(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity:
+        if recipe_entity.lower() in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_calorie_response(recipe_entity)
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", recipe_entity)]
         elif recipe_slot:
             # User has mentioned the dish in previous turns
             response = self.get_calorie_response(recipe_slot)
+            dispatcher.utter_message(response)
         else:
             # Handle the case where neither the entity nor the slot is available
             response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", None)]
 
-        dispatcher.utter_message(response)
         return []
 
     @staticmethod
     def get_calorie_response(recipe_name: Text) -> Text:
-        if recipe_name.lower() == "spaghetti aglio e olio":
-            return "The calorie count for Spaghetti Aglio e Olio is approximately 400 calories per serving."
-        elif recipe_name.lower() == "caprese salad":
-            return "The calorie count for Caprese Salad is approximately 150 calories per serving."
-        elif recipe_name.lower() == "chicken stir-fry":
-            return "The calorie count for Chicken Stir-Fry is approximately 300 calories per serving."
-        elif recipe_name.lower() == "vegetarian quesadillas":
-            return "The calorie count for Vegetarian Quesadillas is approximately 250 calories per serving."
-        elif recipe_name.lower() == "pasta primavera":
-            return "The calorie count for Pasta Primavera is approximately 350 calories per serving."
-        elif recipe_name.lower() == "omelette":
-            return "The calorie count for Omelette is approximately 200 calories per serving."
-        elif recipe_name.lower() == "tomato basil bruschetta":
-            return "The calorie count for Tomato Basil Bruschetta is approximately 120 calories per serving."
-        elif recipe_name.lower() == "mushroom risotto":
-            return "The calorie count for Mushroom Risotto is approximately 400 calories per serving."
-        elif recipe_name.lower() == "honey mustard baked chicken":
-            return "The calorie count for Honey Mustard Baked Chicken is approximately 250 calories per serving."
-        elif recipe_name.lower() == "tuna salad wrap":
-            return "The calorie count for Tuna Salad Wrap is approximately 300 calories per serving."
+        recipe_calories_info = {
+            "spaghetti aglio e olio": "The calorie count for Spaghetti Aglio e Olio is approximately 400 calories per serving.",
+            "caprese salad": "The calorie count for Caprese Salad is approximately 150 calories per serving.",
+            "chicken stir-fry": "The calorie count for Chicken Stir-Fry is approximately 300 calories per serving.",
+            "vegetarian quesadillas": "The calorie count for Vegetarian Quesadillas is approximately 250 calories per serving.",
+            "pasta primavera": "The calorie count for Pasta Primavera is approximately 350 calories per serving.",
+            "omelette": "The calorie count for Omelette is approximately 200 calories per serving.",
+            "tomato basil bruschetta": "The calorie count for Tomato Basil Bruschetta is approximately 120 calories per serving.",
+            "mushroom risotto": "The calorie count for Mushroom Risotto is approximately 400 calories per serving.",
+            "honey mustard baked chicken": "The calorie count for Honey Mustard Baked Chicken is approximately 250 calories per serving.",
+            "tuna salad wrap": "The calorie count for Tuna Salad Wrap is approximately 300 calories per serving."
+        }
+
+        # Check if the recognized dish is in the recipe_calories_info dictionary
+        if recipe_name.lower() in recipe_calories_info:
+            return recipe_calories_info[recipe_name.lower()]
         else:
             return f"I'm sorry, I don't have information on the calorie count for {recipe_name}."
 
@@ -93,17 +99,21 @@ class ActionGetRecipeVegetarianVersion(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity:
+        if recipe_entity.lower() in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_vegetarian_version_response(recipe_entity)
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", recipe_entity)]
         elif recipe_slot:
             # User has mentioned the dish in previous turns
             response = self.get_vegetarian_version_response(recipe_slot)
+            dispatcher.utter_message(response)
         else:
             # Handle the case where neither the entity nor the slot is available
             response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", None)]
 
-        dispatcher.utter_message(response)
         return []
 
     @staticmethod
@@ -121,6 +131,7 @@ class ActionGetRecipeVegetarianVersion(Action):
             "tuna salad wrap": "A vegetarian version of Tuna Salad Wrap can be made using chickpeas or tofu."
         }
 
+        # Check if the recognized dish is in the vegetarian_versions dictionary
         if recipe_name.lower() in vegetarian_versions:
             return vegetarian_versions[recipe_name.lower()]
         else:
@@ -138,17 +149,21 @@ class ActionGetRecipePreparationTime(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity:
+        if recipe_entity.lower() in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_preparation_time_response(recipe_entity)
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", recipe_entity)]
         elif recipe_slot:
             # User has mentioned the dish in previous turns
             response = self.get_preparation_time_response(recipe_slot)
+            dispatcher.utter_message(response)
         else:
             # Handle the case where neither the entity nor the slot is available
             response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", None)]
 
-        dispatcher.utter_message(response)
         return []
 
     @staticmethod
@@ -166,6 +181,7 @@ class ActionGetRecipePreparationTime(Action):
             "tuna salad wrap": "The preparation time for Tuna Salad Wrap is approximately 15 minutes."
         }
 
+        # Check if the recognized dish is in the preparation_times dictionary
         if recipe_name.lower() in preparation_times:
             return preparation_times[recipe_name.lower()]
         else:
@@ -183,17 +199,21 @@ class ActionGetRecipeRequiredEquipment(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity:
+        if recipe_entity.lower() in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_required_equipment_response(recipe_entity)
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", recipe_entity)]
         elif recipe_slot:
             # User has mentioned the dish in previous turns
             response = self.get_required_equipment_response(recipe_slot)
+            dispatcher.utter_message(response)
         else:
             # Handle the case where neither the entity nor the slot is available
             response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", None)]
 
-        dispatcher.utter_message(response)
         return []
 
     @staticmethod
@@ -228,17 +248,21 @@ class ActionGetRecipeAllergens(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity:
+        if recipe_entity.lower() in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_allergens_response(recipe_entity)
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", recipe_entity)]
         elif recipe_slot:
             # User has mentioned the dish in previous turns
             response = self.get_allergens_response(recipe_slot)
+            dispatcher.utter_message(response)
         else:
             # Handle the case where neither the entity nor the slot is available
             response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", None)]
 
-        dispatcher.utter_message(response)
         return []
 
     @staticmethod
@@ -273,17 +297,21 @@ class ActionGetRecipeDifficultyLevel(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity:
+        if recipe_entity.lower() in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_difficulty_level_response(recipe_entity)
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", recipe_entity)]
         elif recipe_slot:
             # User has mentioned the dish in previous turns
             response = self.get_difficulty_level_response(recipe_slot)
+            dispatcher.utter_message(response)
         else:
             # Handle the case where neither the entity nor the slot is available
             response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", None)]
 
-        dispatcher.utter_message(response)
         return []
 
     @staticmethod
@@ -360,17 +388,21 @@ class ActionGetRecipeSideDishRecommendation(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity:
+        if recipe_entity.lower() in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_side_dish_recommendation_response(recipe_entity)
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", recipe_entity)]
         elif recipe_slot:
             # User has mentioned the dish in previous turns
             response = self.get_side_dish_recommendation_response(recipe_slot)
+            dispatcher.utter_message(response)
         else:
             # Handle the case where neither the entity nor the slot is available
             response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", None)]
 
-        dispatcher.utter_message(response)
         return []
 
     @staticmethod
@@ -404,17 +436,21 @@ class ActionGetRecipeHazards(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity:
+        if recipe_entity.lower() in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_recipe_hazards_response(recipe_entity)
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", recipe_entity)]
         elif recipe_slot:
             # User has mentioned the dish in previous turns
             response = self.get_recipe_hazards_response(recipe_slot)
+            dispatcher.utter_message(response)
         else:
             # Handle the case where neither the entity nor the slot is available
             response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", None)]
 
-        dispatcher.utter_message(response)
         return []
 
     @staticmethod
