@@ -77,6 +77,31 @@ stories:
   - intent: recipe_hazards
   - action: action_get_recipe_hazards
 
+- story: Baking Time and Temperature
+  steps:
+  - intent: baking_time_and_temperature
+  - action: action_baking_time_and_temperature
+
+- story: Grilling Techniques
+  steps:
+  - intent: grilling_techniques
+  - action: action_grilling_techniques
+
+- story: Sauteing and Pan Frying
+  steps:
+  - intent: sauteing_and_pan_frying
+  - action: action_sauteing_and_pan_frying
+
+- story: Boiling and Simmering
+  steps:
+  - intent: boiling_and_simmering
+  - action: action_boiling_and_simmering
+
+- story: Roasting Techniques
+  steps:
+  - intent: roasting_techniques
+  - action: action_roasting_techniques
+
 - story: User specifies dish and later asks about calorie count
   steps:
   - intent: dish_help

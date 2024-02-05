@@ -19,6 +19,11 @@ intents:
   - recipe_difficulty_level
   - recipe_side_dish_recommendation
   - recipe_hazards
+  - baking_time_and_temperature
+  - grilling_techniques
+  - sauteing_and_pan_frying
+  - boiling_and_simmering
+  - roasting_techniques
   - inform_recipe
 
 slots:
@@ -99,6 +104,11 @@ actions:
   - action_get_recipe_difficulty_level
   - action_get_recipe_side_dish_recommendation
   - action_get_recipe_hazards
+  - action_baking_time_and_temperature
+  - action_grilling_techniques
+  - action_sauteing_and_pan_frying
+  - action_boiling_and_simmering
+  - action_roasting_techniques
 
 session_config:
   session_expiration_time: 60

@@ -146,6 +146,46 @@ nlu:
     - Tell me about possible hazards involved in preparing [recipe](recipe).
     - Are there specific dangers or risks related to [recipe](recipe) that I should know?
 
+- intent: baking_time_and_temperature
+  examples: |
+    - How long should I bake [recipe](recipe)?
+    - What temperature and duration do you recommend for baking [recipe](recipe)?
+    - Can you provide guidance on the baking time for a [recipe](recipe)?
+    - How do I adjust the oven temperature when baking [recipe](recipe)?
+    - Share tips for determining the right baking time for [recipe](recipe).
+
+- intent: grilling_techniques
+  examples: |
+    - What's the ideal grilling time for [recipe](recipe)?
+    - How do I prevent [recipe](recipe) from drying out on the grill?
+    - Can you provide tips on grilling [recipe](recipe)?
+    - Share the recommended grilling duration for [recipe](recipe).
+    - How long should i grill [recipe](recipe).
+    
+- intent: sauteing_and_pan_frying
+  examples: |
+    - How long should I sauté [recipe](recipe)?
+    - What's the cooking time for pan-frying [recipe](recipe)?
+    - Can you provide guidance on sautéing [recipe](recipe)?
+    - Share tips for achieving a crispy texture when pan-frying [recipe](recipe).
+    - How do I adjust the heat when sautéing [recipe](recipe)?
+    
+- intent: boiling_and_simmering
+  examples: |
+    - What's the recommended boiling time for [recipe](recipe)?
+    - How long should I simmer a [recipe](recipe)?
+    - Can you provide guidance on boiling [recipe](recipe)?
+    - Share tips for cooking [recipe](recipe) to perfection through boiling.
+    - What's the ideal simmering time for a [recipe](recipe)?
+
+- intent: roasting_techniques
+  examples: |
+    - How long should I roast [recipe](recipe)?
+    - Share tips for achieving a crispy skin when roasting [recipe](recipe).
+    - What's the recommended roasting time for [recipe](recipe)?
+    - Can you provide guidance on roasting [recipe](recipe)?
+    - How do I adjust the oven temperature for slow-roasting [recipe](recipe)?
+
 - intent: inform_recipe
   examples: |
     - [Spaghetti Aglio e Olio](recipe)
@@ -158,6 +198,7 @@ nlu:
     - [Mushroom Risotto](recipe)
     - [Honey Mustard Baked Chicken](recipe)
     - [Tuna Salad Wrap](recipe)
+
 
 #- synonyms: Spaghetti Aglio e Olio
 #  examples: |

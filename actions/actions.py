@@ -49,7 +49,7 @@ class ActionGetRecipeCalories(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity.lower() in valid_recipes:
+        if recipe_entity in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_calorie_response(recipe_entity)
             dispatcher.utter_message(response)
@@ -471,3 +471,333 @@ class ActionGetRecipeHazards(Action):
             return recipe_hazards_info[recipe_name.lower()]
         else:
             return f"I'm sorry, I don't have information on the safety hazards of {recipe_name}."
+
+
+class ActionBakingTimeAndTemperature(Action):
+    def name(self) -> Text:
+        return "action_baking_time_and_temperature"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Extract the value of the 'recipe' entity from the current user message
+        recipe_entity = next(tracker.get_latest_entity_values("recipe"), None)
+
+        # Check if the slot 'recipe' has been set in previous turns
+        recipe_slot = tracker.get_slot("recipe")
+
+        if recipe_entity.lower() in valid_recipes:
+            # User directly mentions the dish in the current turn
+            response = self.get_baking_time_and_temperature_response(recipe_entity)
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", recipe_entity)]
+        elif recipe_slot:
+            # User has mentioned the dish in previous turns
+            response = self.get_baking_time_and_temperature_response(recipe_slot)
+            dispatcher.utter_message(response)
+        else:
+            # Handle the case where neither the entity nor the slot is available
+            response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", None)]
+
+        return []
+
+    @staticmethod
+    def get_baking_time_and_temperature_response(recipe_name: Text) -> Text:
+        baking_info = {
+            "spaghetti aglio e olio": None,  # Example: This dish doesn't require baking
+            "caprese salad": None,  # Example: This dish doesn't require baking
+            "chicken stir-fry": None,  # Example: This dish doesn't require baking
+            "vegetarian quesadillas": None,  # Example: This dish doesn't require baking
+            "pasta primavera": {
+                "temperature": "350°F",
+                "duration": "20 minutes",
+                "tips": "Preheat the oven, bake until pasta is golden and bubbling.",
+            },
+            "omelette": None,  # Example: This dish doesn't require baking
+            "tomato basil bruschetta": None,  # Example: This dish doesn't require baking
+            "mushroom risotto": None,  # Example: This dish doesn't require baking
+            "honey mustard baked chicken": {
+                "temperature": "375°F",
+                "duration": "30 minutes",
+                "tips": "Preheat the oven, bake until chicken is cooked through and golden.",
+            },
+            "tuna salad wrap": None,  # Example: This dish doesn't require baking
+        }
+
+        if recipe_name.lower() in baking_info:
+            info = baking_info[recipe_name.lower()]
+
+            if info is None:
+                # This dish doesn't require baking
+                response = f"{recipe_name} doesn't require baking. It's ready to enjoy!"
+            else:
+                # Provide baking information
+                response = f"For {recipe_name}, I recommend baking at {info['temperature']} for {info['duration']}. {info['tips']}"
+            return response
+        else:
+            return f"I'm sorry, I don't have information on the baking time and temperature of {recipe_name}."
+
+
+class ActionGrillingTechniques(Action):
+    def name(self) -> Text:
+        return "action_grilling_techniques"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Extract the value of the 'recipe' entity from the current user message
+        recipe_entity = next(tracker.get_latest_entity_values("recipe"), None)
+
+        # Check if the slot 'recipe' has been set in previous turns
+        recipe_slot = tracker.get_slot("recipe")
+
+        if recipe_entity.lower() in valid_recipes:
+            # User directly mentions the dish in the current turn
+            response = self.get_grilling_techniques_response(recipe_entity)
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", recipe_entity)]
+        elif recipe_slot:
+            # User has mentioned the dish in previous turns
+            response = self.get_grilling_techniques_response(recipe_slot)
+            dispatcher.utter_message(response)
+        else:
+            # Handle the case where neither the entity nor the slot is available
+            response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", None)]
+
+        return []
+
+    @staticmethod
+    def get_grilling_techniques_response(recipe_name: Text) -> Text:
+        grilling_info = {
+            "spaghetti aglio e olio": None,  # Example: This dish doesn't require grilling
+            "caprese salad": None,  # Example: This dish doesn't require grilling
+            "chicken stir-fry": None,  # Example: This dish doesn't require grilling
+            "vegetarian quesadillas": None,  # Example: This dish doesn't require grilling
+            "pasta primavera": None,  # Example: This dish doesn't require grilling
+            "omelette": None,  # Example: This dish doesn't require grilling
+            "tomato basil bruschetta": None,  # Example: This dish doesn't require grilling
+            "mushroom risotto": None,  # Example: This dish doesn't require grilling
+            "honey mustard baked chicken": None,  # Example: This dish doesn't require grilling
+            "tuna salad wrap": {
+                "grilling_time": "3 minutes per side",
+                "tips": "Preheat the grill, grill each side until the tuna is cooked through.",
+            },
+        }
+        if recipe_name.lower() in grilling_info:
+            info = grilling_info[recipe_name.lower()]
+
+            if info is None:
+                # This dish doesn't require grilling
+                response = f"{recipe_name} doesn't require grilling. It's ready to enjoy!"
+            else:
+                # Provide grilling information
+                response = f"For {recipe_name}, I recommend grilling for approximately {info['grilling_time']}. {info['tips']}"
+            return response
+        else:
+            return f"I'm sorry, I don't have information on grilling techniques for {recipe_name}."
+
+
+class ActionSauteingAndPanFrying(Action):
+    def name(self) -> Text:
+        return "action_sauteing_and_pan_frying"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Extract the value of the 'recipe' entity from the current user message
+        recipe_entity = next(tracker.get_latest_entity_values("recipe"), None)
+
+        # Check if the slot 'recipe' has been set in previous turns
+        recipe_slot = tracker.get_slot("recipe")
+
+        if recipe_entity.lower() in valid_recipes:
+            # User directly mentions the dish in the current turn
+            response = self.get_sauteing_and_pan_frying_response(recipe_entity)
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", recipe_entity)]
+        elif recipe_slot:
+            # User has mentioned the dish in previous turns
+            response = self.get_sauteing_and_pan_frying_response(recipe_slot)
+            dispatcher.utter_message(response)
+        else:
+            # Handle the case where neither the entity nor the slot is available
+            response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", None)]
+
+        return []
+
+    @staticmethod
+    def get_sauteing_and_pan_frying_response(recipe_name: Text) -> Text:
+        cooking_info = {
+            "spaghetti aglio e olio": {
+                "time": "5 minutes",
+                "tips": "Heat olive oil in a pan, sauté garlic until golden, and toss with cooked pasta."
+            },
+            "caprese salad": None,  # Example: This dish doesn't involve sautéing or pan-frying
+            "chicken stir-fry": {
+                "time": "10 minutes",
+                "tips": "Cut chicken into small pieces, stir-fry in a hot pan with vegetables, and season with sauce."
+            },
+            "vegetarian quesadillas": {
+                "time": "7 minutes",
+                "tips": "Fill tortillas with veggies and cheese, pan-fry until crispy, and serve with salsa."
+            },
+            "pasta primavera": {
+                "time": "8 minutes",
+                "tips": "Sauté a mix of fresh vegetables in olive oil, toss with cooked pasta, and season to taste."
+            },
+            "omelette": {
+                "time": "5 minutes",
+                "tips": "Beat eggs, pour into a hot pan, add desired fillings, and cook until the edges are set."
+            },
+            "tomato basil bruschetta": None,  # Example: This dish doesn't involve sautéing or pan-frying
+            "mushroom risotto": None,  # Example: This dish doesn't involve sautéing or pan-frying
+            "honey mustard baked chicken": None,  # Example: This dish doesn't involve sautéing or pan-frying
+            "tuna salad wrap": None  # Example: This dish doesn't involve sautéing or pan-frying
+        }
+
+        if recipe_name.lower() in cooking_info:
+            info = cooking_info[recipe_name.lower()]
+
+            if info is None:
+                # This dish doesn't involve sautéing or pan-frying
+                response = f"{recipe_name} doesn't involve sautéing or pan-frying. Enjoy preparing it!"
+            else:
+                # Provide sautéing and pan-frying information
+                response = f"For {recipe_name}, I recommend sautéing or pan-frying for approximately {info['time']}. {info['tips']}"
+            return response
+        else:
+            return f"I'm sorry, I don't have information on sautéing or pan-frying for {recipe_name}."
+
+
+class ActionBoilingAndSimmering(Action):
+    def name(self) -> Text:
+        return "action_boiling_and_simmering"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Extract the value of the 'recipe' entity from the current user message
+        recipe_entity = next(tracker.get_latest_entity_values("recipe"), None)
+
+        # Check if the slot 'recipe' has been set in previous turns
+        recipe_slot = tracker.get_slot("recipe")
+
+        if recipe_entity.lower() in valid_recipes:
+            # User directly mentions the dish in the current turn
+            response = self.get_boiling_and_simmering_info(recipe_entity)
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", recipe_entity)]
+        elif recipe_slot:
+            # User has mentioned the dish in previous turns
+            response = self.get_boiling_and_simmering_info(recipe_slot)
+            dispatcher.utter_message(response)
+        else:
+            # Handle the case where neither the entity nor the slot is available
+            response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", None)]
+
+        return []
+
+    @staticmethod
+    def get_boiling_and_simmering_info(recipe_name: Text) -> Text:
+        boiling_and_simmering_info = {
+            "spaghetti aglio e olio": {
+                "boiling_time": "8-10 minutes",
+                "simmering_time": None,
+                "tips": "Boil the pasta until al dente. No simmering required for this dish."
+            },
+            "caprese salad": None,  # Example: This dish doesn't require boiling or simmering
+            "chicken stir-fry": None,  # Example: This dish doesn't require boiling or simmering
+            "vegetarian quesadillas": None,  # Example: This dish doesn't require boiling or simmering
+            "pasta primavera": {
+                "boiling_time": "8-10 minutes",
+                "simmering_time": "15 minutes",
+                "tips": "Boil the pasta until al dente. Simmer the vegetables in the sauce for added flavor."
+            },
+            "omelette": None,  # Example: This dish doesn't require boiling or simmering
+            "tomato basil bruschetta": None,  # Example: This dish doesn't require boiling or simmering
+            "mushroom risotto": {
+                "boiling_time": "18-20 minutes",
+                "simmering_time": "15 minutes",
+                "tips": "Boil the rice until tender. Simmer the rice with mushrooms and broth for a creamy texture."
+            },
+            "honey mustard baked chicken": None,  # Example: This dish doesn't require boiling or simmering
+            "tuna salad wrap": None,  # Example: This dish doesn't require boiling or simmering
+        }
+
+        if recipe_name.lower() in boiling_and_simmering_info:
+            info = boiling_and_simmering_info[recipe_name.lower()]
+
+            if info is None:
+                # This dish doesn't require boiling or simmering
+                response = f"{recipe_name} doesn't require boiling or simmering. It's ready to enjoy!"
+            else:
+                # Provide boiling and simmering information
+                response = f"For {recipe_name}, I recommend boiling for {info['boiling_time']}."
+                if info['simmering_time']:
+                    response += f" Simmer for {info['simmering_time']} for optimal flavor. {info['tips']}"
+                else:
+                    response += f" {info['tips']}"
+            return response
+        else:
+            return f"I'm sorry, I don't have information on the boiling and simmering details for {recipe_name}."
+
+
+class ActionRoastingTechniques(Action):
+    def name(self) -> Text:
+        return "action_roasting_techniques"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Extract the value of the 'recipe' entity from the current user message
+        recipe_entity = next(tracker.get_latest_entity_values("recipe"), None)
+
+        # Check if the slot 'recipe' has been set in previous turns
+        recipe_slot = tracker.get_slot("recipe")
+
+        if recipe_entity.lower() in valid_recipes:
+            # User directly mentions the dish in the current turn
+            response = self.get_roasting_techniques_info(recipe_entity)
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", recipe_entity)]
+        elif recipe_slot:
+            # User has mentioned the dish in previous turns
+            response = self.get_roasting_techniques_info(recipe_slot)
+            dispatcher.utter_message(response)
+        else:
+            # Handle the case where neither the entity nor the slot is available
+            response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", None)]
+
+        return []
+
+    @staticmethod
+    def get_roasting_techniques_info(recipe_name: Text) -> Text:
+        roasting_techniques_info = {
+            "spaghetti aglio e olio": None,  # Example: This dish doesn't require roasting
+            "caprese salad": None,  # Example: This dish doesn't require roasting
+            "chicken stir-fry": None,  # Example: This dish doesn't require roasting
+            "vegetarian quesadillas": None,  # Example: This dish doesn't require roasting
+            "pasta primavera": None,  # Example: This dish doesn't require roasting
+            "omelette": None,  # Example: This dish doesn't require roasting
+            "tomato basil bruschetta": None,  # Example: This dish doesn't require roasting
+            "mushroom risotto": None,  # Example: This dish doesn't require roasting
+            "honey mustard baked chicken": {
+                "roasting_time": "40-45 minutes",
+                "tips": "Preheat the oven, roast until the chicken is cooked through and the skin is golden."
+            },
+            "tuna salad wrap": None,  # Example: This dish doesn't require roasting
+        }
+
+        if recipe_name.lower() in roasting_techniques_info:
+            info = roasting_techniques_info[recipe_name.lower()]
+
+            if info is None:
+                # This dish doesn't require roasting
+                response = f"{recipe_name} doesn't require roasting. It's ready to enjoy!"
+            else:
+                # Provide roasting information
+                response = f"For {recipe_name}, I recommend roasting for approximately {info['roasting_time']}. {info['tips']}"
+            return response
+        else:
+            return f"I'm sorry, I don't have information on the roasting techniques for {recipe_name}."
+
