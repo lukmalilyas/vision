@@ -200,82 +200,82 @@ nlu:
     - [Tuna Salad Wrap](recipe)
 
 
-#- synonyms: Spaghetti Aglio e Olio
-#  examples: |
-#    - spaghetti aglio e olio
-#    - aglio e olio
-#    - garlic and oil pasta
-#    - pasta with garlic and olive oil
-#    - traditional Italian spaghetti
-#
-#- synonyms: Caprese Salad
-#  examples: |
-#    - caprese salad
-#    - caprese
-#    - tomato and mozzarella salad
-#    - Italian salad
-#    - fresh tomato and cheese salad
-#
-#- synonyms: Chicken Stir-Fry
-#  examples: |
-#    - chicken stir-fry
-#    - stir-fried chicken
-#    - Asian-style chicken
-#    - quick chicken stir-fry
-#    - chicken and vegetable stir-fry
-#
-#- synonyms: Vegetarian Quesadillas
-#  examples: |
-#    - vegetarian quesadillas
-#    - veggie quesadillas
-#    - cheese and veggie wraps
-#    - meatless quesadillas
-#    - Mexican cheese tortillas
-#
-#- synonyms: Pasta Primavera
-#  examples: |
-#    - pasta primavera
-#    - vegetable pasta
-#    - primavera pasta
-#    - colorful vegetable spaghetti
-#    - pasta with mixed veggies
-#
-#- synonyms: Omelette
-#  examples: |
-#    - omelette
-#    - egg omelette
-#    - fluffy egg dish
-#    - savory egg pancake
-#    - classic breakfast omelet
-#
-#- synonyms: Tomato Basil Bruschetta
-#  examples: |
-#    - tomato basil bruschetta
-#    - bruschetta
-#    - Italian appetizer
-#    - tomato and basil toast
-#    - crispy tomato bread
-#
-#- synonyms: Mushroom Risotto
-#  examples: |
-#    - mushroom risotto
-#    - risotto
-#    - creamy mushroom rice
-#    - Italian mushroom rice
-#    - savory risotto with mushrooms
-#
-#- synonyms: Honey Mustard Baked Chicken
-#  examples: |
-#    - honey mustard baked chicken
-#    - baked chicken with honey mustard
-#    - sweet and tangy chicken
-#    - oven-roasted honey mustard chicken
-#    - glazed mustard chicken
-#
-#- synonyms: Tuna Salad Wrap
-#  examples: |
-#    - tuna salad wrap
-#    - wrap with tuna salad
-#    - tuna-filled wrap
-#    - light tuna sandwich wrap
-#    - Mediterranean tuna wrap
+- synonym: Spaghetti Aglio e Olio
+  examples: |
+    - spaghetti aglio e olio
+    - aglio e olio
+    - garlic and oil pasta
+    - pasta with garlic and olive oil
+    - traditional Italian spaghetti
+
+- synonym: Caprese Salad
+  examples: |
+    - caprese salad
+    - caprese
+    - tomato and mozzarella salad
+    - Italian salad
+    - fresh tomato and cheese salad
+
+- synonym: Chicken Stir-Fry
+  examples: |
+    - chicken stir-fry
+    - stir-fried chicken
+    - Asian-style chicken
+    - quick chicken stir-fry
+    - chicken and vegetable stir-fry
+
+- synonym: Vegetarian Quesadillas
+  examples: |
+    - vegetarian quesadillas
+    - veggie quesadillas
+    - cheese and veggie wraps
+    - meatless quesadillas
+    - Mexican cheese tortillas
+
+- synonym: Pasta Primavera
+  examples: |
+    - pasta primavera
+    - vegetable pasta
+    - primavera pasta
+    - colorful vegetable spaghetti
+    - pasta with mixed veggies
+
+- synonym: Omelette
+  examples: |
+    - omelette
+    - egg omelette
+    - fluffy egg dish
+    - savory egg pancake
+    - classic breakfast omelet
+
+- synonym: Tomato Basil Bruschetta
+  examples: |
+    - tomato basil bruschetta
+    - bruschetta
+    - Italian appetizer
+    - tomato and basil toast
+    - crispy tomato bread
+
+- synonym: Mushroom Risotto
+  examples: |
+    - mushroom risotto
+    - risotto
+    - creamy mushroom rice
+    - Italian mushroom rice
+    - savory risotto with mushrooms
+
+- synonym: Honey Mustard Baked Chicken
+  examples: |
+    - honey mustard baked chicken
+    - baked chicken with honey mustard
+    - sweet and tangy chicken
+    - oven-roasted honey mustard chicken
+    - glazed mustard chicken
+
+- synonym: Tuna Salad Wrap
+  examples: |
+    - tuna salad wrap
+    - wrap with tuna salad
+    - tuna-filled wrap
+    - light tuna sandwich wrap
+    - Mediterranean tuna wrap

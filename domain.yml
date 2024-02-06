@@ -26,13 +26,16 @@ intents:
   - roasting_techniques
   - inform_recipe
 
+entities:
+  - recipe
+
 slots:
   recipe:
     type: text
-    mappings: []
-
-entities:
-  - recipe
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: recipe
 
 responses:
   utter_greet:

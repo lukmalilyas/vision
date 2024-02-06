@@ -5,16 +5,16 @@ from rasa_sdk.executor import CollectingDispatcher
 
 
 valid_recipes = [
-    "spaghetti aglio e olio",
-    "caprese salad",
-    "chicken stir-fry",
-    "vegetarian quesadillas",
-    "pasta primavera",
-    "omelette",
-    "tomato basil bruschetta",
-    "mushroom risotto",
-    "honey mustard baked chicken",
-    "tuna salad wrap"
+    "Spaghetti Aglio e Olio",
+    "Caprese Salad",
+    "Chicken Stir-Fry",
+    "Vegetarian Quesadillas",
+    "Pasta Primaver",
+    "Omelette",
+    "Tomato Basil Bruschetta",
+    "Mushroom Risotto",
+    "Honey Mustard Baked Chicken",
+    "Tuna Salad Wrap"
 ]
 
 
@@ -26,7 +26,7 @@ class ActionSetDishName(Action):
         # Extract the value of the 'recipe' entity from the user message
         recipe_entity = next(tracker.get_latest_entity_values("recipe"), None)
 
-        if recipe_entity.lower() in valid_recipes:
+        if recipe_entity in valid_recipes:
             # User directly mentions the dish in the current turn
             dispatcher.utter_message(f"Great choice! I've identified the dish as {recipe_entity}. How can I assist you with {recipe_entity} today?")
             # Set the 'recipe' slot with the recognized dish name
@@ -99,7 +99,7 @@ class ActionGetRecipeVegetarianVersion(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity.lower() in valid_recipes:
+        if recipe_entity in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_vegetarian_version_response(recipe_entity)
             dispatcher.utter_message(response)
@@ -149,7 +149,7 @@ class ActionGetRecipePreparationTime(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity.lower() in valid_recipes:
+        if recipe_entity in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_preparation_time_response(recipe_entity)
             dispatcher.utter_message(response)
@@ -199,7 +199,7 @@ class ActionGetRecipeRequiredEquipment(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity.lower() in valid_recipes:
+        if recipe_entity in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_required_equipment_response(recipe_entity)
             dispatcher.utter_message(response)
@@ -248,7 +248,7 @@ class ActionGetRecipeAllergens(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity.lower() in valid_recipes:
+        if recipe_entity in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_allergens_response(recipe_entity)
             dispatcher.utter_message(response)
@@ -297,7 +297,7 @@ class ActionGetRecipeDifficultyLevel(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity.lower() in valid_recipes:
+        if recipe_entity in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_difficulty_level_response(recipe_entity)
             dispatcher.utter_message(response)
@@ -388,7 +388,7 @@ class ActionGetRecipeSideDishRecommendation(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity.lower() in valid_recipes:
+        if recipe_entity in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_side_dish_recommendation_response(recipe_entity)
             dispatcher.utter_message(response)
@@ -436,7 +436,7 @@ class ActionGetRecipeHazards(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity.lower() in valid_recipes:
+        if recipe_entity in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_recipe_hazards_response(recipe_entity)
             dispatcher.utter_message(response)
@@ -484,7 +484,7 @@ class ActionBakingTimeAndTemperature(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity.lower() in valid_recipes:
+        if recipe_entity in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_baking_time_and_temperature_response(recipe_entity)
             dispatcher.utter_message(response)
@@ -549,7 +549,7 @@ class ActionGrillingTechniques(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity.lower() in valid_recipes:
+        if recipe_entity in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_grilling_techniques_response(recipe_entity)
             dispatcher.utter_message(response)
@@ -608,7 +608,7 @@ class ActionSauteingAndPanFrying(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity.lower() in valid_recipes:
+        if recipe_entity in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_sauteing_and_pan_frying_response(recipe_entity)
             dispatcher.utter_message(response)
@@ -680,7 +680,7 @@ class ActionBoilingAndSimmering(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity.lower() in valid_recipes:
+        if recipe_entity in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_boiling_and_simmering_info(recipe_entity)
             dispatcher.utter_message(response)
@@ -753,7 +753,7 @@ class ActionRoastingTechniques(Action):
         # Check if the slot 'recipe' has been set in previous turns
         recipe_slot = tracker.get_slot("recipe")
 
-        if recipe_entity.lower() in valid_recipes:
+        if recipe_entity in valid_recipes:
             # User directly mentions the dish in the current turn
             response = self.get_roasting_techniques_info(recipe_entity)
             dispatcher.utter_message(response)
