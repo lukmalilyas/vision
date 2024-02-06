@@ -1,4 +1,4 @@
-from typing import Any, Text, Dict, List
+from typing import Any, Text, Dict, List, Tuple
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
@@ -801,3 +801,128 @@ class ActionRoastingTechniques(Action):
         else:
             return f"I'm sorry, I don't have information on the roasting techniques for {recipe_name}."
 
+
+class ActionRetrieveRecipeInfo(Action):
+    def name(self) -> Text:
+        return "action_retrieve_recipe_info"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # Extract the value of the 'recipe' entity from the current user message
+        recipe_entity = next(tracker.get_latest_entity_values("recipe"), None)
+
+        # Check if the slot 'recipe' has been set in previous turns
+        recipe_slot = tracker.get_slot("recipe")
+
+        if recipe_entity in valid_recipes:
+            # User directly mentions the dish in the current turn
+            ingredients, instructions, response = self.retrieve_ingredients_and_instructions(recipe_entity)
+            dispatcher.utter_message(response)
+            if ingredients:
+                dispatcher.utter_message(f"The ingredients for {recipe_entity} are: {', '.join(ingredients)}")
+            if instructions:
+                dispatcher.utter_message(f"Here are the instructions for {recipe_entity}:\n" + "\n".join(instructions))
+            return [SlotSet("recipe", recipe_entity)]
+        elif recipe_slot:
+            # User has mentioned the dish in previous turns
+            ingredients, instructions, response = self.retrieve_ingredients_and_instructions(recipe_slot)
+            dispatcher.utter_message(response)
+            if ingredients:
+                dispatcher.utter_message(f"The ingredients for {recipe_slot} are: {', '.join(ingredients)}")
+            if instructions:
+                dispatcher.utter_message(f"Here are the instructions for {recipe_slot}:\n" + "\n".join(instructions))
+        else:
+            # Handle the case where neither the entity nor the slot is available
+            response = "I didn't catch the name of the recipe. Can you please specify which recipe you're asking about?"
+            dispatcher.utter_message(response)
+            return [SlotSet("recipe", None)]
+
+        return []
+
+    @staticmethod
+    def retrieve_ingredients_and_instructions(recipe_name: Text) -> Tuple[List[Text], List[Text], Text]:
+        recipe_info = {
+            "Spaghetti Aglio e Olio": {
+                "ingredients": ["spaghetti", "olive oil", "garlic", "red pepper flakes", "parsley"],
+                "instructions": ["1. Cook spaghetti according to package instructions.",
+                                 "2. Heat olive oil in a large skillet over medium heat.",
+                                 "3. Add minced garlic and red pepper flakes, cook until garlic is golden but not browned.",
+                                 "4. Toss cooked spaghetti with the garlic oil mixture.",
+                                 "5. Season with salt, pepper, and chopped parsley before serving."]
+            },
+            "Caprese Salad": {
+                "ingredients": ["tomatoes", "fresh mozzarella", "fresh basil", "balsamic glaze", "olive oil"],
+                "instructions": ["1. Slice tomatoes and fresh mozzarella into rounds.",
+                                 "2. Arrange tomato and mozzarella slices on a plate, alternating them.",
+                                 "3. Drizzle with balsamic glaze and olive oil before serving."]
+            },
+            "Chicken Stir-Fry": {
+                "ingredients": ["chicken breast", "mixed vegetables (bell peppers, broccoli, carrots)", "soy sauce",
+                                "ginger", "garlic"],
+                "instructions": ["1. Stir-fry chicken in a pan until cooked.",
+                                 "2. Add minced ginger and garlic.",
+                                 "3. Add mixed vegetables and cook until tender.",
+                                 "4. Pour soy sauce over the mixture and toss."]
+            },
+            "Vegetarian Quesadillas": {
+                "ingredients": ["flour tortillas", "black beans", "corn", "cheese (cheddar or Mexican blend)", "salsa"],
+                "instructions": ["1. Spread black beans and corn on half of a tortilla.",
+                                 "2. Sprinkle cheese over the beans and corn.",
+                                 "3. Fold the tortilla in half and cook on a griddle until cheese is melted.",
+                                 "4. Serve with salsa."]
+            },
+            "Pasta Primavera": {
+                "ingredients": ["penne pasta", "assorted vegetables (zucchini, cherry tomatoes, bell peppers)",
+                                "olive oil", "Parmesan cheese"],
+                "instructions": ["1. Cook penne pasta according to package instructions.",
+                                 "2. Sauté vegetables in olive oil until tender.",
+                                 "3. Toss cooked pasta with the sautéed vegetables.",
+                                 "4. Sprinkle with Parmesan cheese before serving."]
+            },
+            "Omelette": {
+                "ingredients": ["eggs", "milk", "salt and pepper", "fillings (cheese, diced ham, vegetables)"],
+                "instructions": ["1. Whisk eggs with milk, salt, and pepper.",
+                                 "2. Pour the mixture into a heated, greased pan.",
+                                 "3. Add fillings on one side and fold the omelette when the edges set."]
+            },
+            "Tomato Basil Bruschetta": {
+                "ingredients": ["baguette slices", "tomatoes (diced)", "fresh basil (chopped)", "garlic (minced)",
+                                "olive oil"],
+                "instructions": ["1. Toast baguette slices.",
+                                 "2. Mix diced tomatoes, basil, minced garlic, and olive oil.",
+                                 "3. Spoon the tomato mixture onto the toasted bread."]
+            },
+            "Mushroom Risotto": {
+                "ingredients": ["Arborio rice", "mushrooms (sliced)", "onion (chopped)", "chicken or vegetable broth",
+                                "Parmesan cheese"],
+                "instructions": ["1. Sauté onions and mushrooms until tender.",
+                                 "2. Add Arborio rice and cook for a minute.",
+                                 "3. Gradually add broth, stirring until absorbed.",
+                                 "4. Stir in Parmesan cheese before serving."]
+            },
+            "Honey Mustard Baked Chicken": {
+                "ingredients": ["chicken thighs", "Dijon mustard", "honey", "garlic powder", "salt and pepper"],
+                "instructions": ["1. Mix Dijon mustard, honey, garlic powder, salt, and pepper.",
+                                 "2. Coat chicken thighs in the mixture.",
+                                 "3. Bake in the oven until fully cooked."]
+            },
+            "Tuna Salad Wrap": {
+                "ingredients": ["canned tuna", "mayonnaise", "celery (chopped)", "lettuce", "tortillas"],
+                "instructions": ["1. Mix canned tuna with mayonnaise and chopped celery.",
+                                 "2. Lay out a tortilla, add tuna mixture and lettuce.",
+                                 "3. Roll the tortilla into a wrap."]
+            }
+        }
+
+        # Retrieve the ingredients and instructions for the specified recipe
+        recipe_data = recipe_info.get(recipe_name, None)
+
+        if recipe_data:
+            ingredients = recipe_data["ingredients"]
+            instructions = recipe_data["instructions"]
+            response = f"Found the recipe information for {recipe_name}."
+        else:
+            ingredients = []
+            instructions = []
+            response = f"I'm sorry, I don't have the recipe information for {recipe_name}."
+
+        return ingredients, instructions, response

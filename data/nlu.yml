@@ -153,6 +153,7 @@ nlu:
     - Can you provide guidance on the baking time for a [recipe](recipe)?
     - How do I adjust the oven temperature when baking [recipe](recipe)?
     - Share tips for determining the right baking time for [recipe](recipe).
+    - How long does it take to bake [recipe](recipe)?
 
 - intent: grilling_techniques
   examples: |
@@ -185,6 +186,17 @@ nlu:
     - What's the recommended roasting time for [recipe](recipe)?
     - Can you provide guidance on roasting [recipe](recipe)?
     - How do I adjust the oven temperature for slow-roasting [recipe](recipe)?
+
+- intent: recipe_info
+  examples: |
+    - What are the ingredients for [recipe](recipe)?
+    - Can you tell me the ingredients of [recipe](recipe)?
+    - What do I need to make [recipe](recipe)?
+    - List the ingredients for [recipe](recipe)
+    - What are the instructions for creating [recipe](recipe)?
+    - Can you tell me the instructions of creating [recipe](recipe)?
+    - What instructions do I need to make [recipe](recipe)?
+    - List the instructions for creating [recipe](recipe)
 
 - intent: inform_recipe
   examples: |

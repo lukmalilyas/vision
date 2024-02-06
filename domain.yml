@@ -24,6 +24,7 @@ intents:
   - sauteing_and_pan_frying
   - boiling_and_simmering
   - roasting_techniques
+  - recipe_info
   - inform_recipe
 
 entities:
@@ -112,6 +113,7 @@ actions:
   - action_sauteing_and_pan_frying
   - action_boiling_and_simmering
   - action_roasting_techniques
+  - action_retrieve_recipe_info
 
 session_config:
   session_expiration_time: 60

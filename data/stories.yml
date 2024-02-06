@@ -102,6 +102,11 @@ stories:
   - intent: roasting_techniques
   - action: action_roasting_techniques
 
+- story: Retrieve Recipe Information
+  steps:
+  - intent: recipe_info
+  - action: action_retrieve_recipe_info
+
 - story: User specifies dish and later asks about calorie count
   steps:
   - intent: dish_help
