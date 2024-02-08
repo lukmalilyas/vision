@@ -33,7 +33,7 @@ nlu:
     - Provide me with useful tips for cooking.
     - Share some tricks to enhance my cooking skills.
     - Any advice for someone new to cooking?
-    
+
 - intent: cooking_time_management
   examples: |
     - How can I manage my cooking time more efficiently?
@@ -41,7 +41,7 @@ nlu:
     - Help me with time management while cooking.
     - How do I coordinate different cooking times for a meal?
     - Tips for preparing meals quickly and effectively.
-    
+
 - intent: storing_leftovers
   examples: |
     - How should I store leftovers to maintain freshness?
@@ -57,7 +57,7 @@ nlu:
     - What essential utensils do I need to start cooking at home?
     - Share recommendations for must-have kitchen tools for novice cooks.
     - What tools are essential for someone setting up their first kitchen?
-    
+
 - intent: meal_preparation_techniques
   examples: |
     - What are some time-saving meal preparation techniques?
@@ -65,7 +65,7 @@ nlu:
     - Share techniques for preparing ingredients in advance for quick meals.
     - What are some make-ahead meal preparation strategies?
     - Can you suggest time-saving chopping and dicing techniques?
-    
+
 - intent: flavor_enhancement_techniques
   examples: |
     - How can I enhance the flavor of my dishes naturally?
@@ -73,6 +73,46 @@ nlu:
     - What are some natural flavor enhancers for savory and sweet recipes?
     - Share insights into using umami-rich ingredients for enhanced taste.
     - What cooking methods can enhance the natural flavors of ingredients?
+
+- intent: cooking_techniques
+  examples: |
+    - What are some essential cooking techniques I should learn?
+    - Can you explain different cooking methods like sautéing and braising?
+    - Share tips for mastering cooking techniques such as frying and steaming.
+    - What cooking techniques are suitable for different types of ingredients?
+    - Provide insights into advanced cooking techniques for experienced home cooks.
+
+- intent: recipe_adaptation
+  examples: |
+    - How can I adapt a recipe to make it healthier?
+    - Can you suggest substitutions to make a recipe vegetarian?
+    - Share tips for adapting recipes to accommodate dietary restrictions.
+    - What adjustments can I make to a recipe to suit my taste preferences?
+    - Provide guidelines for modifying recipes to use seasonal ingredients.
+
+- intent: food_safety
+  examples: |
+    - What are some food safety practices every cook should follow?
+    - Can you explain proper food handling procedures to prevent contamination?
+    - Share tips for storing raw meat and poultry safely in the refrigerator.
+    - How can I ensure food is cooked to the right temperature to prevent foodborne illnesses?
+    - Provide insights into avoiding cross-contamination while preparing meals.
+
+- intent: ingredient_selection
+  examples: |
+    - How do I choose the best-quality ingredients for cooking?
+    - Can you provide tips for selecting ripe fruits and vegetables?
+    - Share insights into choosing fresh seafood and poultry at the market.
+    - What factors should I consider when buying grains and legumes?
+    - Provide guidance on selecting herbs and spices for optimal flavor in dishes.
+
+- intent: culinary_resources
+  examples: |
+    - Where can I find reliable culinary resources for learning cooking techniques?
+    - Can you recommend websites or books for expanding my culinary knowledge?
+    - Share insights into reputable cooking blogs and YouTube channels for beginners.
+    - What online courses or cooking classes do you recommend for home cooks?
+    - Provide guidance on finding local cooking workshops or culinary events to attend.
 
 - intent: dish_help
   examples: |
@@ -136,7 +176,7 @@ nlu:
     - Recommend a good side dish for [recipe](recipe).
     - Tell me about side options for [recipe](recipe).
     - Suggest some sides to serve with [recipe](recipe).
-    
+
 - intent: recipe_hazards
   examples: |
     - Are there any safety hazards I should be aware of when making [recipe](recipe)?
@@ -162,7 +202,7 @@ nlu:
     - Can you provide tips on grilling [recipe](recipe)?
     - Share the recommended grilling duration for [recipe](recipe).
     - How long should i grill [recipe](recipe).
-    
+
 - intent: sauteing_and_pan_frying
   examples: |
     - How long should I sauté [recipe](recipe)?
@@ -170,7 +210,7 @@ nlu:
     - Can you provide guidance on sautéing [recipe](recipe)?
     - Share tips for achieving a crispy texture when pan-frying [recipe](recipe).
     - How do I adjust the heat when sautéing [recipe](recipe)?
-    
+
 - intent: boiling_and_simmering
   examples: |
     - What's the recommended boiling time for [recipe](recipe)?
@@ -201,6 +241,8 @@ nlu:
 - intent: inform_recipe
   examples: |
     - [Spaghetti Aglio e Olio](recipe)
+    - [aglio e olio](recipe)
+    - [garlic and oil pasta](recipe)
     - [Caprese Salad](recipe)
     - [Chicken Stir-Fry](recipe)
     - [Vegetarian Quesadillas](recipe)
@@ -210,7 +252,6 @@ nlu:
     - [Mushroom Risotto](recipe)
     - [Honey Mustard Baked Chicken](recipe)
     - [Tuna Salad Wrap](recipe)
-
 
 - synonym: Spaghetti Aglio e Olio
   examples: |
@@ -281,13 +322,13 @@ nlu:
     - honey mustard baked chicken
     - baked chicken with honey mustard
     - sweet and tangy chicken
-    - oven-roasted honey mustard chicken
+    - oven roasted honey mustard chicken
     - glazed mustard chicken
 
 - synonym: Tuna Salad Wrap
   examples: |
     - tuna salad wrap
     - wrap with tuna salad
-    - tuna-filled wrap
+    - tuna filled wrap
     - light tuna sandwich wrap
     - Mediterranean tuna wrap

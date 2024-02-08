@@ -4,13 +4,18 @@ intents:
   - greet
   - goodbye
   - thanks
+  - dish_help
   - general_cooking_tips
   - cooking_time_management
   - storing_leftovers
   - kitchen_tools_and_utensils
   - meal_preparation_techniques
   - flavor_enhancement_techniques
-  - dish_help
+  - cooking_techniques
+  - recipe_adaptation
+  - food_safety
+  - ingredient_selection
+  - culinary_resources
   - recipe_calories
   - recipe_vegetarian_version
   - recipe_preparation_time
@@ -40,7 +45,7 @@ slots:
 
 responses:
   utter_greet:
-    - text: "Hey! How are you?"
+    - text: "Hey! How can I assist you today related to cooking?"
 
   utter_goodbye:
     - text: "Bye"
@@ -95,12 +100,58 @@ responses:
         \n8. Reductions: Create flavorful sauces by reducing stocks or liquids.
         \nThese techniques will help you create delicious and well-seasoned dishes!"
 
-  utter_ask_dish_name:
-    - text: "Sure, what dish do you want assistance for?"
+  utter_cooking_techniques:
+    - text: "Certainly! Here are some essential cooking techniques you should learn:
+        \n1. Sautéing: Cooking food quickly in a small amount of oil or fat over high heat.
+        \n2. Braising: Slow-cooking food in a covered pot with a small amount of liquid.
+        \n3. Frying: Cooking food in hot oil or fat, either shallow or deep frying.
+        \n4. Steaming: Cooking food by exposing it to steam in a covered pot or steamer.
+        \n5. Grilling: Cooking food over direct heat, usually on a grill or barbecue.
+        \n6. Roasting: Cooking food in an oven using dry heat, often with added fat or oil.
+        \n7. Boiling: Cooking food in water or another liquid at a high temperature.
+        \n8. Simmering: Cooking food gently in liquid at a temperature just below boiling.
+        \n9. Poaching: Cooking food by submerging it in liquid at a low temperature.
+        \n10. Broiling: Cooking food with direct heat from above, similar to grilling but indoors.
+        \nThese techniques cover a wide range of cooking methods suitable for various types of dishes."
+
+  utter_recipe_adaptation:
+    - text: "Certainly! Here are some tips for adapting recipes to meet your needs:
+        \n1. Making recipes healthier: Substitute ingredients with healthier options, such as using whole grains instead of refined flour or reducing the amount of sugar and oil.
+        \n2. Vegetarian substitutions: Replace meat with plant-based alternatives like tofu, tempeh, or beans. You can also use vegetable broth instead of meat broth for added flavor.
+        \n3. Dietary restrictions: Identify the specific ingredients causing the restriction and find suitable substitutes. For example, use gluten-free flour for wheat allergies or dairy-free milk for lactose intolerance.
+        \n4. Taste preferences: Adjust seasoning levels, spices, or herbs according to your taste preferences. Experiment with different flavor profiles to enhance the dish to your liking.
+        \n5. Seasonal ingredients: Use fresh, seasonal produce to enhance flavor and nutrition. Modify recipes to incorporate seasonal fruits and vegetables for a fresher taste and added variety.
+        \nBy following these guidelines, you can adapt recipes to align with your dietary needs, taste preferences, and the availability of seasonal ingredients."
+
+  utter_food_safety:
+    - text: "Absolutely! Here are some essential food safety practices to keep in mind:
+        \n1. Proper food handling: Wash hands thoroughly before and after handling food, especially raw meats and poultry. Use separate cutting boards and utensils for raw and cooked foods to prevent cross-contamination.
+        \n2. Storage guidelines: Store raw meat and poultry on the bottom shelf of the refrigerator to prevent drips onto other foods. Keep perishable items refrigerated at or below 40°F (4°C) to slow bacterial growth.
+        \n3. Cooking temperatures: Use a food thermometer to ensure meat, poultry, seafood, and eggs are cooked to their recommended internal temperatures. This helps kill harmful bacteria and prevents foodborne illnesses.
+        \n4. Cross-contamination prevention: Clean and sanitize kitchen surfaces, utensils, and equipment after each use, especially when switching between raw and cooked foods. Avoid using the same cutting board or knife for raw meats and ready-to-eat foods without proper cleaning.
+        \nBy following these food safety practices, you can minimize the risk of foodborne illnesses and ensure the safety of your meals."
+
+  utter_ingredient_selection:
+    - text: "Of course! Here's how to choose the best-quality ingredients for your cooking:
+        \n1. Quality assessment: Look for fresh, vibrant produce with no signs of wilting or browning. For fruits and vegetables, choose ones that are firm to the touch and free of bruises or blemishes.
+        \n2. Ripeness indicators: When selecting fruits and vegetables, pay attention to their aroma, color, and texture. Ripe fruits often have a sweet fragrance and yield slightly to pressure, while ripe vegetables should be crisp and brightly colored.
+        \n3. Seafood and poultry: Opt for seafood with firm flesh, a mild aroma, and bright, clear eyes. When buying poultry, choose cuts that are plump, moist, and free of any unpleasant odors or slimy textures.
+        \n4. Grain and legume quality: Check grains and legumes for any signs of insect damage, moisture, or mold. Choose whole grains that are intact and free from added preservatives or artificial colors.
+        \n5. Spice freshness: Purchase herbs and spices from reputable sources and check for freshness by smelling them. Look for vibrant colors and avoid purchasing spices that appear dull or have lost their aroma.
+        \nBy following these guidelines, you can ensure that you're selecting the best-quality ingredients for your recipes, resulting in delicious and flavorful dishes!"
+
+  utter_culinary_resources:
+    - text: "Absolutely! Here are some reliable culinary resources to enhance your cooking skills:
+        \n1. Websites and books: Websites like [Serious Eats](https://www.seriouseats.com/), [Food52](https://food52.com/), and [The Kitchn](https://www.thekitchn.com/) offer a wealth of recipes, tutorials, and cooking tips. Books such as '[The Joy of Cooking](https://www.amazon.com/Joy-Cooking-Irma-S-Rombauer/dp/1501169718)' by Irma S. Rombauer and '[Salt, Fat, Acid, Heat](https://www.simonandschuster.com/books/Salt-Fat-Acid-Heat/Samin-Nosrat/9781476753836)' by Samin Nosrat are excellent resources for learning fundamental cooking techniques.
+        \n2. Cooking blogs and YouTube channels: Explore cooking blogs like [Simply Recipes](https://www.simplyrecipes.com/), [Smitten Kitchen](https://smittenkitchen.com/), and [Budget Bytes](https://www.budgetbytes.com/) for beginner-friendly recipes and instructional videos. YouTube channels such as [Tasty](https://www.youtube.com/c/buzzfeedtasty), [Bon Appétit](https://www.youtube.com/user/BonAppetitDotCom), and [ChefSteps](https://www.youtube.com/user/chefsteps) provide step-by-step tutorials and culinary inspiration.
+        \n3. Online courses and classes: Platforms like [Udemy](https://www.udemy.com/), [Coursera](https://www.coursera.org/), and [Skillshare](https://www.skillshare.com/) offer a variety of cooking courses taught by professional chefs and culinary experts. Look for courses that cover topics ranging from basic knife skills to advanced cooking techniques.
+        \n4. Local workshops and events: Check out local culinary schools, community centers, and gourmet food stores for cooking workshops, tasting events, and culinary demonstrations. Joining cooking clubs or attending food festivals can also provide valuable hands-on experience and networking opportunities.
+        \n5. Social media and forums: Follow reputable chefs, food bloggers, and culinary influencers on social media platforms like Instagram and Twitter for cooking tips, recipe ideas, and behind-the-scenes insights. Join online forums and cooking communities such as [Reddit's r/Cooking](https://www.reddit.com/r/Cooking/) and [ChefTalk](https://cheftalk.com/) to connect with fellow food enthusiasts and share culinary knowledge.
+        \nWith these culinary resources at your disposal, you'll have plenty of opportunities to expand your knowledge and master new cooking techniques!"
 
 actions:
-  - action_get_recipe_calories
   - action_set_dish_name
+  - action_get_recipe_calories
   - action_get_recipe_vegetarian_version
   - action_get_recipe_preparation_time
   - action_get_recipe_required_equipment
