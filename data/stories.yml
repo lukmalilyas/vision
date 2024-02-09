@@ -102,6 +102,36 @@ stories:
   - intent: recipe_hazards
   - action: action_get_recipe_hazards
 
+- story: User asks for alternative ingredients for a recipe
+  steps:
+  - intent: recipe_alternative_ingredients
+  - action: action_alternative_ingredients
+
+- story: User seeks recommendations for storing a recipe
+  steps:
+  - intent: recipe_storage_recommendation
+  - action: action_recipe_storage_recommendation
+
+- story: User wants to adjust the taste of a recipe
+  steps:
+  - intent: recipe_taste_adjustment
+  - action: action_recipe_taste_adjustment
+
+- story: User asks for health information about a recipe
+  steps:
+  - intent: recipe_health_info
+  - action: action_recipe_health_info
+
+- story: User inquires about the cuisine origin of a recipe
+  steps:
+  - intent: recipe_cuisine_origin
+  - action: action_recipe_origin
+
+- story: User asks for nutrition value of a recipe
+  steps:
+  - intent: recipe_nutrition_value
+  - action: action_get_recipe_nutrition
+
 - story: Baking Time and Temperature
   steps:
   - intent: baking_time_and_temperature
@@ -126,6 +156,36 @@ stories:
   steps:
   - intent: roasting_techniques
   - action: action_roasting_techniques
+
+- story: Marinating Duration
+  steps:
+  - intent: marinating_duration
+  - action: action_marinating_duration
+
+- story: Chopping and Cutting Techniques
+  steps:
+  - intent: chopping_and_cutting_techniques
+  - action: action_chopping_cutting_techniques
+
+- story: Seasoning and Spices
+  steps:
+  - intent: seasoning_and_spices
+  - action: action_seasoning_and_spices
+
+- story: Garnishing and Presentation
+  steps:
+  - intent: garnishing_and_presentation
+  - action: action_garnishing_and_presentation
+
+- story: Resting and Serving
+  steps:
+  - intent: resting_and_serving
+  - action: action_resting_and_serving
+
+- story: Sauce and Dressing
+  steps:
+  - intent: sauce_and_dressing
+  - action: action_sauce_and_dressing
 
 - story: Retrieve Recipe Information
   steps:

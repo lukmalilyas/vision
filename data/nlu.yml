@@ -186,6 +186,54 @@ nlu:
     - Tell me about possible hazards involved in preparing [recipe](recipe).
     - Are there specific dangers or risks related to [recipe](recipe) that I should know?
 
+- intent: recipe_alternative_ingredients
+  examples: |
+    - Can I substitute [ingredient](ingredient) in recipe with something else?
+    - What can I use as a replacement for [ingredient](ingredient) in recipe?
+    - Are there alternative ingredients I can use instead of [ingredient](ingredient) in recipe?
+    - Can I swap [ingredient](ingredient) for another option in recipe?
+    - What are some alternatives to [ingredient](ingredient) for making recipe?
+
+- intent: recipe_storage_recommendation
+  examples: |
+    - How should I store leftovers of [recipe](recipe) to maintain freshness?
+    - What's the best way to store [recipe](recipe) for later consumption?
+    - Can [recipe](recipe) be frozen for future use?
+    - Should I refrigerate [recipe](recipe) or leave it at room temperature?
+    - What are the storage guidelines for [recipe](recipe)?
+    
+- intent: recipe_taste_adjustment
+  examples: |
+    - How can I adjust the sweetness of [recipe](recipe)?
+    - Can I make [recipe](recipe) less spicy?
+    - What can I do to enhance the flavor of [recipe](recipe)?
+    - Is there a way to make [recipe](recipe) more tangy?
+    - Can I reduce the saltiness of [recipe](recipe) without affecting the taste?
+
+- intent: recipe_health_info
+  examples: |
+    - Does [recipe](recipe) fall under a health food meal?
+    - Is [recipe](recipe) considered a healthy meal option?
+    - Is it good to consume a lot of [recipe](recipe)?
+    - Does [recipe](recipe) provide a good balance of nutrients for a healthy diet?
+    - Can [recipe](recipe) be part of a weight-loss meal plan?
+
+- intent: recipe_cuisine_origin
+  examples: |
+    - Where does [recipe](recipe) originate from?
+    - Is [recipe](recipe) a traditional dish from a specific region?
+    - What cultural influences are present in [recipe](recipe)?
+    - Can you tell me about the culinary heritage of [recipe](recipe)?
+    - Is [recipe](recipe) considered to be part of a particular cuisine?
+
+- intent: recipe_nutrition_value
+  examples: |
+    - What is the nutritional value of [recipe](recipe)?
+    - Can you provide the nutrition information for [recipe](recipe)?
+    - What are the nutritional details of [recipe](recipe)?
+    - Do you have information on the nutrients in [recipe](recipe)?
+    - How many carbohydrates/ proteins/ fats/ vitamins are there in [recipe](recipe)?
+
 - intent: baking_time_and_temperature
   examples: |
     - How long should I bake [recipe](recipe)?
@@ -227,10 +275,60 @@ nlu:
     - Can you provide guidance on roasting [recipe](recipe)?
     - How do I adjust the oven temperature for slow-roasting [recipe](recipe)?
 
+- intent: marinating_duration
+  examples: |
+    - How long should I marinate [recipe](recipe)?
+    - What's the recommended marinating time for [recipe](recipe)?
+    - Can you provide guidance on marinating [recipe](recipe)?
+    - Share tips for enhancing flavor through marinating [recipe](recipe).
+    - How do I adjust the marinating time for [recipe](recipe)?
+
+- intent: chopping_and_cutting_techniques
+  examples: |
+    - How finely should I chop the ingredients for [recipe](recipe)?
+    - What's the best cutting technique for ingredients in [recipe](recipe)?
+    - Can you provide guidance on chopping ingredients for [recipe](recipe)?
+    - Share tips for efficient cutting in [recipe](recipe).
+    - How do I chop the ingredients for [recipe](recipe)?
+
+- intent: seasoning_and_spices
+  examples: |
+    - What spices should I use for seasoning [recipe](recipe)?
+    - How much salt and pepper do you recommend for [recipe](recipe)?
+    - Can you provide guidance on the seasoning for [recipe](recipe)?
+    - Share tips for balancing flavors with spices in [recipe](recipe).
+    - How do I adjust the seasoning for [recipe](recipe)?
+
+- intent: garnishing_and_presentation
+  examples: |
+    - What's the best garnish for [recipe](recipe)?
+    - How should I plate [recipe](recipe) for presentation?
+    - Can you provide guidance on garnishing [recipe](recipe)?
+    - Share tips for enhancing the visual appeal of [recipe](recipe).
+    - How do I arrange the ingredients for [recipe](recipe) on the plate?
+
+- intent: resting_and_serving
+  examples: |
+    - How long should [recipe](recipe) rest before serving?
+    - When is the best time to serve [recipe](recipe)?
+    - Can you provide guidance on resting and serving [recipe](recipe)?
+    - How do I keep [recipe](recipe) warm before serving?
+    - How do I serve [recipe](recipe) in a more pleasing way?
+
+- intent: sauce_and_dressing
+  examples: |
+    - What type of sauce pairs well with [recipe](recipe)?
+    - How should I adjust the dressing for [recipe](recipe)?
+    - Can you provide guidance on making sauce for [recipe](recipe)?
+    - Share tips for creating a flavorful dressing for [recipe](recipe).
+    - How do I thicken the sauce for [recipe](recipe)?
+
 - intent: recipe_info
   examples: |
     - What are the ingredients for [recipe](recipe)?
+    - Whats the recipe for creating [recipe](recipe)?
     - Can you tell me the ingredients of [recipe](recipe)?
+    - Can u tell me the recipe in making [recipe](recipe)?
     - What do I need to make [recipe](recipe)?
     - List the ingredients for [recipe](recipe)
     - What are the instructions for creating [recipe](recipe)?

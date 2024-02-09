@@ -24,16 +24,29 @@ intents:
   - recipe_difficulty_level
   - recipe_side_dish_recommendation
   - recipe_hazards
+  - recipe_alternative_ingredients
+  - recipe_storage_recommendation
+  - recipe_taste_adjustment
+  - recipe_health_info
+  - recipe_cuisine_origin
+  - recipe_nutrition_value
   - baking_time_and_temperature
   - grilling_techniques
   - sauteing_and_pan_frying
   - boiling_and_simmering
   - roasting_techniques
+  - marinating_duration
+  - chopping_and_cutting_techniques
+  - seasoning_and_spices
+  - garnishing_and_presentation
+  - resting_and_serving
+  - sauce_and_dressing
   - recipe_info
   - inform_recipe
 
 entities:
   - recipe
+  - ingredient
 
 slots:
   recipe:
@@ -42,6 +55,12 @@ slots:
     mappings:
       - type: from_entity
         entity: recipe
+#  ingredient:
+#    type: text
+#    influence_conversation: false
+#    mappings:
+#      - type: from_entity
+#        entity: ingredient
 
 responses:
   utter_greet:
@@ -159,11 +178,23 @@ actions:
   - action_get_recipe_difficulty_level
   - action_get_recipe_side_dish_recommendation
   - action_get_recipe_hazards
+  - action_alternative_ingredients
+  - action_recipe_storage_recommendation
+  - action_recipe_taste_adjustment
+  - action_recipe_health_info
+  - action_recipe_origin
+  - action_get_recipe_nutrition
   - action_baking_time_and_temperature
   - action_grilling_techniques
   - action_sauteing_and_pan_frying
   - action_boiling_and_simmering
   - action_roasting_techniques
+  - action_marinating_duration
+  - action_chopping_cutting_techniques
+  - action_seasoning_and_spices
+  - action_garnishing_and_presentation
+  - action_resting_and_serving
+  - action_sauce_and_dressing
   - action_retrieve_recipe_info
 
 session_config:
