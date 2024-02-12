@@ -4,7 +4,6 @@ intents:
   - greet
   - goodbye
   - thanks
-  - dish_help
   - general_cooking_tips
   - cooking_time_management
   - storing_leftovers
@@ -16,33 +15,62 @@ intents:
   - food_safety
   - ingredient_selection
   - culinary_resources
-  - recipe_calories
-  - recipe_vegetarian_version
-  - recipe_preparation_time
-  - recipe_required_equipment
-  - recipe_allergens
-  - recipe_difficulty_level
-  - recipe_side_dish_recommendation
-  - recipe_hazards
-  - recipe_alternative_ingredients
-  - recipe_storage_recommendation
-  - recipe_taste_adjustment
-  - recipe_health_info
-  - recipe_cuisine_origin
-  - recipe_nutrition_value
-  - baking_time_and_temperature
-  - grilling_techniques
-  - sauteing_and_pan_frying
-  - boiling_and_simmering
-  - roasting_techniques
-  - marinating_duration
-  - chopping_and_cutting_techniques
-  - seasoning_and_spices
-  - garnishing_and_presentation
-  - resting_and_serving
-  - sauce_and_dressing
-  - recipe_info
-  - inform_recipe
+  - dish_help:
+      use_entities: true
+  - recipe_calories:
+      use_entities: true
+  - recipe_vegetarian_version:
+      use_entities: true
+  - recipe_preparation_time:
+      use_entities: true
+  - recipe_required_equipment:
+      use_entities: true
+  - recipe_allergens:
+      use_entities: true
+  - recipe_difficulty_level:
+      use_entities: true
+  - recipe_side_dish_recommendation:
+      use_entities: true
+  - recipe_hazards:
+      use_entities: true
+  - recipe_alternative_ingredients:
+      use_entities: true
+  - recipe_storage_recommendation:
+      use_entities: true
+  - recipe_taste_adjustment:
+      use_entities: true
+  - recipe_health_info:
+      use_entities: true
+  - recipe_cuisine_origin:
+      use_entities: true
+  - recipe_nutrition_value:
+      use_entities: true
+  - baking_time_and_temperature:
+      use_entities: true
+  - grilling_techniques:
+      use_entities: true
+  - sauteing_and_pan_frying:
+      use_entities: true
+  - boiling_and_simmering:
+      use_entities: true
+  - roasting_techniques:
+      use_entities: true
+  - marinating_duration:
+      use_entities: true
+  - chopping_and_cutting_techniques:
+      use_entities: true
+  - seasoning_and_spices:
+      use_entities: true
+  - garnishing_and_presentation:
+      use_entities: true
+  - resting_and_serving:
+      use_entities: true
+  - sauce_and_dressing:
+      use_entities: true
+  - recipe_info:
+      use_entities: true
+  - inform_recipe:
+      use_entities: true
 
 entities:
   - recipe

@@ -1,0 +1,6 @@
+[
+  {
+    "name": "recipe",
+    "pattern": "(\\bspaghetti\\ aglio\\ e\\ olio\\b|\\bcaprese\\ salad\\b|\\bchicken\\ stir\\-fry\\b|\\bvegetarian\\ quesadillas\\b|\\bpasta\\ primavera\\b|\\bomelette\\b|\\btomato\\ basil\\ bruschetta\\b|\\bmushroom\\ risotto\\b|\\bhoney\\ mustard\\ baked\\ chicken\\b|\\btuna\\ salad\\ wrap\\b)"
+  }
+]
