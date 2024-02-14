@@ -1,0 +1,10 @@
+[
+  {
+    "name": "recipe",
+    "pattern": "(\\bspaghetti\\ aglio\\ e\\ olio\\b|\\bcaprese\\ salad\\b|\\bchicken\\ stir\\ fry\\b|\\bvegetarian\\ quesadillas\\b|\\bpasta\\ primavera\\b|\\bomelette\\b|\\btomato\\ basil\\ bruschetta\\b|\\bmushroom\\ risotto\\b|\\bhoney\\ mustard\\ baked\\ chicken\\b|\\btuna\\ salad\\ wrap\\b)"
+  },
+  {
+    "name": "ingredient",
+    "pattern": "(\\bspaghetti\\b|\\bolive\\ oil\\b|\\bgarlic\\b|\\bred\\ pepper\\ flakes\\b|\\bparsley\\b|\\btomatoes\\b|\\bfresh\\ mozzarella\\b|\\bfresh\\ basil\\ leaves\\b|\\bbalsamic\\ glaze\\b|\\bmixed\\ vegetables\\b|\\bbell\\ peppers\\b|\\bbroccoli\\b|\\bcarrots\\b|\\bsoy\\ sauce\\b|\\bginger\\b|\\bflour\\ tortillas\\b|\\bblack\\ beans\\b|\\bcorn\\b|\\bcheese\\b|\\bsalsa\\b|\\bpenne\\ pasta\\b|\\bzucchini\\b|\\bcherry\\ tomatoes\\b|\\bparmesan\\ cheese\\b|\\beggs\\b|\\bmilk\\b|\\bfillings\\b|\\bdiced\\ ham\\b|\\bvegetables\\b|\\bbaguette\\ slices\\b|\\bonion\\b|\\bchicken\\ or\\ vegetable\\ broth\\b|\\barborio\\ rice\\b|\\bchicken\\ thighs\\b|\\bdijon\\ mustard\\b|\\bhoney\\b|\\bgarlic\\ powder\\b|\\bsalt\\b|\\bpepper\\b|\\bcanned\\ tuna\\b|\\bmayonnaise\\b|\\bcelery\\b|\\blettuce\\b|\\btortillas\\b)"
+  }
+]

@@ -7,7 +7,7 @@ from rasa_sdk.executor import CollectingDispatcher
 valid_recipes = [
     "Spaghetti Aglio e Olio",
     "Caprese Salad",
-    "Chicken Stir-Fry",
+    "Chicken Stir Fry",
     "Vegetarian Quesadillas",
     "Pasta Primaver",
     "Omelette",
@@ -118,7 +118,7 @@ class ActionGetRecipeCalories(Action):
         recipe_calories_info = {
             "spaghetti aglio e olio": "The calorie count for Spaghetti Aglio e Olio is approximately 400 calories per serving.",
             "caprese salad": "The calorie count for Caprese Salad is approximately 150 calories per serving.",
-            "chicken stir-fry": "The calorie count for Chicken Stir-Fry is approximately 300 calories per serving.",
+            "chicken stir fry": "The calorie count for Chicken Stir-Fry is approximately 300 calories per serving.",
             "vegetarian quesadillas": "The calorie count for Vegetarian Quesadillas is approximately 250 calories per serving.",
             "pasta primavera": "The calorie count for Pasta Primavera is approximately 350 calories per serving.",
             "omelette": "The calorie count for Omelette is approximately 200 calories per serving.",
@@ -168,7 +168,7 @@ class ActionGetRecipeVegetarianVersion(Action):
         vegetarian_versions = {
             "spaghetti aglio e olio": "Yes, you can make a delightful vegetarian version of Spaghetti Aglio e Olio by using roasted vegetables such as cherry tomatoes, zucchini, and bell peppers.",
             "caprese salad": "Caprese Salad is naturally vegetarian.",
-            "chicken stir-fry": "A vegetarian version of Chicken Stir-Fry can be made using tofu or vegetables.",
+            "chicken stir fry": "A vegetarian version of Chicken Stir-Fry can be made using tofu or vegetables.",
             "vegetarian quesadillas": "Vegetarian Quesadillas are already meat-free.",
             "pasta primavera": "Pasta Primavera is a vegetarian dish with a variety of vegetables.",
             "omelette": "For a vegetarian omelette, you can use alternatives like tofu or mushrooms.",
@@ -218,7 +218,7 @@ class ActionGetRecipePreparationTime(Action):
         preparation_times = {
             "spaghetti aglio e olio": "The preparation time for Spaghetti Aglio e Olio is approximately 20 minutes.",
             "caprese salad": "The preparation time for Caprese Salad is approximately 10 minutes.",
-            "chicken stir-fry": "The preparation time for Chicken Stir-Fry is approximately 15 minutes.",
+            "chicken stir fry": "The preparation time for Chicken Stir-Fry is approximately 15 minutes.",
             "vegetarian quesadillas": "The preparation time for Vegetarian Quesadillas is approximately 20 minutes.",
             "pasta primavera": "The preparation time for Pasta Primavera is approximately 30 minutes.",
             "omelette": "The preparation time for Omelette is approximately 10 minutes.",
@@ -268,7 +268,7 @@ class ActionGetRecipeRequiredEquipment(Action):
         equipment_info = {
             "spaghetti aglio e olio": "To prepare Spaghetti Aglio e Olio, you'll need a pot for boiling pasta, a pan for sautéing garlic, and tongs for tossing the pasta.",
             "caprese salad": "Caprese Salad is a simple dish that requires a cutting board, a knife, and a serving plate.",
-            "chicken stir-fry": "For Chicken Stir-Fry, you'll need a wok or a large skillet, a cutting board, and a sharp knife.",
+            "chicken stir fry": "For Chicken Stir-Fry, you'll need a wok or a large skillet, a cutting board, and a sharp knife.",
             "vegetarian quesadillas": "Vegetarian Quesadillas can be made with a skillet, a spatula, and a cutting board.",
             "pasta primavera": "To prepare Pasta Primavera, you'll need a pot for boiling pasta, a pan for sautéing vegetables, and tongs for tossing the pasta.",
             "omelette": "For making an Omelette, you'll need a non-stick skillet, a spatula, and a mixing bowl.",
@@ -317,7 +317,7 @@ class ActionGetRecipeAllergens(Action):
         allergens_info = {
             "spaghetti aglio e olio": "Spaghetti Aglio e Olio may contain wheat in the form of pasta.",
             "caprese salad": "Caprese Salad is generally allergen-free.",
-            "chicken stir-fry": "Chicken Stir-Fry may contain soy sauce, which has soy and wheat.",
+            "chicken stir fry": "Chicken Stir-Fry may contain soy sauce, which has soy and wheat.",
             "vegetarian quesadillas": "Vegetarian Quesadillas can include ingredients like cheese and wheat tortillas.",
             "pasta primavera": "Pasta Primavera may contain wheat in pasta.",
             "omelette": "Omelette ingredients vary, but common allergens include eggs and milk.",
@@ -374,7 +374,7 @@ class ActionGetRecipeDifficultyLevel(Action):
                 "difficulty": "Very Easy",
                 "skill_level": "Basic",
             },
-            "chicken stir-fry": {
+            "chicken stir fry": {
                 "beginner": False,
                 "difficulty": "Moderate",
                 "skill_level": "Intermediate",
@@ -457,7 +457,7 @@ class ActionGetRecipeSideDishRecommendation(Action):
         side_dish_recommendations = {
             "spaghetti aglio e olio": "A classic side dish for Spaghetti Aglio e Olio is a simple green salad with a lemon vinaigrette.",
             "caprese salad": "Caprese Salad pairs well with a side of garlic bread or a light soup.",
-            "chicken stir-fry": "For Chicken Stir-Fry, consider serving it with steamed rice or vegetable spring rolls.",
+            "chicken stir fry": "For Chicken Stir-Fry, consider serving it with steamed rice or vegetable spring rolls.",
             "vegetarian quesadillas": "Vegetarian Quesadillas go well with guacamole, salsa, and sour cream for dipping.",
             "pasta primavera": "Pasta Primavera is delicious with a side of crusty bread or a fresh garden salad.",
             "omelette": "An Omelette is versatile, but you can pair it with a side of mixed greens or hash browns.",
@@ -505,7 +505,7 @@ class ActionGetRecipeHazards(Action):
         recipe_hazards_info = {
             "spaghetti aglio e olio": "When making Spaghetti Aglio e Olio, be cautious of hot oil splatter while sautéing garlic. Additionally, be mindful of boiling water when cooking the pasta.",
             "caprese salad": "Caprese Salad is generally safe to prepare. However, exercise caution when using knives to slice tomatoes and mozzarella.",
-            "chicken stir-fry": "When making Chicken Stir-Fry, be careful with the hot wok or pan. Use proper utensils to avoid burns and ensure the chicken is cooked thoroughly.",
+            "chicken stir fry": "When making Chicken Stir-Fry, be careful with the hot wok or pan. Use proper utensils to avoid burns and ensure the chicken is cooked thoroughly.",
             "vegetarian quesadillas": "When preparing Vegetarian Quesadillas, be cautious when flipping them to avoid hot filling spills. Use oven mitts or tongs.",
             "pasta primavera": "Pasta Primavera involves boiling pasta; take care to avoid burns from hot water. Be cautious when handling sharp knives for chopping vegetables.",
             "omelette": "When cooking an Omelette, use caution with the stove and hot pans. Be mindful of potential allergens if adding cheese or other ingredients.",
@@ -621,7 +621,7 @@ class ActionRecipeStorageRecommendation(Action):
         recipe_storage_info = {
             "spaghetti aglio e olio": "Store leftover Spaghetti Aglio e Olio in an airtight container in the refrigerator for up to 3 days. Reheat before consuming.",
             "caprese salad": "Caprese Salad is best served fresh. Store any leftovers in an airtight container in the refrigerator and consume within 1-2 days.",
-            "chicken stir-fry": "Store leftover Chicken Stir-Fry in an airtight container in the refrigerator for up to 3 days. Reheat thoroughly before consuming.",
+            "chicken stir fry": "Store leftover Chicken Stir-Fry in an airtight container in the refrigerator for up to 3 days. Reheat thoroughly before consuming.",
             "vegetarian quesadillas": "Store leftover Vegetarian Quesadillas in an airtight container in the refrigerator for up to 2 days. Reheat before serving.",
             "pasta primavera": "Store leftover Pasta Primavera in an airtight container in the refrigerator for up to 3 days. Reheat gently before consuming.",
             "omelette": "Store leftover Omelette in an airtight container in the refrigerator for up to 2 days. Reheat before consuming.",
@@ -669,7 +669,7 @@ class ActionRecipeTasteAdjustment(Action):
         recipe_taste_info = {
             "spaghetti aglio e olio": "To adjust the taste of Spaghetti Aglio e Olio, you can increase the amount of garlic for a stronger flavor or add more red pepper flakes for extra heat. If you prefer it sweeter, you can add a pinch of sugar to balance the acidity of the tomatoes.",
             "caprese salad": "Caprese Salad's flavor is primarily influenced by the freshness of its ingredients. You can enhance its taste by using high-quality tomatoes, fresh basil, and a drizzle of aged balsamic vinegar. If you want to make it less spicy, you can omit the black pepper or reduce the amount of red pepper flakes.",
-            "chicken stir-fry": "For Chicken Stir-Fry, you can balance the flavors by adding a touch of sweetness with honey or brown sugar, or reduce the spiciness by using less chili sauce or omitting it altogether. To enhance the flavor, you can add more ginger and garlic, or a splash of lime juice for tanginess.",
+            "chicken stir fry": "For Chicken Stir-Fry, you can balance the flavors by adding a touch of sweetness with honey or brown sugar, or reduce the spiciness by using less chili sauce or omitting it altogether. To enhance the flavor, you can add more ginger and garlic, or a splash of lime juice for tanginess.",
             "vegetarian quesadillas": "To adjust the taste of Vegetarian Quesadillas, consider adding more cheese for creaminess or incorporating sliced jalapenos for extra spice. You can also experiment with different types of salsa for added flavor. If you want to make it less salty, use low-sodium beans and cheese.",
             "pasta primavera": "To enhance the flavor of Pasta Primavera, try adding freshly grated Parmesan cheese or a squeeze of lemon juice for brightness. You can also sauté the vegetables with garlic and herbs for extra aroma. If you find it too tangy, reduce the amount of lemon juice or use a sweeter variety of tomatoes.",
             "omelette": "To adjust the taste of the Omelette, you can add more herbs like parsley or chives for freshness, or diced bell peppers and onions for sweetness. If it's too salty, use less salt in the egg mixture or add more vegetables to balance the flavors.",
@@ -717,7 +717,7 @@ class ActionRecipeHealthInfo(Action):
         recipe_health_info = {
             "spaghetti aglio e olio": "Spaghetti Aglio e Olio is a relatively simple dish primarily made of pasta, olive oil, garlic, and parsley. While it's not inherently unhealthy, the nutritional value can vary based on portion size and ingredient ratios. It's a carb-heavy dish due to the pasta, but you can make it healthier by using whole wheat pasta and incorporating more vegetables.",
             "caprese salad": "Caprese Salad is a light and refreshing dish made with tomatoes, fresh mozzarella, basil, and balsamic glaze. It's low in calories and carbohydrates, making it a suitable option for those following a low-carb diet. Additionally, it's rich in vitamins, minerals, and antioxidants, providing various health benefits.",
-            "chicken stir-fry": "Chicken Stir-Fry is a nutritious meal consisting of lean protein from chicken breast and an assortment of vegetables. It's low in carbs and can be tailored to fit different dietary preferences, such as low-carb or low-calorie diets. However, the healthiness of the dish depends on the cooking method and added sauces, so opt for minimal oil and use low-sodium soy sauce for a healthier option.",
+            "chicken stir fry": "Chicken Stir-Fry is a nutritious meal consisting of lean protein from chicken breast and an assortment of vegetables. It's low in carbs and can be tailored to fit different dietary preferences, such as low-carb or low-calorie diets. However, the healthiness of the dish depends on the cooking method and added sauces, so opt for minimal oil and use low-sodium soy sauce for a healthier option.",
             "vegetarian quesadillas": "Vegetarian Quesadillas can be a healthy meal option when made with whole wheat tortillas, black beans, vegetables, and a moderate amount of cheese. They provide plant-based protein, fiber, and essential nutrients. To make them even healthier, use a small amount of cheese and load up on vegetables for added vitamins and minerals.",
             "pasta primavera": "Pasta Primavera is a pasta dish loaded with vegetables, making it a nutritious option. However, the healthiness of the dish can vary based on the type of pasta used and the amount of cheese added. Opt for whole wheat pasta for added fiber and choose a light sauce to keep the dish lower in calories.",
             "omelette": "An Omelette can be a healthy meal choice, especially when loaded with vegetables and made with minimal oil. Eggs are a good source of protein and essential nutrients, but be mindful of added ingredients like cheese and high-fat meats.",
@@ -765,7 +765,7 @@ class ActionRecipeOrigin(Action):
         recipe_origin_info = {
             "spaghetti aglio e olio": "Spaghetti Aglio e Olio originates from Italy, specifically from the region of Naples. It's a traditional Italian pasta dish known for its simplicity and use of olive oil, garlic, and red pepper flakes.",
             "caprese salad": "Caprese Salad is a classic Italian dish originating from the island of Capri. It's a staple of Italian cuisine, featuring fresh tomatoes, mozzarella cheese, basil, and a drizzle of balsamic glaze or olive oil.",
-            "chicken stir-fry": "Chicken Stir-Fry is a popular dish in Asian cuisine, particularly in Chinese cooking. It's characterized by quickly cooking bite-sized pieces of chicken and mixed vegetables in a wok over high heat.",
+            "chicken stir fry": "Chicken Stir-Fry is a popular dish in Asian cuisine, particularly in Chinese cooking. It's characterized by quickly cooking bite-sized pieces of chicken and mixed vegetables in a wok over high heat.",
             "vegetarian quesadillas": "Quesadillas are a traditional Mexican dish, but the vegetarian version has become popular worldwide. While the exact origin of vegetarian quesadillas is unclear, they are inspired by Mexican cuisine and often feature ingredients like beans, cheese, and vegetables.",
             "pasta primavera": "Pasta Primavera is an Italian-American dish that originated in the United States. It was created in the 1970s in New York City and is characterized by pasta tossed with fresh vegetables and a light sauce.",
             "omelette": "Omelette is a versatile dish enjoyed worldwide, but it has roots in French cuisine. The French omelette is known for its creamy texture and can be filled with various ingredients such as cheese, vegetables, or ham.",
@@ -813,7 +813,7 @@ class ActionGetRecipeNutrition(Action):
         recipe_nutrition_info = {
             "spaghetti aglio e olio": "Spaghetti Aglio e Olio is a relatively simple dish primarily made of pasta, olive oil, garlic, and parsley. While it's not inherently unhealthy, the nutritional value can vary based on portion size and ingredient ratios. It's a carb-heavy dish due to the pasta, but you can make it healthier by using whole wheat pasta and incorporating more vegetables. Nutrition information per serving: Carbohydrates: 45g, Proteins: 8g, Fats: 15g, Vitamins: Vitamin C, Vitamin K, Minerals: Iron, Manganese",
             "caprese salad": "Caprese Salad is a light and refreshing dish made with tomatoes, fresh mozzarella, basil, and balsamic glaze. It's low in calories and carbohydrates, making it a suitable option for those following a low-carb diet. Additionally, it's rich in vitamins, minerals, and antioxidants, providing various health benefits. Nutrition information per serving: Carbohydrates: 5g, Proteins: 10g, Fats: 10g, Vitamins: Vitamin A, Vitamin C, Minerals: Calcium, Potassium",
-            "chicken stir-fry": "Chicken Stir-Fry is a nutritious meal consisting of lean protein from chicken breast and an assortment of vegetables. It's low in carbs and can be tailored to fit different dietary preferences, such as low-carb or low-calorie diets. However, the healthiness of the dish depends on the cooking method and added sauces, so opt for minimal oil and use low-sodium soy sauce for a healthier option. Nutrition information per serving: Carbohydrates: 15g, Proteins: 20g, Fats: 10g, Vitamins: Vitamin B6, Vitamin C, Minerals: Potassium, Magnesium",
+            "chicken stir fry": "Chicken Stir-Fry is a nutritious meal consisting of lean protein from chicken breast and an assortment of vegetables. It's low in carbs and can be tailored to fit different dietary preferences, such as low-carb or low-calorie diets. However, the healthiness of the dish depends on the cooking method and added sauces, so opt for minimal oil and use low-sodium soy sauce for a healthier option. Nutrition information per serving: Carbohydrates: 15g, Proteins: 20g, Fats: 10g, Vitamins: Vitamin B6, Vitamin C, Minerals: Potassium, Magnesium",
             "vegetarian quesadillas": "Vegetarian Quesadillas can be a healthy meal option when made with whole wheat tortillas, black beans, vegetables, and a moderate amount of cheese. They provide plant-based protein, fiber, and essential nutrients. To make them even healthier, use a small amount of cheese and load up on vegetables for added vitamins and minerals. Nutrition information per serving: Carbohydrates: 25g, Proteins: 12g, Fats: 15g, Vitamins: Vitamin A, Vitamin K, Minerals: Iron, Zinc",
             "pasta primavera": "Pasta Primavera is a pasta dish loaded with vegetables, making it a nutritious option. However, the healthiness of the dish can vary based on the type of pasta used and the amount of cheese added. Opt for whole wheat pasta for added fiber and choose a light sauce to keep the dish lower in calories. Nutrition information per serving: Carbohydrates: 40g, Proteins: 10g, Fats: 10g, Vitamins: Vitamin A, Vitamin C, Minerals: Potassium, Magnesium",
             "omelette": "An Omelette can be a healthy meal choice, especially when loaded with vegetables and made with minimal oil. Eggs are a good source of protein and essential nutrients, but be mindful of added ingredients like cheese and high-fat meats. Nutrition information per serving: Carbohydrates: 2g, Proteins: 15g, Fats: 15g, Vitamins: Vitamin D, Vitamin B12, Minerals: Iron, Phosphorus",
@@ -861,7 +861,7 @@ class ActionBakingTimeAndTemperature(Action):
         baking_info = {
             "spaghetti aglio e olio": None,  # Example: This dish doesn't require baking
             "caprese salad": None,  # Example: This dish doesn't require baking
-            "chicken stir-fry": None,  # Example: This dish doesn't require baking
+            "chicken stir fry": None,  # Example: This dish doesn't require baking
             "vegetarian quesadillas": None,  # Example: This dish doesn't require baking
             "pasta primavera": {
                 "temperature": "350°F",
@@ -926,7 +926,7 @@ class ActionGrillingTechniques(Action):
         grilling_info = {
             "spaghetti aglio e olio": None,  # Example: This dish doesn't require grilling
             "caprese salad": None,  # Example: This dish doesn't require grilling
-            "chicken stir-fry": None,  # Example: This dish doesn't require grilling
+            "chicken stir fry": None,  # Example: This dish doesn't require grilling
             "vegetarian quesadillas": None,  # Example: This dish doesn't require grilling
             "pasta primavera": None,  # Example: This dish doesn't require grilling
             "omelette": None,  # Example: This dish doesn't require grilling
@@ -988,7 +988,7 @@ class ActionSauteingAndPanFrying(Action):
                 "tips": "Heat olive oil in a pan, sauté garlic until golden, and toss with cooked pasta."
             },
             "caprese salad": None,  # Example: This dish doesn't involve sautéing or pan-frying
-            "chicken stir-fry": {
+            "chicken stir fry": {
                 "time": "10 minutes",
                 "tips": "Cut chicken into small pieces, stir-fry in a hot pan with vegetables, and season with sauce."
             },
@@ -1061,7 +1061,7 @@ class ActionBoilingAndSimmering(Action):
                 "tips": "Boil the pasta until al dente. No simmering required for this dish."
             },
             "caprese salad": None,  # Example: This dish doesn't require boiling or simmering
-            "chicken stir-fry": None,  # Example: This dish doesn't require boiling or simmering
+            "chicken stir fry": None,  # Example: This dish doesn't require boiling or simmering
             "vegetarian quesadillas": None,  # Example: This dish doesn't require boiling or simmering
             "pasta primavera": {
                 "boiling_time": "8-10 minutes",
@@ -1130,7 +1130,7 @@ class ActionRoastingTechniques(Action):
         roasting_techniques_info = {
             "spaghetti aglio e olio": None,  # Example: This dish doesn't require roasting
             "caprese salad": None,  # Example: This dish doesn't require roasting
-            "chicken stir-fry": None,  # Example: This dish doesn't require roasting
+            "chicken stir fry": None,  # Example: This dish doesn't require roasting
             "vegetarian quesadillas": None,  # Example: This dish doesn't require roasting
             "pasta primavera": None,  # Example: This dish doesn't require roasting
             "omelette": None,  # Example: This dish doesn't require roasting
@@ -1190,7 +1190,7 @@ class ActionMarinatingDuration(Action):
         marinating_duration_info = {
             "spaghetti aglio e olio": None,  # Example: This dish doesn't require marinating
             "caprese salad": None,  # Example: This dish doesn't require marinating
-            "chicken stir-fry": {
+            "chicken stir fry": {
                 "marinating_time": "30 minutes to 1 hour",
                 "tips": "Marinate the chicken for at least 30 minutes to enhance flavor. For a deeper flavor, marinate for up to 1 hour."
             },
@@ -1256,7 +1256,7 @@ class ActionChoppingCuttingTechniques(Action):
                 "technique": "slicing",
                 "tips": "Use a sharp knife to slice the tomatoes and mozzarella cheese evenly."
             },
-            "chicken stir-fry": {
+            "chicken stir fry": {
                 "technique": "dicing",
                 "tips": "Dice the chicken into uniform pieces to ensure even cooking."
             },
@@ -1345,7 +1345,7 @@ class ActionSeasoningAndSpices(Action):
                 "salt_and_pepper_amount": "to taste",
                 "tips": "Use freshly ground black pepper for enhanced flavor."
             },
-            "chicken stir-fry": {
+            "chicken stir fry": {
                 "spices": ["soy sauce", "garlic powder", "ginger powder"],
                 "salt_and_pepper_amount": "to taste",
                 "tips": "Adjust soy sauce according to your preference for saltiness."
@@ -1439,7 +1439,7 @@ class ActionGarnishingAndPresentation(Action):
                 "garnish": "Fresh basil leaves",
                 "presentation": "Arrange alternating slices of tomatoes and mozzarella cheese on a serving platter, garnish with basil leaves, and drizzle with balsamic glaze."
             },
-            "chicken stir-fry": {
+            "chicken stir fry": {
                 "garnish": "Sesame seeds",
                 "presentation": "Serve the chicken stir-fry on a large plate or bowl, sprinkle with sesame seeds for garnish, and serve with steamed rice or noodles on the side."
             },
@@ -1526,7 +1526,7 @@ class ActionRestingAndServing(Action):
                 "serving_time": "Immediately",  # Example: Best served immediately after assembling
                 "guidance": "Serve the caprese salad immediately after assembling to prevent the tomatoes from becoming too soggy."
             },
-            "chicken stir-fry": {
+            "chicken stir fry": {
                 "resting_time": None,  # Example: This dish doesn't require resting
                 "serving_time": "Immediately",  # Example: Best served immediately after cooking
                 "guidance": "Serve the chicken stir-fry immediately after cooking while it's still hot and flavorful."
@@ -1625,7 +1625,7 @@ class ActionSauceAndDressing(Action):
                 "sauce": "Balsamic glaze",  # Example: Balsamic glaze pairs well with caprese salad
                 "dressing": "Extra virgin olive oil, balsamic vinegar, salt, and pepper"  # Example: Classic dressing for caprese salad
             },
-            "chicken stir-fry": {
+            "chicken stir fry": {
                 "sauce": "Teriyaki sauce",  # Example: Teriyaki sauce pairs well with chicken stir-fry
                 "dressing": None  # Example: This dish doesn't require dressing
             },
@@ -1733,7 +1733,7 @@ class ActionRetrieveRecipeInfo(Action):
                                  "2. Arrange tomato and mozzarella slices on a plate, alternating them.",
                                  "3. Drizzle with balsamic glaze and olive oil before serving."]
             },
-            "Chicken Stir-Fry": {
+            "Chicken Stir Fry": {
                 "ingredients": ["chicken breast", "mixed vegetables (bell peppers, broccoli, carrots)", "soy sauce",
                                 "ginger", "garlic"],
                 "instructions": ["1. Stir-fry chicken in a pan until cooked.",

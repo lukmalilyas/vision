@@ -339,10 +339,8 @@ nlu:
 - intent: inform_recipe
   examples: |
     - [Spaghetti Aglio e Olio](recipe)
-    - [aglio e olio](recipe)
-    - [garlic and oil pasta](recipe)
     - [Caprese Salad](recipe)
-    - [Chicken Stir-Fry](recipe)
+    - [Chicken Stir Fry](recipe)
     - [Vegetarian Quesadillas](recipe)
     - [Pasta Primavera](recipe)
     - [Omelette](recipe)
@@ -354,55 +352,15 @@ nlu:
 - lookup: recipe
   examples: |
     - spaghetti aglio e olio
-    - aglio e olio
-    - garlic and oil pasta
-    - pasta with garlic and olive oil
-    - traditional Italian spaghetti
     - caprese salad
-    - caprese
-    - tomato and mozzarella salad
-    - Italian salad
-    - fresh tomato and cheese salad
-    - chicken stir-fry
-    - stir-fried chicken
-    - Asian-style chicken
-    - quick chicken stir-fry
-    - chicken and vegetable stir-fry
+    - chicken stir fry
     - vegetarian quesadillas
-    - veggie quesadillas
-    - cheese and veggie wraps
-    - meatless quesadillas
-    - Mexican cheese tortillas
     - pasta primavera
-    - vegetable pasta
-    - primavera pasta
-    - colorful vegetable spaghetti
-    - pasta with mixed veggies
     - omelette
-    - egg omelette
-    - fluffy egg dish
-    - savory egg pancake
-    - classic breakfast omelet
     - tomato basil bruschetta
-    - bruschetta
-    - Italian appetizer
-    - tomato and basil toast
-    - crispy tomato bread
     - mushroom risotto
-    - risotto
-    - creamy mushroom rice
-    - Italian mushroom rice
-    - savory risotto with mushrooms
     - honey mustard baked chicken
-    - baked chicken with honey mustard
-    - sweet and tangy chicken
-    - oven roasted honey mustard chicken
-    - glazed mustard chicken
     - tuna salad wrap
-    - wrap with tuna salad
-    - tuna filled wrap
-    - light tuna sandwich wrap
-    - Mediterranean tuna wrap
 
 - lookup: ingredient
   examples: |
@@ -467,13 +425,13 @@ nlu:
     - Italian salad
     - fresh tomato and cheese salad
 
-- synonym: Chicken Stir-Fry
+- synonym: Chicken Stir Fry
   examples: |
-    - chicken stir-fry
-    - stir-fried chicken
-    - Asian-style chicken
-    - quick chicken stir-fry
-    - chicken and vegetable stir-fry
+    - chicken stir fry
+    - stir fried chicken
+    - Asian style chicken
+    - quick chicken stir fry
+    - chicken and vegetable stir fry
 
 - synonym: Vegetarian Quesadillas
   examples: |
