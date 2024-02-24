@@ -2,90 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rasa & FLask Chatbot</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        .chat-sign-button {
-            width: 50px;
-            height: 50px;
-            font-size: 24px;
-        }
-
-        #chat-widget {
-            max-height: 400px; /* set the max height how much u want */
-            overflow-y: auto; /* enable vertical scroll when content extends the limit*/
-        }
-
-        /* css styling for chat messages */
-        #chat-widget-messages {
-            margin-right: 15px; /* sets margin to allow space for the scrollbar without obscuring */
-        }
-    </style>
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>VISION | CHATBOT</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" >
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Chatbot!</h1>
-        <button id="chat-widget-button" type="button" class="btn btn-primary rounded-circle position-fixed chat-sign-button" style="bottom: 20px; right: 20px;"></button>
-        <div id="chat-widget" class="card position-fixed shadow d-none" style="bottom: 100px; right: 20px; width: 300px;">
-            <div class="card-header bg-primary text-white">
-                Chatbot
-                <button id="chat-widget-close-button" type="button" class="btn-close float-end" aria-label="Close"></button>
+    <div class="main-div">
+        <div class="container">
+            <div class="top-part">
+                <div class="agent-details">
+                    <i class="fa-solid fa-robot"></i>
+                    <div class="agent-text">
+                        <h3>Vision Chatbot</h3>
+                        <span>(Online)</span>
+                    </div>
+                </div>
             </div>
-            <div class="card-body" id="chat-widget-messages">
-                <!-- Chat messages will be appended here -->
+            <div class="chart-section" id="chatbox">
+                <div class="left-part">
+                    <div class="agent-chart">
+                        <i class="fa-solid fa-robot"></i>                         
+                        <p>Hey! there any questions?</p>
+                    </div>
+                </div>
             </div>
-            <div class="card-footer">
-                <input type="text" class="form-control" id="chat-widget-input" placeholder="Type your message...">
+            <div class="bottom-section">
+                <button id="record-button" class="microphone-button">
+                    <i class='bx bx-microphone'></i>
+                </button>
             </div>
         </div>
     </div>
-
-<script>
-    $(document).ready(function() {
-        $("#chat-widget-button").on("click", function() {
-            $("#chat-widget").toggleClass("d-none")
-        });
-
-        $("#chat-widget-close-button").on("click", function() {
-            $("#chat-widget").addClass("d-none")
-        });
-        // handle user input in the chatbox
-        $("#chat-widget-input").keypress(function(event) {
-            if (event.which === 13) {
-                let userMessage = $("#chat-widget-input").val();
-                $("#chat-widget-input").val("")
-
-            // append user message to the chatbox
-            $("#chat-widget-messages").append("<div><strong>You:</strong> " + userMessage + "</div>");
-
-            // send user message to the server and get bots response
-            $.ajax({
-                type: "POST",
-                url: "/webhook",
-                contentType: "application/json",
-                data: JSON.stringify({message: userMessage}),
-                success: function(data) {
-                    let botResponse = data.response;
-
-                    // Append bot's response to the chatbox
-                    $("#chat-widget-messages").append("<div><strong>Bot:</strong> " + botResponse + "</div>");
-<!--                    botResponses.forEach(function(response) {-->
-<!--                        $("#chat-widget-messages").append("<div><strong>Bot:</strong> " + response + "</div>");-->
-<!--                    });-->
-                },
-
-                error: function() {
-                       // handle error if needed
-                }
-            });
-
-
-            }
-        });
-    });
-
-
-</script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

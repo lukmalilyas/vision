@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, jsonify
+from speech_to_text import recognize_speech
 import requests
 
 RASA_API_URL = 'http://localhost:5005/webhooks/rest/webhook'
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 
 @app.route('/')
@@ -10,21 +11,35 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/webhook', methods=['POST'])
-def webhook():
-    user_message = request.json['message']
-    print("User Message:", user_message)
+@app.route('/transcribe', methods=['POST'])
+def transcribe():
+    modified_text = None
+    while modified_text is None:
+        modified_text = recognize_speech()
+        if modified_text:
+            break
 
-    # send user message to rasa and get bots response
-    rasa_response = requests.post(RASA_API_URL, json={'message': user_message})
-    rasa_response_json = rasa_response.json()
+    if modified_text:
+        return jsonify({'text': modified_text}), 200
+    else:
+        return jsonify({'error': 'Failed to transcribe'}), 500
 
-    print("Rasa Response:", rasa_response_json)
 
-    # bot_response = rasa_response_json[0]['text'] if rasa_response_json else 'Sorry, I didn\'t understand that.'
-    bot_response = [message['text'] for message in rasa_response_json] if rasa_response_json else ['Sorry, I didn\'t understand that.']
+@app.route('/rasa', methods=['POST'])
+def rasa():
+    data = request.json
+    text = data['text']
 
-    return jsonify({'response': bot_response})
+    # Send text to Rasa
+    response = requests.post(RASA_API_URL, json={"message": text})
+
+    if response.ok:
+        # Extract the response from Rasa
+        rasa_response = response.json()
+        bot_response = [message['text'] for message in rasa_response] if rasa_response else ['Sorry, I didn\'t understand that.']
+        return jsonify({'response': bot_response}), 200
+    else:
+        return jsonify({'error': 'Failed to get response from Rasa'}), 500
 
 
 if __name__ == "__main__":

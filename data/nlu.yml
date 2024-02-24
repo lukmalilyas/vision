@@ -145,6 +145,7 @@ nlu:
     - Can you give an estimate of the cooking time of [spaghetti aglio e olio]{"entity": "recipe"}?
     - How much time should I allocate for cooking [spaghetti aglio e olio]{"entity": "recipe"}?
     - Tell me about the time required for preparation of [spaghetti aglio e olio]{"entity": "recipe"}.
+    - How long does it take to make [spaghetti aglio e olio]{"entity": "recipe"}.
 
 - intent: recipe_required_equipment
   examples: |
