@@ -108,16 +108,20 @@ def search_similar_recipes(search_term):
         return "", ""
 
 
+# Initialize the text-to-speech engine
+engine = pyttsx3.init()
+engine_lock = threading.Lock()  # Lock to ensure synchronized access to the engine
+
+
 def say_text(text):
-    engine.say(text)
-    engine.runAndWait()
+    with engine_lock:
+        engine.say(text)
 
 
 def recognize_speech():
     with microphone as source:
         recognizer.adjust_for_ambient_noise(source)
         print("1")
-        # engine.say("Listening...")
         engine_thread = threading.Thread(target=say_text, args=("Listening...",))
         engine_thread.start()
         print("2")
@@ -163,6 +167,15 @@ def recognize_speech():
 
 
 if __name__ == "__main__":
+    # Initialize the speech engine only once
+    while True:
+        try:
+            recognizer.adjust_for_ambient_noise(microphone)
+            break
+        except sr.RequestError as e:
+            print(f"Error initializing recognizer: {e}")
+            continue
+
     while True:
         modified_text = recognize_speech()
         if modified_text:

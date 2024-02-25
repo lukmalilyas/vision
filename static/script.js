@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (transcript.includes(phrase_1) || transcript.includes(phrase_2) || transcript.includes(phrase_3) || transcript.includes(phrase_4)) {
                 console.log('Transcript matched:', transcript);
                 recognition.stop();
+                speechSynthesis.speak(new SpeechSynthesisUtterance("Listening..."));
                 recordButton.click();
                 break;
             }
