@@ -1,0 +1,15 @@
+#page {
+    position: absolute;
+    bottom: 250px; /* Adjust this value to move the div upwards */
+    left: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    margin: 0; /* Remove default margin */
+}
+
+
+#root {
+
+}
