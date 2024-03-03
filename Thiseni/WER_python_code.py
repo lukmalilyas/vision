@@ -24,7 +24,7 @@ def transcribe_audio(audio_path, recognizer):
 if __name__ == "__main__":
     recognizer = sr.Recognizer()
 
-    audio_folder = "C:/Users/Acer/Desktop/recipe_audio"
+    audio_folder = "C:/Users/Acer/Desktop/recipe_audio/"
 
     total_wer = 0
     num_files = 0
