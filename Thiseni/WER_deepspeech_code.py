@@ -1,17 +1,17 @@
-import os
-import deepspeech
-import numpy as np
-import jiwer
-import wave
+import os  # read files and directories
+import deepspeech #transcript using asr
+import numpy as np #convert audio data to a NumPy array
+import jiwer #ji Speech Error Rate - calc wer
+import wave #write wav files
 
-# Path to the DeepSpeech model and scorer files
-model_path = "C:/Users/Acer/Desktop/recipe_audio/deepspeech/deepspeech-0.9.3-models.pbmm"
-scorer_path = "C:/Users/Acer/Desktop/recipe_audio/deepspeech/deepspeech-0.9.3-models.scorer"
+#DeepSpeech model and scorer files
+model_path = "C:/Users/Acer/Desktop/recipe_audio/deepspeech/deepspeech-0.9.3-models.pbmm" #trained model
+scorer_path = "C:/Users/Acer/Desktop/recipe_audio/deepspeech/deepspeech-0.9.3-models.scorer" #to improve accuracy
 
-# Directory containing your .wav files and corresponding .txt files
+#.wav files and corresponding .txt files
 data_directory = "C:/Users/Acer/Desktop/recipe_audio/wav/"
 
-def read_text_file(text_file_path):
+def read_text_file(text_file_path): #read reference text
     with open(text_file_path, 'r') as file:
         return file.read().strip()
 
@@ -33,16 +33,15 @@ def transcribe_deepspeech(wav_path, model, scorer):
 total_wer = 0
 num_files = 0
 
-# Iterate over all .wav files in the directory
-for filename in os.listdir(data_directory):
+
+for filename in os.listdir(data_directory): #loop through all .wav files and get respective text file
     if filename.endswith(".wav"):
         wav_path = os.path.join(data_directory, filename)
 
-        # Read the corresponding text file
         text_file_path = os.path.join(data_directory, os.path.splitext(filename)[0] + ".txt")
         reference_transcription = read_text_file(text_file_path)
 
-        # Transcribe audio and print the result
+        # Transcribe audio
         hypothesis_transcription = transcribe_deepspeech(wav_path, model_path, scorer_path)
         print(f"Reference: {reference_transcription}")
         print(f"Hypothesis: {hypothesis_transcription}")
