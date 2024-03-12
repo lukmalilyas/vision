@@ -1,35 +1,28 @@
 {
-  "ingredient": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 20,
-    "confused_with": {}
-  },
   "recipe": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 570,
+    "support": 574,
     "confused_with": {}
   },
   "micro avg": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 590
+    "support": 574
   },
   "macro avg": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 590
+    "support": 574
   },
   "weighted avg": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 590
+    "support": 574
   },
   "accuracy": 1.0
 }

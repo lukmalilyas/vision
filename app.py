@@ -1,9 +1,23 @@
 from flask import Flask, render_template, request, jsonify
 from speech_to_text import recognize_speech
 import requests
+import subprocess
 
 RASA_API_URL = 'http://localhost:5005/webhooks/rest/webhook'
 app = Flask(__name__, static_url_path='/static')
+
+
+# Function to start Rasa server as subprocess
+def start_rasa_server():
+    try:
+        subprocess.Popen(['rasa', 'run', 'actions'])
+        subprocess.Popen(['rasa', 'run'])
+    except Exception as e:
+        print(f"Error starting Rasa server: {e}")
+
+
+# Start Rasa server when Flask app is initialized
+start_rasa_server()
 
 
 @app.route('/')
@@ -43,4 +57,4 @@ def rasa():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=3000)
+    app.run(host='127.0.0.1', port=5000)

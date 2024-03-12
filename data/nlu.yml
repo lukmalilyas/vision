@@ -187,14 +187,6 @@ nlu:
     - Tell me about possible hazards involved in preparing [spaghetti aglio e olio]{"entity": "recipe"}.
     - Are there specific dangers or risks related to [spaghetti aglio e olio]{"entity": "recipe"} that I should know?
 
-- intent: recipe_alternative_ingredients
-  examples: |
-    - Can I substitute [chicken or vegetable broth]{"entity": "ingredient"} in recipe with something else?
-    - What can I use as a replacement for [chicken or vegetable broth]{"entity": "ingredient"} in recipe?
-    - Are there alternative ingredients I can use instead of [chicken or vegetable broth]{"entity": "ingredient"} in recipe?
-    - Can I swap [chicken or vegetable broth]{"entity": "ingredient"} for another option in recipe?
-    - What are some alternatives to [chicken or vegetable broth]{"entity": "ingredient"} for making recipe?
-
 - intent: recipe_storage_recommendation
   examples: |
     - How should I store leftovers of [spaghetti aglio e olio]{"entity": "recipe"} to maintain freshness?
@@ -363,56 +355,10 @@ nlu:
     - honey mustard baked chicken
     - tuna salad wrap
 
-- lookup: ingredient
-  examples: |
-    - spaghetti
-    - olive oil
-    - garlic
-    - red pepper flakes
-    - parsley
-    - tomatoes
-    - fresh mozzarella
-    - fresh basil leaves
-    - balsamic glaze
-    - mixed vegetables
-    - bell peppers
-    - broccoli
-    - carrots
-    - soy sauce
-    - ginger
-    - flour tortillas
-    - black beans
-    - corn
-    - cheese
-    - salsa
-    - penne pasta
-    - zucchini
-    - cherry tomatoes
-    - parmesan cheese
-    - eggs
-    - milk
-    - fillings
-    - diced ham
-    - vegetables
-    - baguette slices
-    - onion
-    - chicken or vegetable broth
-    - arborio rice
-    - chicken thighs
-    - dijon mustard
-    - honey
-    - garlic powder
-    - salt
-    - pepper
-    - canned tuna
-    - mayonnaise
-    - celery
-    - lettuce
-    - tortillas
-
 - synonym: Spaghetti Aglio e Olio
   examples: |
     - spaghetti aglio e olio
+    - spaghetti aglio olio
     - aglio e olio
     - garlic and oil pasta
     - pasta with garlic and olive oil
@@ -437,6 +383,7 @@ nlu:
 - synonym: Vegetarian Quesadillas
   examples: |
     - vegetarian quesadillas
+    - quesadillas
     - veggie quesadillas
     - cheese and veggie wraps
     - meatless quesadillas
@@ -474,17 +421,20 @@ nlu:
     - Italian mushroom rice
     - savory risotto with mushrooms
 
-- synonym: Honey Mustard Baked Chicken
+- synonym: Honey Mustard Bake Chicken
   examples: |
     - honey mustard baked chicken
-    - baked chicken with honey mustard
-    - sweet and tangy chicken
-    - oven roasted honey mustard chicken
-    - glazed mustard chicken
+    - mustard baked chicken
+    - mustard
+    - honey mustard bake chicken
+    - mustard bake chicken
+    - honey mustard
 
 - synonym: Tuna Salad Wrap
   examples: |
     - tuna salad wrap
+    - tuna salad
+    - salad
     - wrap with tuna salad
     - tuna filled wrap
     - light tuna sandwich wrap

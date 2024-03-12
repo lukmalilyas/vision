@@ -102,11 +102,6 @@ stories:
   - intent: recipe_hazards
   - action: action_get_recipe_hazards
 
-- story: User asks for alternative ingredients for a recipe
-  steps:
-  - intent: recipe_alternative_ingredients
-  - action: action_alternative_ingredients
-
 - story: User seeks recommendations for storing a recipe
   steps:
   - intent: recipe_storage_recommendation

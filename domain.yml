@@ -33,8 +33,6 @@ intents:
       use_entities: true
   - recipe_hazards:
       use_entities: true
-  - recipe_alternative_ingredients:
-      use_entities: true
   - recipe_storage_recommendation:
       use_entities: true
   - recipe_taste_adjustment:
@@ -74,7 +72,6 @@ intents:
 
 entities:
   - recipe
-  - ingredient
 
 slots:
   recipe:
@@ -83,12 +80,6 @@ slots:
     mappings:
       - type: from_entity
         entity: recipe
-#  ingredient:
-#    type: text
-#    influence_conversation: false
-#    mappings:
-#      - type: from_entity
-#        entity: ingredient
 
 responses:
   utter_greet:
@@ -206,7 +197,6 @@ actions:
   - action_get_recipe_difficulty_level
   - action_get_recipe_side_dish_recommendation
   - action_get_recipe_hazards
-  - action_alternative_ingredients
   - action_recipe_storage_recommendation
   - action_recipe_taste_adjustment
   - action_recipe_health_info

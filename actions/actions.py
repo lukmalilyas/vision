@@ -9,59 +9,12 @@ valid_recipes = [
     "Caprese Salad",
     "Chicken Stir Fry",
     "Vegetarian Quesadillas",
-    "Pasta Primaver",
+    "Pasta Primavera",
     "Omelette",
     "Tomato Basil Bruschetta",
     "Mushroom Risotto",
-    "Honey Mustard Baked Chicken",
+    "Honey Mustard Bake Chicken",
     "Tuna Salad Wrap"
-]
-
-valid_ingredients = [
-    "spaghetti",
-    "olive oil",
-    "garlic",
-    "red pepper flakes",
-    "parsley",
-    "tomatoes",
-    "fresh mozzarella",
-    "fresh basil leaves",
-    "balsamic glaze",
-    "mixed vegetables",
-    "bell peppers",
-    "broccoli",
-    "carrots",
-    "soy sauce",
-    "ginger",
-    "flour tortillas",
-    "black beans",
-    "corn",
-    "cheese",
-    "salsa",
-    "penne pasta",
-    "zucchini",
-    "cherry tomatoes",
-    "parmesan cheese",
-    "eggs",
-    "milk",
-    "fillings",
-    "diced ham",
-    "vegetables",
-    "baguette slices",
-    "onion",
-    "chicken or vegetable broth",
-    "arborio rice",
-    "chicken thighs",
-    "dijon mustard",
-    "honey",
-    "garlic powder",
-    "salt",
-    "pepper",
-    "canned tuna",
-    "mayonnaise",
-    "celery",
-    "lettuce",
-    "tortillas"
 ]
 
 
@@ -518,80 +471,6 @@ class ActionGetRecipeHazards(Action):
             return recipe_hazards_info[recipe_name.lower()]
         else:
             return f"I'm sorry, I don't have information on the safety hazards of {recipe_name}."
-
-
-class ActionAlternativeIngredients(Action):
-    def name(self) -> Text:
-        return "action_alternative_ingredients"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # Extract the value of the 'ingredient' entity from the current user message
-        ingredient_entity = next(tracker.get_latest_entity_values("ingredient"), None)
-
-        if ingredient_entity in valid_ingredients:
-            # User directly mentions the ingredient in the current turn
-            alternatives = self.get_alternatives(ingredient_entity)
-            if alternatives:
-                response = f"Here are some alternatives for {ingredient_entity}: {', '.join(alternatives)}"
-            else:
-                response = f"Sorry, I couldn't find any alternatives for {ingredient_entity}."
-        else:
-            # Handle the case where neither the entity nor the slot is available
-            response = "I didn't catch the name of the ingredient. Can you please specify which ingredient you're asking about?"
-        dispatcher.utter_message(response)
-        return []
-
-    @staticmethod
-    def get_alternatives(ingredient: Text) -> List[Text]:
-        # Define your dictionary of alternative ingredients here
-        alternative_dict = {
-            "spaghetti": ["linguine", "fettuccine", "penne"],
-            "olive oil": ["avocado oil", "coconut oil", "vegetable oil"],
-            "garlic": ["garlic powder", "shallots", "onion"],
-            "red pepper flakes": ["cayenne pepper", "crushed red pepper", "paprika"],
-            "parsley": ["cilantro", "basil", "chives"],
-            "tomatoes": ["cherry tomatoes", "roma tomatoes", "heirloom tomatoes"],
-            "fresh mozzarella": ["buffalo mozzarella", "burrata", "ricotta"],
-            "fresh basil leaves": ["dried basil", "parsley", "oregano"],
-            "balsamic glaze": ["balsamic vinegar", "balsamic reduction", "balsamic syrup"],
-            "mixed vegetables": ["broccoli", "bell peppers", "snap peas"],
-            "bell peppers": ["red bell peppers", "green bell peppers", "yellow bell peppers"],
-            "broccoli": ["cauliflower", "asparagus", "green beans"],
-            "carrots": ["celery", "parsnips", "sweet potatoes"],
-            "soy sauce": ["tamari", "coconut aminos", "fish sauce"],
-            "ginger": ["ground ginger", "ginger paste", "ginger powder"],
-            "flour tortillas": ["corn tortillas", "whole wheat tortillas", "lettuce wraps"],
-            "black beans": ["pinto beans", "kidney beans", "chickpeas"],
-            "corn": ["peas", "edamame", "green beans"],
-            "cheese": ["cheddar cheese", "mozzarella cheese", "pepper jack cheese"],
-            "salsa": ["pico de gallo", "guacamole", "queso dip"],
-            "penne pasta": ["spaghetti", "fettuccine", "farfalle"],
-            "zucchini": ["yellow squash", "cucumber", "eggplant"],
-            "cherry tomatoes": ["grape tomatoes", "plum tomatoes", "sun-dried tomatoes"],
-            "parmesan cheese": ["pecorino romano", "asiago cheese", "gruyere cheese"],
-            "eggs": ["egg whites", "tofu", "egg replacer"],
-            "milk": ["almond milk", "soy milk", "coconut milk"],
-            "fillings": ["cheese", "ham", "spinach"],
-            "diced ham": ["cooked bacon", "sausage", "smoked turkey"],
-            "vegetables": ["bell peppers", "zucchini", "mushrooms"],
-            "baguette slices": ["sourdough slices", "ciabatta slices", "French bread slices"],
-            "onion": ["shallots", "leeks", "scallions"],
-            "chicken or vegetable broth": ["beef broth", "mushroom broth", "vegetable stock"],
-            "arborio rice": ["carnaroli rice", "vialone nano rice", "jasmine rice"],
-            "chicken thighs": ["chicken drumsticks", "chicken wings", "tofu"],
-            "dijon mustard": ["yellow mustard", "whole grain mustard", "honey mustard"],
-            "honey": ["maple syrup", "agave nectar", "brown rice syrup"],
-            "garlic powder": ["onion powder", "paprika", "cayenne pepper"],
-            "salt": ["sea salt", "kosher salt", "pink Himalayan salt"],
-            "pepper": ["black pepper", "white pepper", "cayenne pepper"],
-            "canned tuna": ["canned salmon", "canned sardines", "canned mackerel"],
-            "mayonnaise": ["Greek yogurt", "avocado", "hummus"],
-            "celery": ["bell peppers", "cucumber", "carrots"],
-            "lettuce": ["spinach", "arugula", "kale"],
-            "tortillas": ["lettuce wraps", "collard green wraps", "rice paper wraps"]
-        }
-
-        return alternative_dict.get(ingredient, [])
 
 
 class ActionRecipeStorageRecommendation(Action):
