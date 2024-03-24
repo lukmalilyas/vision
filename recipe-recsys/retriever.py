@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from pinecone import Pinecone
 import configparser
@@ -11,7 +12,7 @@ config.read('config.conf')
 # embedding model from hugging face
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
-# initialize pinecone
+# init pinecone
 api_key = config.get('VECTORDB', 'API_KEY')
 pc_index = config.get('VECTORDB', 'INDEX')
 init = Pinecone(api_key=api_key)
@@ -20,6 +21,20 @@ index = init.Index(pc_index)
 # init fastAPI
 app = FastAPI()
 
+# Configure CORS
+origins = [
+    "http://localhost",
+    "http://localhost:8000",
+    "http://127.0.0.1",
+    "http://127.0.0.1:8000",
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+)
 
 # pydantic class for user query
 class UserQuery(BaseModel):
@@ -31,9 +46,8 @@ async def process_text(query_data: UserQuery):
     input_text = query_data.user_query
 
     response = pinecone_call(input_text)
-    ingredients, instructions, titles = construct_answer(response)
-    return {"titles": titles, "ingredients": ingredients, "instructions": instructions}
-
+    final_answer = construct_answer(response)
+    return {"response": final_answer}
 
 # pinecone query function
 def pinecone_call(query):
@@ -50,7 +64,6 @@ def pinecone_call(query):
 
     return result
 
-
 # function to construct final answer
 def construct_answer(json_response):
     ingredients_list = []
@@ -64,8 +77,20 @@ def construct_answer(json_response):
         title = match['metadata']['title']
 
         # Add them to respective lists
-        ingredients_list.append(ingredients)
+        ingredients_string = ', '.join(ingredients)
+        ingredients_string = ingredients_string.replace('ADVERTISEMENT', '')
+
+        ingredients_list.append(ingredients_string)
         instructions_list.append(instructions)
         titles_list.append(title)
 
-    return ingredients_list, instructions_list, titles_list
+    final_answer = f'''With the ingredients you have you can prepare the following four dishes,
+    dish no : {1} is {titles_list[0]}, and for that you will need - {ingredients_list[0]}. Now {instructions_list[0]}.
+    dish no : {2} is {titles_list[1]}, and for that you will need - {ingredients_list[1]}. Now {instructions_list[1]}.
+    dish no : {3} is {titles_list[2]}, and for that you will need - {ingredients_list[2]}. Now {instructions_list[2]}.
+    dish no : {4} is {titles_list[3]}, and for that you will need - {ingredients_list[3]}. Now {instructions_list[3]}.
+    Enjoy your day.
+    '''
+
+    return final_answer
+

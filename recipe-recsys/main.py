@@ -50,7 +50,7 @@ with open('contents/recipes_raw_nosource_ar.json', 'r') as file:
                     {
                         "id": str(count),
                         "values": embeddings,
-                        "metadata": {"title": title, "ingredients": ingredients, "instructions": instructions}
+                        "metadata": {"title": title, "ingredients": ingredients, "instructions": instructions, "confidence_score": confidence_score}
                     }
                 ]
             )
