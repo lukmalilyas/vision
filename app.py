@@ -3,6 +3,7 @@ from speech_to_text import recognize_speech
 import requests
 import subprocess
 
+
 RASA_API_URL = 'http://localhost:5005/webhooks/rest/webhook'
 app = Flask(__name__, static_url_path='/static')
 
@@ -21,8 +22,8 @@ start_rasa_server()
 
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+def chatbot():
+    return render_template('chatbot.html')
 
 
 @app.route('/transcribe', methods=['POST'])

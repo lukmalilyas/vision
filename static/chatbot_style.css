@@ -35,12 +35,12 @@ body{
     align-items: center;
 }
 .container .top-part .agent-details i {
-    padding: 10px; 
-    font-size: 30px; 
-    color: #fff; 
-    background-color: #0f0f20; 
-    border: 2px solid #fff; 
-    border-radius: 50%; 
+    padding: 10px;
+    font-size: 30px;
+    color: #fff;
+    background-color: #0f0f20;
+    border: 2px solid #fff;
+    border-radius: 50%;
 }
 .top-part .agent-text{
     margin-left: 10px;

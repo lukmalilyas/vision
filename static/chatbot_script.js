@@ -1,11 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
+//    console.log('DOMContentLoaded event triggered');
+//    const recordButton = document.getElementById('record-button');
+//    const chatbox = document.getElementById('chatbox');
+//
+//    const recognition = new webkitSpeechRecognition();
+//    recognition.continuous = true;
+//    recognition.lang = 'en-US';
     console.log('DOMContentLoaded event triggered');
     const recordButton = document.getElementById('record-button');
     const chatbox = document.getElementById('chatbox');
+    let isListening = false;
 
     const recognition = new webkitSpeechRecognition();
     recognition.continuous = true;
     recognition.lang = 'en-US';
+
+    recognition.onstart = function() {
+        console.log('Speech recognition started');
+        isListening = true;
+    };
+
+    recognition.onend = function() {
+        console.log('Speech recognition ended');
+        if (isListening) {
+            recognition.start();
+        }
+    };
 
     recognition.onresult = function(event) {
         console.log('Speech recognition result:', event);
