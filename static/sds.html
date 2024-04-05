@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Recognition using Webcam</title>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.2"></script>
+</head>
+<body>
+    <video id="videoElement" width="400" height="300" autoplay></video>
+    <canvas id="canvas" style="display:none;"></canvas>
+    <div id="output"></div>
+
+    <script>
+        // Access webcam
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                var video = document.getElementById('videoElement');
+                video.srcObject = stream;
+                video.play();
+            })
+            .catch(function (err) {
+                console.log("An error occurred: " + err);
+            });
+
+        // Function to recognize text
+        async function recognizeText() {
+            var video = document.getElementById('videoElement');
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+
+            try {
+                // Convert canvas to blob
+                canvas.toBlob(async function(blob) {
+                    if (!blob) {
+                        console.error("Error: Failed to convert canvas to blob.");
+                        return;
+                    }
+                    
+                    try {
+                        const { data: { text } } = await Tesseract.recognize(blob, 'eng', { logger: m => console.log(m) });
+                        document.getElementById('output').textContent = text;
+                    } catch (error) {
+                        console.error("Error during recognition:", error);
+                    }
+                }, 'image/jpeg');
+            } catch (error) {
+                console.error("Error while processing canvas:", error);
+            }
+        }
+
+        // Interval for continuous text recognition
+        setInterval(recognizeText, 2000); // Adjust interval as needed
+    </script>
+</body>
+</html>

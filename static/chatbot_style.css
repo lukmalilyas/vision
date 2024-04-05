@@ -2,7 +2,6 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"poppins";
     color:#fff;
 }
 body{
@@ -14,10 +13,10 @@ body{
     align-items: center;
     min-height: 100vh;
 }
-.container{
+.container {
     height: 550px;
     width: 390px;
-    border: 3px solid rgba(255, 255, 255,.5);
+    border: 3px solid #000; /* Black border */
     border-radius: 20px;
     background: #fff;
     overflow: hidden;

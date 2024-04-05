@@ -1,0 +1,24 @@
+#page {
+    position: absolute;
+    bottom: 300px; /* Adjust this value to move the div upwards */
+    left: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#webcam-container {
+    display: flex;
+
+}
+
+#label-container {
+    padding-left: 50px;
+
+}
+
+footer{
+	margin-top: 600px;
+	
+}

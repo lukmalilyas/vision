@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webcam Text Extraction</title>
+</head>
+<body>
+  <h1>Webcam Text Extraction</h1>
+  <video id="video" width="640" height="480" autoplay></video>
+  <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+  <div id="output"></div>
+
+  <!-- Include your JavaScript file as a module -->
+  <script type="module">
+    import Tesseract from "D:/Youtube/TensorFlow Object Detection/TFODApp/node_modules/tesseract.js/dist/tesseract.js"; // Adjust the path as needed
+
+    // Access webcam
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function(stream) {
+        var video = document.getElementById('video');
+        video.srcObject = stream;
+        video.play();
+      })
+      .catch(function(err) {
+        console.log("An error occurred: " + err);
+      });
+
+    // Function to capture and process video frames
+    function captureFrame() {
+      var video = document.getElementById('video');
+      var canvas = document.getElementById('canvas');
+      var context = canvas.getContext('2d');
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+      // Extract text using Tesseract.js
+      Tesseract.recognize(
+        canvas,
+        'eng',
+        { logger: m => console.log(m) }
+      ).then(({ data: { text } }) => {
+        document.getElementById('output').innerText = text;
+      });
+    }
+
+    // Capture and process frame every 2 seconds
+    setInterval(captureFrame, 2000);
+  </script>
+</body>
+</html>
