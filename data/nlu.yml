@@ -1,0 +1,441 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+
+- intent: thanks
+  examples: |
+    - thanks
+    - thank you
+    - appreciate it
+    - many thanks
+
+- intent: general_cooking_tips
+  examples: |
+    - Can you share some general cooking tips?
+    - What are some cooking hacks for beginners?
+    - Provide me with useful tips for cooking.
+    - Share some tricks to enhance my cooking skills.
+    - Any advice for someone new to cooking?
+
+- intent: cooking_time_management
+  examples: |
+    - How can I manage my cooking time more efficiently?
+    - Any tips for multitasking in the kitchen?
+    - Help me with time management while cooking.
+    - How do I coordinate different cooking times for a meal?
+    - Tips for preparing meals quickly and effectively.
+
+- intent: storing_leftovers
+  examples: |
+    - How should I store leftovers to maintain freshness?
+    - Can you provide guidelines for storing cooked food?
+    - What's the best way to store leftover ingredients?
+    - Tips for preserving food for later use.
+    - How do I prevent leftovers from spoiling?
+
+- intent: kitchen_tools_and_utensils
+  examples: |
+    - What are essential kitchen tools and utensils for beginners?
+    - Can you provide a list of basic kitchen tools every beginner should have?
+    - What essential utensils do I need to start cooking at home?
+    - Share recommendations for must-have kitchen tools for novice cooks.
+    - What tools are essential for someone setting up their first kitchen?
+
+- intent: meal_preparation_techniques
+  examples: |
+    - What are some time-saving meal preparation techniques?
+    - Can you provide tips for efficient meal prep to save time during the week?
+    - Share techniques for preparing ingredients in advance for quick meals.
+    - What are some make-ahead meal preparation strategies?
+    - Can you suggest time-saving chopping and dicing techniques?
+
+- intent: flavor_enhancement_techniques
+  examples: |
+    - How can I enhance the flavor of my dishes naturally?
+    - Provide tips on using herbs and spices to elevate the taste of dishes.
+    - What are some natural flavor enhancers for savory and sweet recipes?
+    - Share insights into using umami-rich ingredients for enhanced taste.
+    - What cooking methods can enhance the natural flavors of ingredients?
+
+- intent: cooking_techniques
+  examples: |
+    - What are some essential cooking techniques I should learn?
+    - Can you explain different cooking methods like sautéing and braising?
+    - Share tips for mastering cooking techniques such as frying and steaming.
+    - What cooking techniques are suitable for different types of ingredients?
+    - Provide insights into advanced cooking techniques for experienced home cooks.
+
+- intent: recipe_adaptation
+  examples: |
+    - How can I adapt a recipe to make it healthier?
+    - Can you suggest substitutions to make a recipe vegetarian?
+    - Share tips for adapting recipes to accommodate dietary restrictions.
+    - What adjustments can I make to a recipe to suit my taste preferences?
+    - Provide guidelines for modifying recipes to use seasonal ingredients.
+
+- intent: food_safety
+  examples: |
+    - What are some food safety practices every cook should follow?
+    - Can you explain proper food handling procedures to prevent contamination?
+    - Share tips for storing raw meat and poultry safely in the refrigerator.
+    - How can I ensure food is cooked to the right temperature to prevent foodborne illnesses?
+    - Provide insights into avoiding cross-contamination while preparing meals.
+
+- intent: ingredient_selection
+  examples: |
+    - How do I choose the best-quality ingredients for cooking?
+    - Can you provide tips for selecting ripe fruits and vegetables?
+    - Share insights into choosing fresh seafood and poultry at the market.
+    - What factors should I consider when buying grains and legumes?
+    - Provide guidance on selecting herbs and spices for optimal flavor in dishes.
+
+- intent: culinary_resources
+  examples: |
+    - Where can I find reliable culinary resources for learning cooking techniques?
+    - Can you recommend websites or books for expanding my culinary knowledge?
+    - Share insights into reputable cooking blogs and YouTube channels for beginners.
+    - What online courses or cooking classes do you recommend for home cooks?
+    - Provide guidance on finding local cooking workshops or culinary events to attend.
+
+- intent: dish_help
+  examples: |
+    - Can you help me make a [spaghetti aglio e olio]{"entity": "recipe"}?
+    - I need assistance with preparing a [spaghetti aglio e olio]{"entity": "recipe"}.
+    - Help me with the recipe for a [spaghetti aglio e olio]{"entity": "recipe"}.
+    - Can you guide me through making a [spaghetti aglio e olio]{"entity": "recipe"}?
+    - I'm looking for some help with a [spaghetti aglio e olio]{"entity": "recipe"}.
+    - Could you assist me in cooking a [spaghetti aglio e olio]{"entity": "recipe"}?
+
+- intent: recipe_calories
+  examples: |
+    - What's the calorie count for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you provide information about the calories in [spaghetti aglio e olio]{"entity": "recipe"}?
+    - How many calories does [spaghetti aglio e olio]{"entity": "recipe"} have?
+    - Tell me about the calorie content of [spaghetti aglio e olio]{"entity": "recipe"}.
+    - I'm curious about the caloric content of [spaghetti aglio e olio]{"entity": "recipe"}.
+
+- intent: recipe_vegetarian_version
+  examples: |
+    - Is there a vegetarian version of [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can I make [spaghetti aglio e olio]{"entity": "recipe"} without meat?
+    - What are the vegetarian options for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Provide a meat-free variation for [spaghetti aglio e olio]{"entity": "recipe"}.
+    - How can I make [spaghetti aglio e olio]{"entity": "recipe"} vegetarian?
+
+- intent: recipe_preparation_time
+  examples: |
+    - What's the total preparation time of [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you give an estimate of the cooking time of [spaghetti aglio e olio]{"entity": "recipe"}?
+    - How much time should I allocate for cooking [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Tell me about the time required for preparation of [spaghetti aglio e olio]{"entity": "recipe"}.
+    - How long does it take to make [spaghetti aglio e olio]{"entity": "recipe"}.
+
+- intent: recipe_required_equipment
+  examples: |
+    - What kitchen tools do I need for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - List the equipment required to make [spaghetti aglio e olio]{"entity": "recipe"}.
+    - Are there any specific utensils I should use when making [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Tell me about the necessary kitchen appliances when making [spaghetti aglio e olio]{"entity": "recipe"}.
+    - Mention the tools needed for cooking [spaghetti aglio e olio]{"entity": "recipe"}.
+
+- intent: recipe_allergens
+  examples: |
+    - Are there any common allergens in [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Do I need to be cautious about allergies with [spaghetti aglio e olio]{"entity": "recipe"}?
+    - What allergens should I be aware of [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Any potential allergens in [spaghetti aglio e olio]{"entity": "recipe"}?
+    - List the ingredients that may cause allergies of [spaghetti aglio e olio]{"entity": "recipe"}.
+
+- intent: recipe_difficulty_level
+  examples: |
+    - How difficult is it to make [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Is [spaghetti aglio e olio]{"entity": "recipe"} suitable for beginners?
+    - Tell me about the cooking complexity for [spaghetti aglio e olio]{"entity": "recipe"}.
+    - Provide information on the skill level required for [spaghetti aglio e olio]{"entity": "recipe"}.
+
+- intent: recipe_side_dish_recommendation
+  examples: |
+    - Any suggestions for a side dish that pairs well with [spaghetti aglio e olio]{"entity": "recipe"}?
+    - What side dishes complement [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Recommend a good side dish for [spaghetti aglio e olio]{"entity": "recipe"}.
+    - Tell me about side options for [spaghetti aglio e olio]{"entity": "recipe"}.
+    - Suggest some sides to serve with [spaghetti aglio e olio]{"entity": "recipe"}.
+
+- intent: recipe_hazards
+  examples: |
+    - Are there any safety hazards I should be aware of when making [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you list potential risks or hazards associated with preparing [spaghetti aglio e olio]{"entity": "recipe"}?
+    - What precautions should I take while making [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Are there any safety concerns when cooking [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Tell me about possible hazards involved in preparing [spaghetti aglio e olio]{"entity": "recipe"}.
+    - Are there specific dangers or risks related to [spaghetti aglio e olio]{"entity": "recipe"} that I should know?
+
+- intent: recipe_storage_recommendation
+  examples: |
+    - How should I store leftovers of [spaghetti aglio e olio]{"entity": "recipe"} to maintain freshness?
+    - What's the best way to store [spaghetti aglio e olio]{"entity": "recipe"} for later consumption?
+    - Can [spaghetti aglio e olio]{"entity": "recipe"} be frozen for future use?
+    - Should I refrigerate [spaghetti aglio e olio]{"entity": "recipe"} or leave it at room temperature?
+    - What are the storage guidelines for [spaghetti aglio e olio]{"entity": "recipe"}?
+    
+- intent: recipe_taste_adjustment
+  examples: |
+    - How can I adjust the sweetness of [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can I make [spaghetti aglio e olio]{"entity": "recipe"} less spicy?
+    - What can I do to enhance the flavor of [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Is there a way to make [spaghetti aglio e olio]{"entity": "recipe"} more tangy?
+    - Can I reduce the saltiness of [spaghetti aglio e olio]{"entity": "recipe"} without affecting the taste?
+
+- intent: recipe_health_info
+  examples: |
+    - Does [spaghetti aglio e olio]{"entity": "recipe"} fall under a health food meal?
+    - Is [spaghetti aglio e olio]{"entity": "recipe"} considered a healthy meal option?
+    - Is it good to consume a lot of [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Does [spaghetti aglio e olio]{"entity": "recipe"} provide a good balance of nutrients for a healthy diet?
+    - Can [spaghetti aglio e olio]{"entity": "recipe"} be part of a weight-loss meal plan?
+
+- intent: recipe_cuisine_origin
+  examples: |
+    - Where does [spaghetti aglio e olio]{"entity": "recipe"} originate from?
+    - Is [spaghetti aglio e olio]{"entity": "recipe"} a traditional dish from a specific region?
+    - What cultural influences are present in [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you tell me about the culinary heritage of [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Is [spaghetti aglio e olio]{"entity": "recipe"} considered to be part of a particular cuisine?
+
+- intent: recipe_nutrition_value
+  examples: |
+    - What is the nutritional value of [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you provide the nutrition information for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - What are the nutritional details of [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Do you have information on the nutrients in [spaghetti aglio e olio]{"entity": "recipe"}?
+    - How many carbohydrates/ proteins/ fats/ vitamins are there in [spaghetti aglio e olio]{"entity": "recipe"}?
+
+- intent: baking_time_and_temperature
+  examples: |
+    - How long should I bake [spaghetti aglio e olio]{"entity": "recipe"}?
+    - What temperature and duration do you recommend for baking [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you provide guidance on the baking time for a [spaghetti aglio e olio]{"entity": "recipe"}?
+    - How do I adjust the oven temperature when baking [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Share tips for determining the right baking time for [spaghetti aglio e olio]{"entity": "recipe"}.
+    - How long does it take to bake [spaghetti aglio e olio]{"entity": "recipe"}?
+
+- intent: grilling_techniques
+  examples: |
+    - What's the ideal grilling time for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - How do I prevent [spaghetti aglio e olio]{"entity": "recipe"} from drying out on the grill?
+    - Can you provide tips on grilling [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Share the recommended grilling duration for [spaghetti aglio e olio]{"entity": "recipe"}.
+    - How long should i grill [spaghetti aglio e olio]{"entity": "recipe"}.
+
+- intent: sauteing_and_pan_frying
+  examples: |
+    - How long should I sauté [spaghetti aglio e olio]{"entity": "recipe"}?
+    - What's the cooking time for pan-frying [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you provide guidance on sautéing [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Share tips for achieving a crispy texture when pan-frying [spaghetti aglio e olio]{"entity": "recipe"}.
+    - How do I adjust the heat when sautéing [spaghetti aglio e olio]{"entity": "recipe"}?
+
+- intent: boiling_and_simmering
+  examples: |
+    - What's the recommended boiling time for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - How long should I simmer a [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you provide guidance on boiling [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Share tips for cooking [spaghetti aglio e olio]{"entity": "recipe"} to perfection through boiling.
+    - What's the ideal simmering time for a [spaghetti aglio e olio]{"entity": "recipe"}?
+
+- intent: roasting_techniques
+  examples: |
+    - How long should I roast [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Share tips for achieving a crispy skin when roasting [spaghetti aglio e olio]{"entity": "recipe"}.
+    - What's the recommended roasting time for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you provide guidance on roasting [spaghetti aglio e olio]{"entity": "recipe"}?
+    - How do I adjust the oven temperature for slow-roasting [spaghetti aglio e olio]{"entity": "recipe"}?
+
+- intent: marinating_duration
+  examples: |
+    - How long should I marinate [spaghetti aglio e olio]{"entity": "recipe"}?
+    - What's the recommended marinating time for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you provide guidance on marinating [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Share tips for enhancing flavor through marinating [spaghetti aglio e olio]{"entity": "recipe"}.
+    - How do I adjust the marinating time for [spaghetti aglio e olio]{"entity": "recipe"}?
+
+- intent: chopping_and_cutting_techniques
+  examples: |
+    - How finely should I chop the ingredients for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - What's the best cutting technique for ingredients in [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you provide guidance on chopping ingredients for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Share tips for efficient cutting in [spaghetti aglio e olio]{"entity": "recipe"}.
+    - How do I chop the ingredients for [spaghetti aglio e olio]{"entity": "recipe"}?
+
+- intent: seasoning_and_spices
+  examples: |
+    - What spices should I use for seasoning [spaghetti aglio e olio]{"entity": "recipe"}?
+    - How much salt and pepper do you recommend for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you provide guidance on the seasoning for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Share tips for balancing flavors with spices in [spaghetti aglio e olio]{"entity": "recipe"}.
+    - How do I adjust the seasoning for [spaghetti aglio e olio]{"entity": "recipe"}?
+
+- intent: garnishing_and_presentation
+  examples: |
+    - What's the best garnish for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - How should I plate [spaghetti aglio e olio]{"entity": "recipe"} for presentation?
+    - Can you provide guidance on garnishing [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Share tips for enhancing the visual appeal of [spaghetti aglio e olio]{"entity": "recipe"}.
+    - How do I arrange the ingredients for [spaghetti aglio e olio]{"entity": "recipe"} on the plate?
+
+- intent: resting_and_serving
+  examples: |
+    - How long should [spaghetti aglio e olio]{"entity": "recipe"} rest before serving?
+    - When is the best time to serve [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you provide guidance on resting and serving [spaghetti aglio e olio]{"entity": "recipe"}?
+    - How do I keep [spaghetti aglio e olio]{"entity": "recipe"} warm before serving?
+    - How do I serve [spaghetti aglio e olio]{"entity": "recipe"} in a more pleasing way?
+
+- intent: sauce_and_dressing
+  examples: |
+    - What type of sauce pairs well with [spaghetti aglio e olio]{"entity": "recipe"}?
+    - How should I adjust the dressing for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you provide guidance on making sauce for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Share tips for creating a flavorful dressing for [spaghetti aglio e olio]{"entity": "recipe"}.
+    - How do I thicken the sauce for [spaghetti aglio e olio]{"entity": "recipe"}?
+
+- intent: recipe_info
+  examples: |
+    - What are the ingredients for [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Whats the recipe for creating [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you tell me the ingredients of [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can u tell me the recipe in making [spaghetti aglio e olio]{"entity": "recipe"}?
+    - What do I need to make [spaghetti aglio e olio]{"entity": "recipe"}?
+    - List the ingredients for [spaghetti aglio e olio]{"entity": "recipe"}
+    - What are the instructions for creating [spaghetti aglio e olio]{"entity": "recipe"}?
+    - Can you tell me the instructions of creating [spaghetti aglio e olio]{"entity": "recipe"}?
+    - What instructions do I need to make [spaghetti aglio e olio]{"entity": "recipe"}?
+    - List the instructions for creating [spaghetti aglio e olio]{"entity": "recipe"}
+
+- intent: inform_recipe
+  examples: |
+    - [Spaghetti Aglio e Olio](recipe)
+    - [Caprese Salad](recipe)
+    - [Chicken Stir Fry](recipe)
+    - [Vegetarian Quesadillas](recipe)
+    - [Pasta Primavera](recipe)
+    - [Omelette](recipe)
+    - [Tomato Basil Bruschetta](recipe)
+    - [Mushroom Risotto](recipe)
+    - [Honey Mustard Baked Chicken](recipe)
+    - [Tuna Salad Wrap](recipe)
+
+- lookup: recipe
+  examples: |
+    - spaghetti aglio e olio
+    - caprese salad
+    - chicken stir fry
+    - vegetarian quesadillas
+    - pasta primavera
+    - omelette
+    - tomato basil bruschetta
+    - mushroom risotto
+    - honey mustard baked chicken
+    - tuna salad wrap
+
+- synonym: Spaghetti Aglio e Olio
+  examples: |
+    - spaghetti aglio e olio
+    - spaghetti aglio olio
+    - aglio e olio
+    - garlic and oil pasta
+    - pasta with garlic and olive oil
+    - traditional Italian spaghetti
+
+- synonym: Caprese Salad
+  examples: |
+    - caprese salad
+    - caprese
+    - tomato and mozzarella salad
+    - Italian salad
+    - fresh tomato and cheese salad
+
+- synonym: Chicken Stir Fry
+  examples: |
+    - chicken stir fry
+    - stir fried chicken
+    - Asian style chicken
+    - quick chicken stir fry
+    - chicken and vegetable stir fry
+
+- synonym: Vegetarian Quesadillas
+  examples: |
+    - vegetarian quesadillas
+    - quesadillas
+    - veggie quesadillas
+    - cheese and veggie wraps
+    - meatless quesadillas
+    - Mexican cheese tortillas
+
+- synonym: Pasta Primavera
+  examples: |
+    - pasta primavera
+    - vegetable pasta
+    - primavera pasta
+    - colorful vegetable spaghetti
+    - pasta with mixed veggies
+
+- synonym: Omelette
+  examples: |
+    - omelette
+    - egg omelette
+    - fluffy egg dish
+    - savory egg pancake
+    - classic breakfast omelet
+
+- synonym: Tomato Basil Bruschetta
+  examples: |
+    - tomato basil bruschetta
+    - bruschetta
+    - Italian appetizer
+    - tomato and basil toast
+    - crispy tomato bread
+
+- synonym: Mushroom Risotto
+  examples: |
+    - mushroom risotto
+    - risotto
+    - creamy mushroom rice
+    - Italian mushroom rice
+    - savory risotto with mushrooms
+
+- synonym: Honey Mustard Bake Chicken
+  examples: |
+    - honey mustard baked chicken
+    - mustard baked chicken
+    - mustard
+    - honey mustard bake chicken
+    - mustard bake chicken
+    - honey mustard
+
+- synonym: Tuna Salad Wrap
+  examples: |
+    - tuna salad wrap
+    - tuna salad
+    - salad
+    - wrap with tuna salad
+    - tuna filled wrap
+    - light tuna sandwich wrap
+    - Mediterranean tuna wrap

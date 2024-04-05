@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>VISION | CHATBOT</title>
+    <link rel="stylesheet" href="../static/chatbot_style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" >
+</head>
+<body>
+    <div class="main-div">
+        <div class="container">
+            <div class="top-part">
+                <div class="agent-details">
+                    <i class="fa-solid fa-robot"></i>
+                    <div class="agent-text">
+                        <h3>Vision Chatbot</h3>
+                        <span>(Online)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-section" id="chatbox">
+                <div class="left-part">
+                    <div class="agent-chart">
+                        <i class="fa-solid fa-robot"></i>
+                        <p>Hey! there any questions?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-section">
+                <button id="record-button" class="microphone-button">
+                    <i class='bx bx-microphone'></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='chatbot_script.js') }}"></script>
+</body>
+</html>

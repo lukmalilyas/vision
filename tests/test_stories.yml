@@ -1,0 +1,259 @@
+stories:
+  - story: greet and ask for cooking tips
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: general_cooking_tips
+      - action: utter_general_cooking_tips
+
+  - story: inquire about cooking time management
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: cooking_time_management
+      - action: utter_cooking_time_management
+
+  - story: ask about storing leftovers
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: storing_leftovers
+      - action: utter_storing_leftovers
+
+  - story: inquire about essential kitchen tools
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: kitchen_tools_and_utensils
+      - action: utter_kitchen_tools_and_utensils
+
+  - story: ask for meal preparation techniques
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: meal_preparation_techniques
+      - action: utter_meal_preparation_techniques
+
+  - story: inquire about flavor enhancement techniques
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: flavor_enhancement_techniques
+      - action: utter_flavor_enhancement_techniques
+
+  - story: ask about cooking techniques
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: cooking_techniques
+      - action: utter_cooking_techniques
+
+  - story: inquire about recipe adaptation
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_adaptation
+      - action: utter_recipe_adaptation
+
+  - story: ask about food safety practices
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: food_safety
+      - action: utter_food_safety
+
+  - story: inquire about ingredient selection tips
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ingredient_selection
+      - action: utter_ingredient_selection
+
+  - story: ask for culinary resources
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: culinary_resources
+      - action: utter_culinary_resources
+
+  - story: inquire about recipe calories
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_calories
+      - action: action_get_recipe_calories
+
+  - story: ask for a vegetarian version of a recipe
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_vegetarian_version
+      - action: action_get_recipe_vegetarian_version
+
+  - story: inquire about recipe preparation time
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_preparation_time
+      - action: action_get_recipe_preparation_time
+
+  - story: ask about required equipment for a recipe
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_required_equipment
+      - action: action_get_recipe_required_equipment
+
+  - story: inquire about allergens in a recipe
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_allergens
+      - action: action_get_recipe_allergens
+
+  - story: ask about the difficulty level of a recipe
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_difficulty_level
+      - action: action_get_recipe_difficulty_level
+
+  - story: inquire about side dish recommendations for a recipe
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_side_dish_recommendation
+      - action: action_get_recipe_side_dish_recommendation
+
+  - story: ask about hazards associated with a recipe
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_hazards
+      - action: action_get_recipe_hazards
+
+  - story: inquire about storage recommendations for a recipe
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_storage_recommendation
+      - action: action_recipe_storage_recommendation
+
+  - story: ask about taste adjustment for a recipe
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_taste_adjustment
+      - action: action_recipe_taste_adjustment
+
+  - story: inquire about health information related to a recipe
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_health_info
+      - action: action_recipe_health_info
+
+  - story: ask about the origin of a recipe
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_cuisine_origin
+      - action: action_recipe_origin
+
+  - story: inquire about the nutrition value of a recipe
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_nutrition_value
+      - action: action_get_recipe_nutrition
+
+  - story: inquire about baking time and temperature
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: baking_time_and_temperature
+      - action: action_baking_time_and_temperature
+
+  - story: ask about grilling techniques
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: grilling_techniques
+      - action: action_grilling_techniques
+
+  - story: inquire about sautéing and pan-frying
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: sauteing_and_pan_frying
+      - action: action_sauteing_and_pan_frying
+
+  - story: ask about boiling and simmering
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: boiling_and_simmering
+      - action: action_boiling_and_simmering
+
+  - story: inquire about roasting techniques
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: roasting_techniques
+      - action: action_roasting_techniques
+
+  - story: ask about marinating duration
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: marinating_duration
+      - action: action_marinating_duration
+
+  - story: inquire about chopping and cutting techniques
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: chopping_and_cutting_techniques
+      - action: action_chopping_cutting_techniques
+
+  - story: ask about seasoning and spices
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: seasoning_and_spices
+      - action: action_seasoning_and_spices
+
+  - story: inquire about garnishing and presentation
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: garnishing_and_presentation
+      - action: action_garnishing_and_presentation
+
+  - story: ask about resting and serving
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: resting_and_serving
+      - action: action_resting_and_serving
+
+  - story: inquire about sauce and dressing
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: sauce_and_dressing
+      - action: action_sauce_and_dressing
+
+  - story: ask for recipe information
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: recipe_info
+      - action: action_retrieve_recipe_info
+
+  - story: when the user re-enters the recipe name
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_recipe
+      - action: action_set_dish_name

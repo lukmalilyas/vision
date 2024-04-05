@@ -1,0 +1,18 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Greet he user whenever the user greets
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Expressing Gratitude Rule
+  steps:
+  - intent: thanks
+  - action: utter_thanks

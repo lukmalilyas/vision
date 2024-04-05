@@ -1,0 +1,220 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thanks
+  - general_cooking_tips
+  - cooking_time_management
+  - storing_leftovers
+  - kitchen_tools_and_utensils
+  - meal_preparation_techniques
+  - flavor_enhancement_techniques
+  - cooking_techniques
+  - recipe_adaptation
+  - food_safety
+  - ingredient_selection
+  - culinary_resources
+  - dish_help:
+      use_entities: true
+  - recipe_calories:
+      use_entities: true
+  - recipe_vegetarian_version:
+      use_entities: true
+  - recipe_preparation_time:
+      use_entities: true
+  - recipe_required_equipment:
+      use_entities: true
+  - recipe_allergens:
+      use_entities: true
+  - recipe_difficulty_level:
+      use_entities: true
+  - recipe_side_dish_recommendation:
+      use_entities: true
+  - recipe_hazards:
+      use_entities: true
+  - recipe_storage_recommendation:
+      use_entities: true
+  - recipe_taste_adjustment:
+      use_entities: true
+  - recipe_health_info:
+      use_entities: true
+  - recipe_cuisine_origin:
+      use_entities: true
+  - recipe_nutrition_value:
+      use_entities: true
+  - baking_time_and_temperature:
+      use_entities: true
+  - grilling_techniques:
+      use_entities: true
+  - sauteing_and_pan_frying:
+      use_entities: true
+  - boiling_and_simmering:
+      use_entities: true
+  - roasting_techniques:
+      use_entities: true
+  - marinating_duration:
+      use_entities: true
+  - chopping_and_cutting_techniques:
+      use_entities: true
+  - seasoning_and_spices:
+      use_entities: true
+  - garnishing_and_presentation:
+      use_entities: true
+  - resting_and_serving:
+      use_entities: true
+  - sauce_and_dressing:
+      use_entities: true
+  - recipe_info:
+      use_entities: true
+  - inform_recipe:
+      use_entities: true
+
+entities:
+  - recipe
+
+slots:
+  recipe:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: recipe
+
+responses:
+  utter_greet:
+    - text: "Hey! How can I assist you today related to cooking?"
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_thanks:
+    - text: "You are welcome, it was my pleasure to assist you"
+
+  utter_general_cooking_tips:
+    - text: "Sure! Here are some general cooking tips:\n1. Always read the recipe thoroughly before starting.\n2. Keep your knives sharp for efficient chopping.\n3. Taste as you go to adjust seasoning.\n4. Use fresh and high-quality ingredients.\n5. Don't overcrowd the pan for better cooking results."
+
+  utter_cooking_time_management:
+    - text: "Effective time management is crucial in the kitchen! Here are some tips:\n1. Prep ingredients before you start cooking.\n2. Prioritize tasks and create a cooking schedule.\n3. Use timers to avoid overcooking or burning.\n4. Clean as you go to minimize post-cooking cleanup time.\n5. Learn to multitask for more efficient cooking."
+
+  utter_storing_leftovers:
+    - text: "To store leftovers properly:\n1. Allow hot food to cool before refrigerating.\n2. Use airtight containers to prevent odors and maintain freshness.\n3. Label containers with the date to track shelf life.\n4. Store similar items together for easy access.\n5. Consume leftovers within a safe timeframe to ensure quality."
+
+  utter_kitchen_tools_and_utensils:
+    - text: "Certainly! Here's a list of essential kitchen tools and utensils for beginners:
+        \n1. Chef's knife: A versatile knife for chopping, slicing, and dicing.
+        \n2. Cutting board: To provide a stable surface for food preparation.
+        \n3. Pots and pans: Basic cookware for boiling, sautéing, and frying.
+        \n4. Wooden spoons: Ideal for stirring and mixing without scratching cookware.
+        \n5. Measuring cups and spoons: For precise ingredient measurements.
+        \n6. Mixing bowls: Essential for combining and mixing ingredients.
+        \n7. Can opener: To easily open canned goods.
+        \n8. Peeler: For removing the skin from fruits and vegetables.
+        \n9. Tongs: Useful for flipping, turning, and serving.
+        \n10. Colander: For draining pasta and washing fruits and vegetables.
+        \nThese tools will help you get started and make your cooking experience enjoyable!"
+
+  utter_meal_preparation_techniques:
+    - text: "Absolutely! Here are some time-saving meal preparation techniques:
+        \n1. Batch cooking: Prepare large quantities and store portions for later use.
+        \n2. Mise en place: Pre-measure and organize ingredients before starting to cook.
+        \n3. Use pre-cut and frozen vegetables: Save time on chopping and preparation.
+        \n4. One-pan meals: Cook multiple ingredients together in a single pan for easy cleanup.
+        \n5. Pre-marinate proteins: Enhance flavor by marinating meats ahead of time.
+        \n6. Invest in kitchen gadgets: Tools like a food processor can speed up chopping.
+        \n7. Plan your meals: Create a weekly meal plan to streamline preparation.
+        \n8. Cook once, eat twice: Repurpose leftovers into new meals.
+        \nThese techniques will help you streamline your meal preparation and make cooking more efficient!"
+
+  utter_flavor_enhancement_techniques:
+    - text: "Certainly! Here are some flavor enhancement techniques to elevate your dishes:
+        \n1. Herbs and spices: Experiment with a variety of herbs and spices for added depth.
+        \n2. Citrus zest: Use lemon, lime, or orange zest to brighten flavors.
+        \n3. Infused oils: Make your own flavored oils with herbs and garlic for a gourmet touch.
+        \n4. Umami-rich ingredients: Incorporate ingredients like mushrooms, soy sauce, and miso.
+        \n5. Roasting: Enhance natural sweetness and depth by roasting vegetables and meats.
+        \n6. Caramelization: Develop rich flavors by caramelizing onions or sugars.
+        \n7. Fresh ingredients: Use high-quality, fresh produce for optimal flavor.
+        \n8. Reductions: Create flavorful sauces by reducing stocks or liquids.
+        \nThese techniques will help you create delicious and well-seasoned dishes!"
+
+  utter_cooking_techniques:
+    - text: "Certainly! Here are some essential cooking techniques you should learn:
+        \n1. Sautéing: Cooking food quickly in a small amount of oil or fat over high heat.
+        \n2. Braising: Slow-cooking food in a covered pot with a small amount of liquid.
+        \n3. Frying: Cooking food in hot oil or fat, either shallow or deep frying.
+        \n4. Steaming: Cooking food by exposing it to steam in a covered pot or steamer.
+        \n5. Grilling: Cooking food over direct heat, usually on a grill or barbecue.
+        \n6. Roasting: Cooking food in an oven using dry heat, often with added fat or oil.
+        \n7. Boiling: Cooking food in water or another liquid at a high temperature.
+        \n8. Simmering: Cooking food gently in liquid at a temperature just below boiling.
+        \n9. Poaching: Cooking food by submerging it in liquid at a low temperature.
+        \n10. Broiling: Cooking food with direct heat from above, similar to grilling but indoors.
+        \nThese techniques cover a wide range of cooking methods suitable for various types of dishes."
+
+  utter_recipe_adaptation:
+    - text: "Certainly! Here are some tips for adapting recipes to meet your needs:
+        \n1. Making recipes healthier: Substitute ingredients with healthier options, such as using whole grains instead of refined flour or reducing the amount of sugar and oil.
+        \n2. Vegetarian substitutions: Replace meat with plant-based alternatives like tofu, tempeh, or beans. You can also use vegetable broth instead of meat broth for added flavor.
+        \n3. Dietary restrictions: Identify the specific ingredients causing the restriction and find suitable substitutes. For example, use gluten-free flour for wheat allergies or dairy-free milk for lactose intolerance.
+        \n4. Taste preferences: Adjust seasoning levels, spices, or herbs according to your taste preferences. Experiment with different flavor profiles to enhance the dish to your liking.
+        \n5. Seasonal ingredients: Use fresh, seasonal produce to enhance flavor and nutrition. Modify recipes to incorporate seasonal fruits and vegetables for a fresher taste and added variety.
+        \nBy following these guidelines, you can adapt recipes to align with your dietary needs, taste preferences, and the availability of seasonal ingredients."
+
+  utter_food_safety:
+    - text: "Absolutely! Here are some essential food safety practices to keep in mind:
+        \n1. Proper food handling: Wash hands thoroughly before and after handling food, especially raw meats and poultry. Use separate cutting boards and utensils for raw and cooked foods to prevent cross-contamination.
+        \n2. Storage guidelines: Store raw meat and poultry on the bottom shelf of the refrigerator to prevent drips onto other foods. Keep perishable items refrigerated at or below 40°F (4°C) to slow bacterial growth.
+        \n3. Cooking temperatures: Use a food thermometer to ensure meat, poultry, seafood, and eggs are cooked to their recommended internal temperatures. This helps kill harmful bacteria and prevents foodborne illnesses.
+        \n4. Cross-contamination prevention: Clean and sanitize kitchen surfaces, utensils, and equipment after each use, especially when switching between raw and cooked foods. Avoid using the same cutting board or knife for raw meats and ready-to-eat foods without proper cleaning.
+        \nBy following these food safety practices, you can minimize the risk of foodborne illnesses and ensure the safety of your meals."
+
+  utter_ingredient_selection:
+    - text: "Of course! Here's how to choose the best-quality ingredients for your cooking:
+        \n1. Quality assessment: Look for fresh, vibrant produce with no signs of wilting or browning. For fruits and vegetables, choose ones that are firm to the touch and free of bruises or blemishes.
+        \n2. Ripeness indicators: When selecting fruits and vegetables, pay attention to their aroma, color, and texture. Ripe fruits often have a sweet fragrance and yield slightly to pressure, while ripe vegetables should be crisp and brightly colored.
+        \n3. Seafood and poultry: Opt for seafood with firm flesh, a mild aroma, and bright, clear eyes. When buying poultry, choose cuts that are plump, moist, and free of any unpleasant odors or slimy textures.
+        \n4. Grain and legume quality: Check grains and legumes for any signs of insect damage, moisture, or mold. Choose whole grains that are intact and free from added preservatives or artificial colors.
+        \n5. Spice freshness: Purchase herbs and spices from reputable sources and check for freshness by smelling them. Look for vibrant colors and avoid purchasing spices that appear dull or have lost their aroma.
+        \nBy following these guidelines, you can ensure that you're selecting the best-quality ingredients for your recipes, resulting in delicious and flavorful dishes!"
+
+  utter_culinary_resources:
+    - text: "Absolutely! Here are some reliable culinary resources to enhance your cooking skills:
+        \n1. Websites and books: Websites like [Serious Eats](https://www.seriouseats.com/), [Food52](https://food52.com/), and [The Kitchn](https://www.thekitchn.com/) offer a wealth of recipes, tutorials, and cooking tips. Books such as '[The Joy of Cooking](https://www.amazon.com/Joy-Cooking-Irma-S-Rombauer/dp/1501169718)' by Irma S. Rombauer and '[Salt, Fat, Acid, Heat](https://www.simonandschuster.com/books/Salt-Fat-Acid-Heat/Samin-Nosrat/9781476753836)' by Samin Nosrat are excellent resources for learning fundamental cooking techniques.
+        \n2. Cooking blogs and YouTube channels: Explore cooking blogs like [Simply Recipes](https://www.simplyrecipes.com/), [Smitten Kitchen](https://smittenkitchen.com/), and [Budget Bytes](https://www.budgetbytes.com/) for beginner-friendly recipes and instructional videos. YouTube channels such as [Tasty](https://www.youtube.com/c/buzzfeedtasty), [Bon Appétit](https://www.youtube.com/user/BonAppetitDotCom), and [ChefSteps](https://www.youtube.com/user/chefsteps) provide step-by-step tutorials and culinary inspiration.
+        \n3. Online courses and classes: Platforms like [Udemy](https://www.udemy.com/), [Coursera](https://www.coursera.org/), and [Skillshare](https://www.skillshare.com/) offer a variety of cooking courses taught by professional chefs and culinary experts. Look for courses that cover topics ranging from basic knife skills to advanced cooking techniques.
+        \n4. Local workshops and events: Check out local culinary schools, community centers, and gourmet food stores for cooking workshops, tasting events, and culinary demonstrations. Joining cooking clubs or attending food festivals can also provide valuable hands-on experience and networking opportunities.
+        \n5. Social media and forums: Follow reputable chefs, food bloggers, and culinary influencers on social media platforms like Instagram and Twitter for cooking tips, recipe ideas, and behind-the-scenes insights. Join online forums and cooking communities such as [Reddit's r/Cooking](https://www.reddit.com/r/Cooking/) and [ChefTalk](https://cheftalk.com/) to connect with fellow food enthusiasts and share culinary knowledge.
+        \nWith these culinary resources at your disposal, you'll have plenty of opportunities to expand your knowledge and master new cooking techniques!"
+
+actions:
+  - action_set_dish_name
+  - action_get_recipe_calories
+  - action_get_recipe_vegetarian_version
+  - action_get_recipe_preparation_time
+  - action_get_recipe_required_equipment
+  - action_get_recipe_allergens
+  - action_get_recipe_difficulty_level
+  - action_get_recipe_side_dish_recommendation
+  - action_get_recipe_hazards
+  - action_recipe_storage_recommendation
+  - action_recipe_taste_adjustment
+  - action_recipe_health_info
+  - action_recipe_origin
+  - action_get_recipe_nutrition
+  - action_baking_time_and_temperature
+  - action_grilling_techniques
+  - action_sauteing_and_pan_frying
+  - action_boiling_and_simmering
+  - action_roasting_techniques
+  - action_marinating_duration
+  - action_chopping_cutting_techniques
+  - action_seasoning_and_spices
+  - action_garnishing_and_presentation
+  - action_resting_and_serving
+  - action_sauce_and_dressing
+  - action_retrieve_recipe_info
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

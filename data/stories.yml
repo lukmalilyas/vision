@@ -1,0 +1,193 @@
+version: "3.1"
+
+stories:
+
+- story: General Cooking Tips
+  steps:
+  - intent: general_cooking_tips
+  - action: utter_general_cooking_tips
+
+- story: Cooking Time Management
+  steps:
+  - intent: cooking_time_management
+  - action: utter_cooking_time_management
+
+- story: Storing Leftovers
+  steps:
+  - intent: storing_leftovers
+  - action: utter_storing_leftovers
+
+- story: Kitchen Tools and Utensils
+  steps:
+  - intent: kitchen_tools_and_utensils
+  - action: utter_kitchen_tools_and_utensils
+
+- story: Meal Preparation Techniques
+  steps:
+  - intent: meal_preparation_techniques
+  - action: utter_meal_preparation_techniques
+
+- story: Flavor Enhancement Techniques
+  steps:
+  - intent: flavor_enhancement_techniques
+  - action: utter_flavor_enhancement_techniques
+
+- story: Cooking Techniques
+  steps:
+  - intent: cooking_techniques
+  - action: utter_cooking_techniques
+
+- story: Recipe Adaptation
+  steps:
+  - intent: recipe_adaptation
+  - action: utter_recipe_adaptation
+
+- story: Food Safety
+  steps:
+  - intent: food_safety
+  - action: utter_food_safety
+
+- story: Ingredient Selection
+  steps:
+  - intent: ingredient_selection
+  - action: utter_ingredient_selection
+
+- story: Culinary Resources
+  steps:
+  - intent: culinary_resources
+  - action: utter_culinary_resources
+
+- story: User directly asks for assistance of a dish
+  steps:
+  - intent: dish_help
+  - action: action_set_dish_name
+
+- story: User directly asks for calories of a dish
+  steps:
+  - intent: recipe_calories
+  - action: action_get_recipe_calories
+
+- story: User directly asks for vegetarian version of a dish
+  steps:
+  - intent: recipe_vegetarian_version
+  - action: action_get_recipe_vegetarian_version
+
+- story: User directly asks for preparation time of a dish
+  steps:
+  - intent: recipe_preparation_time
+  - action: action_get_recipe_preparation_time
+
+- story: User directly asks for required equipment of a dish
+  steps:
+  - intent: recipe_required_equipment
+  - action: action_get_recipe_required_equipment
+
+- story: User directly asks about allergens in a dish
+  steps:
+  - intent: recipe_allergens
+  - action: action_get_recipe_allergens
+
+- story: User directly asks about the difficulty level of a dish
+  steps:
+  - intent: recipe_difficulty_level
+  - action: action_get_recipe_difficulty_level
+
+- story: User directly asks for side dish recommendations for a dish
+  steps:
+  - intent: recipe_side_dish_recommendation
+  - action: action_get_recipe_side_dish_recommendation
+
+- story: User directly asks about hazards in a dish
+  steps:
+  - intent: recipe_hazards
+  - action: action_get_recipe_hazards
+
+- story: User seeks recommendations for storing a recipe
+  steps:
+  - intent: recipe_storage_recommendation
+  - action: action_recipe_storage_recommendation
+
+- story: User wants to adjust the taste of a recipe
+  steps:
+  - intent: recipe_taste_adjustment
+  - action: action_recipe_taste_adjustment
+
+- story: User asks for health information about a recipe
+  steps:
+  - intent: recipe_health_info
+  - action: action_recipe_health_info
+
+- story: User inquires about the cuisine origin of a recipe
+  steps:
+  - intent: recipe_cuisine_origin
+  - action: action_recipe_origin
+
+- story: User asks for nutrition value of a recipe
+  steps:
+  - intent: recipe_nutrition_value
+  - action: action_get_recipe_nutrition
+
+- story: Baking Time and Temperature
+  steps:
+  - intent: baking_time_and_temperature
+  - action: action_baking_time_and_temperature
+
+- story: Grilling Techniques
+  steps:
+  - intent: grilling_techniques
+  - action: action_grilling_techniques
+
+- story: Sauteing and Pan Frying
+  steps:
+  - intent: sauteing_and_pan_frying
+  - action: action_sauteing_and_pan_frying
+
+- story: Boiling and Simmering
+  steps:
+  - intent: boiling_and_simmering
+  - action: action_boiling_and_simmering
+
+- story: Roasting Techniques
+  steps:
+  - intent: roasting_techniques
+  - action: action_roasting_techniques
+
+- story: Marinating Duration
+  steps:
+  - intent: marinating_duration
+  - action: action_marinating_duration
+
+- story: Chopping and Cutting Techniques
+  steps:
+  - intent: chopping_and_cutting_techniques
+  - action: action_chopping_cutting_techniques
+
+- story: Seasoning and Spices
+  steps:
+  - intent: seasoning_and_spices
+  - action: action_seasoning_and_spices
+
+- story: Garnishing and Presentation
+  steps:
+  - intent: garnishing_and_presentation
+  - action: action_garnishing_and_presentation
+
+- story: Resting and Serving
+  steps:
+  - intent: resting_and_serving
+  - action: action_resting_and_serving
+
+- story: Sauce and Dressing
+  steps:
+  - intent: sauce_and_dressing
+  - action: action_sauce_and_dressing
+
+- story: Retrieve Recipe Information
+  steps:
+  - intent: recipe_info
+  - action: action_retrieve_recipe_info
+
+- story: If the user re-enters the recipe name this story will run
+  steps:
+  - intent: inform_recipe
+  - action: action_set_dish_name
