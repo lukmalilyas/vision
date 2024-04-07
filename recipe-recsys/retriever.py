@@ -27,6 +27,7 @@ origins = [
     "http://localhost:8000",
     "http://127.0.0.1",
     "http://127.0.0.1:8000",
+    "null"
 ]
 app.add_middleware(
     CORSMiddleware,
@@ -85,12 +86,11 @@ def construct_answer(json_response):
         titles_list.append(title)
 
     final_answer = f'''With the ingredients you have you can prepare the following four dishes,
-    dish no : {1} is {titles_list[0]}, and for that you will need - {ingredients_list[0]}. Now {instructions_list[0]}.
-    dish no : {2} is {titles_list[1]}, and for that you will need - {ingredients_list[1]}. Now {instructions_list[1]}.
-    dish no : {3} is {titles_list[2]}, and for that you will need - {ingredients_list[2]}. Now {instructions_list[2]}.
-    dish no : {4} is {titles_list[3]}, and for that you will need - {ingredients_list[3]}. Now {instructions_list[3]}.
+    dish number  {1} is : {titles_list[0]}, and for that you will need - {ingredients_list[0]}. Now {instructions_list[0]}.
+    dish number  {2} is : {titles_list[1]}, and for that you will need - {ingredients_list[1]}. Now {instructions_list[1]}.
+    dish number  {3} is : {titles_list[2]}, and for that you will need - {ingredients_list[2]}. Now {instructions_list[2]}.
+    dish number  {4} is : {titles_list[3]}, and for that you will need - {ingredients_list[3]}. Now {instructions_list[3]}.
     Enjoy your day.
     '''
 
     return final_answer
-
