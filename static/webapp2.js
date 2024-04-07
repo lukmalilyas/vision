@@ -1,3 +1,4 @@
+
 const modelURL = "https://visioncookingapplication2.s3.ap-south-1.amazonaws.com/tm-my-image-model/model.json";
 const metadataURL = "https://visioncookingapplication2.s3.ap-south-1.amazonaws.com/tm-my-image-model/metadata.json";
 
@@ -7,6 +8,7 @@ const predictionInterval = 5000; // 5000 milliseconds (5 seconds) interval betwe
 
 // Load the image model and setup the webcam
 async function init() {
+
     model = await tmImage.load(modelURL, metadataURL);
     maxPredictions = model.getTotalClasses();
 
