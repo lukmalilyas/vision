@@ -1,8 +1,5 @@
 
-    // More API functions here:
-    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
-    // the link to your model provided by Teachable Machine export panel
     const modelURL = "https://visioncookingapplication2.s3.ap-south-1.amazonaws.com/tm-my-image-model/model.json";
     const metadataURL = "https://visioncookingapplication2.s3.ap-south-1.amazonaws.com/tm-my-image-model/metadata.json";
 
@@ -11,10 +8,6 @@
     // Load the image model and setup the webcam
     async function init() {
 
-        // load the model and metadata
-        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-        // or files from your local hard drive
-        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
         model = await tmImage.load(modelURL, metadataURL);
         maxPredictions = model.getTotalClasses();
 
