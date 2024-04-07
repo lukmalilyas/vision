@@ -17,7 +17,7 @@ function stopListening() {
     // Stop speech recognition
     recognition.stop();
 }
-readText("Hello, I am your Personal Recipe Recommender and Cooking assistant. Tell me the ingredients");
+speechSynthesis.speak(new SpeechSynthesisUtterance("Hello, I am your Personal Recipe Recommender and Cooking assistant. Tell me the ingredients"));
 
 // Event listener for when speech recognition starts
 recognition.onstart = function() {
@@ -43,7 +43,6 @@ function triggerRecommendation(transcript) {
             stopListening(); // Stop listening when "recommend recipe" is detected
             setTimeout(clickRecommendButton, 5000);
             clickRecommendButton(); // Automatically click the "Recommend Recipe" button
-
     }
 }
 
@@ -81,6 +80,13 @@ function readText(text) {
     var utterance = new SpeechSynthesisUtterance(text);
     utterance.voice = speechSynthesis.getVoices()[0];
     speechSynthesis.speak(utterance);
+    utterance.onend = function() {
+        redirectToHomePage();
+    };
+}
+
+function redirectToHomePage() {
+    window.location.href = "http://127.0.0.1:5000/static/Home.html";
 }
 
 // Start listening when the page loads

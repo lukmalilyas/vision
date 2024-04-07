@@ -1,11 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-//    console.log('DOMContentLoaded event triggered');
-//    const recordButton = document.getElementById('record-button');
-//    const chatbox = document.getElementById('chatbox');
-//
-//    const recognition = new webkitSpeechRecognition();
-//    recognition.continuous = true;
-//    recognition.lang = 'en-US';
     console.log('DOMContentLoaded event triggered');
     const recordButton = document.getElementById('record-button');
     const chatbox = document.getElementById('chatbox');
@@ -31,17 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Speech recognition result:', event);
         for (let i = event.resultIndex; i < event.results.length; i++) {
             const transcript = event.results[i][0].transcript.trim();
-            const phrase_1 = 'Vision Chat bot'
-            const phrase_2 = 'Vision Chatbot'
-            const phrase_3 = 'Chatbot'
-            const phrase_4 = 'Chat bot'
+            const phrase_1 = 'Chatbot'
+            const phrase_2 = 'Chat bot'
             console.log('Transcript:', transcript.trim());
-            if (transcript.includes(phrase_1) || transcript.includes(phrase_2) || transcript.includes(phrase_3) || transcript.includes(phrase_4)) {
+            if (transcript.includes(phrase_1) || transcript.includes(phrase_2)) {
                 console.log('Transcript matched:', transcript);
                 recognition.stop();
                 speechSynthesis.speak(new SpeechSynthesisUtterance("Listening..."));
                 recordButton.click();
                 break;
+            } else if (transcript.toLowerCase().includes('home')) {
+                window.location.href = "http://127.0.0.1:5000/static/Home.html";
+            } else if (transcript.toLowerCase().includes('object detection')) {
+                window.location.href = "http://127.0.0.1:5000/static/objectdetectionapp.html";
+            } else if (transcript.toLowerCase().includes('label reader')) {
+                window.location.href = "http://127.0.0.1:5000/label_reader";
+            } else if (transcript.toLowerCase().includes('recipe recommendation')) {
+                window.location.href = "http://127.0.0.1:5000/static/recipeRecom.html";
             }
         }
     };
@@ -91,11 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function appendMessageAndResponse(question, response) {
         console.log('Appending message and response:', question, response);
 
-        // Create container for the question-response pair
         const messageContainer = document.createElement('div');
         messageContainer.classList.add('message-container');
 
-        // Append user's question if provided
         if (question) {
             const userQuestion = document.createElement('div');
             userQuestion.classList.add('right-part');
@@ -114,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
             messageContainer.appendChild(userQuestion);
         }
 
-        // Append chatbot's response
         if (response) {
             const chatbotResponse = document.createElement('div');
             chatbotResponse.classList.add('left-part');
@@ -129,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
             chatbotResponse.appendChild(agentChart);
             messageContainer.appendChild(chatbotResponse);
 
-            // Convert chatbot's response to speech
             const utterance = new SpeechSynthesisUtterance(response);
             speechSynthesis.speak(utterance);
         }
